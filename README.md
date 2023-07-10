@@ -1,1 +1,1 @@
-# FYP112_vue_flask
+# FYP 112-1 Course Selection Handbook
