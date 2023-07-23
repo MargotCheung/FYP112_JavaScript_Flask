@@ -13,11 +13,13 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   
-  
   <body class="g-sidenav-show" >    
   
       <div class="main-content" id="panel">
-  
+
+        <!-- submit 事件觸發時，執行 login -->
+        <form @submit.prevent="login">
+
           <div class="container-fluid pt-3" style="background: #FFE8D6">
               <div class="row removable" >
   
@@ -53,14 +55,29 @@
   
                               <div class="row removable">
                                   <a class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">Email</a>
-                                  <div class="col-lg-9" style="margin-left: 20px"><input class="form-control" style="text-align: center" type="email" placeholder="輸入賬號"></div> 
+                                  <div class="col-lg-9" style="margin-left: 20px"> 
+                                    <input type="email"
+                                        class="form-control"
+                                        id="inputEmail"
+                                        aria-describedby="emailHelp"
+                                        v-model="user.email" 
+                                        style="text-align: center" 
+                                        placeholder="輸入賬號" />
+                                    </div> 
                               </div>    
   
                               <p></p>
   
                               <div class="row removable">  
                                   <p class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">密碼</p>                         
-                                  <div class="col-lg-9" style="margin-left: 20px"><input class="form-control" style="text-align: center" type="password" placeholder="輸入密碼"></div>                                                
+                                  <div class="col-lg-9" style="margin-left: 20px">
+                                    <input type="password"
+                                        class="form-control"
+                                        id="inputPassword"
+                                        v-model="user.password" 
+                                        style="text-align: center" 
+                                        placeholder="輸入密碼" />
+                                  </div>                                                
                               </div>
   
                               <p></p>
@@ -70,8 +87,12 @@
                               <div class="card-body"></div>
                               <div class="card-body" style="background: #DDBEA9"></div>
   
-                              <div class="row removable"> 
-                                  <div class="col-lg-12"><button class="btn btn-default col text-center" style="background:#CB997E"><router-link to="/myProfile" style="color: #FFFFFF">登入</router-link></button></div>                                 
+                              <div class="row removable">                                 
+                                  <div class="col-lg-12">
+                                    <!-- type 為 submit 讓按下後得以觸發 submit -->
+                                    <button type="submit" class="btn btn-default col text-center" style="background:#CB997E">
+                                    <router-link to="/myProfile" style="color: #FFFFFF">登入</router-link></button>
+                                  </div>                                 
                               </div>
 
 
@@ -114,12 +135,60 @@
                   <div class="card-body"></div>
               </div>
           </footer>
-      </div>
-  </body>
+          </form> 
+        </div>
+  </body> 
+</template>
   
-  </template>
   
-  
-  
-  <!-- <script src="../assets/style/loopple.js"></script> -->
-  
+<script>
+// 記得要先 import axois
+import axios from "axios";
+export default {
+name: "Login",
+data() {
+    return {
+    // 與使用者輸入的帳密欄位 v-model 雙向綁定
+    user: {
+        email: "",
+        password: "",
+    },
+    // getData 時會先從瀏覽器 cookie 叫出 Token 存來此元件
+    token: "",
+    };
+},
+methods: {
+    login() {
+    // 如果一開始沒有 import axios 的話
+    // 用 require("axios").default 也可以讓我們使用 axios
+    // const axios = require("axios").default;
+    axios
+        .post(`你的 api 喔`, this.user)
+        .then((res) => {
+        const token = res.data.token;
+        const expired = res.data.expired;
+        // 將 token 與他的到期時間存到瀏覽器 cookie 裡
+        document.cookie = `loginToken = ${token}; expires = ${new Date(
+            expired * 1000
+        )};`;
+        });
+    },
+    getData() {
+    // 先從瀏覽器 cookie 取得 token
+    this.token = document.cookie.replace(/(?:(?:^|.*;\s*)loginToken\s*=\s*([^;]*).*$)|^.*$/, "$1");
+    const api = `你的 api 喔`;
+
+    // https://github.com/axios/axios#global-axios-defaults
+    // 並且 header 按照後端 api 文件的規格要求填上 Bearer token 字樣
+    axios.defaults.headers.common.Authorization = `this.token`;
+    axios.get(api).then((res) => {
+        console.log(res);
+    });
+    },
+    logout() {
+    // 清除瀏覽器 cookie 的 Token
+    document.cookie = `loginToken = ""; expires = "";`;
+    },
+},
+};
+</script>
