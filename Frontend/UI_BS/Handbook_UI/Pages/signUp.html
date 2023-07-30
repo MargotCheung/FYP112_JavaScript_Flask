@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
-    <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/loopple/loopple.css">
+    <link rel="stylesheet" href="../src/css/theme.css">
+    <link rel="stylesheet" href="../src/css/loopple.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -18,7 +18,7 @@
         <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" style="background: #FFE8D6" id="navbarTop">
             <div class="container" >
                 <a class="loopple-navbar-brand" href="landing.html" style="margin-right: 15px">
-                    <img src="..\assets\images\logo.jpg" style="width:85px">
+                    <img src="..\src\images\logo.jpg" style="width:85px">
                 </a>
                 <a class="" style="color: #6B705C" href="landing.html" >首頁</a>
                 <div class="collapse navbar-collapse" id="navbar-primary">                
@@ -60,55 +60,69 @@
 
                 <!-- Right container -->
                 <div class="col-lg-6">
-                    <div class="card-header col-lg-10"  style="background: #FFE8D6">
-                        <div class="card-body" style="background: #FFE8D6"></div>
-                        <div class="card-body" style="background: #DDBEA9"></div>
-                        
-                        <div class="card-body" style="background: #DDBEA9" >
+                    <form action="">
+                        <div class="form-row">
+                            <div class="card-header col-lg-10"  style="background: #FFE8D6">
+                                <div class="card-body" style="background: #FFE8D6"></div>
+                                <div class="card-body" style="background: #DDBEA9"></div>
+                                
+                                <div class="card-body" style="background: #DDBEA9" >
 
-                            <div class="row removable">  
-                                <p class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">暱稱</p>                         
-                                <div class="col-lg-9" style="margin-left: 30px"><input class="form-control" style="text-align: center" placeholder="輸入暱稱"></div>                                                
+                                    <div class="row removable">  
+                                        <label for="RegisterUsername" class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">暱稱</label>
+                                        <div class="col-lg-9" style="margin-left: 30px">                                           
+                                            <input type="text" class="form-control" id="RegisterDefaultUsername" style="text-align: center" placeholder="輸入暱稱" aria-describedby="inputGroupPrepend2" required>
+                                        </div>
+                                    </div>
+
+                                    <p></p>
+
+                                    <div class="row removable">  
+                                        <label for="RegisterEmail" class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">Email</label>
+                                        <div class="col-lg-9" style="margin-left: 18px">                                           
+                                            <input type="email" class="form-control" id="RegisterDefaultEmail" style="text-align: center" placeholder="輸入Email" aria-describedby="inputGroupPrepend2" required>
+                                        </div>
+                                    </div>  
+
+                                    <p></p>
+
+                                    <div class="row removable">  
+                                        <label for="RegisterPassword" class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">密碼</label>
+                                        <div class="col-lg-9" style="margin-left: 30px">                                           
+                                            <input type="password" class="form-control" id="RegisterDefaultPassword1" style="text-align: center" placeholder="輸入密碼" aria-describedby="inputGroupPrepend2" required>
+                                        </div>
+                                    </div>
+
+                                    <p></p>
+
+                                    <div class="row removable">  
+                                        <label for="RegisterPassword2" class="text-lg-left" style="margin-left: 17px; font-size: 21px; font-weight: 500; color: #000; text-indent: 0%"確認>確認密碼</label>
+                                        <div class="col-lg-9" style="margin-left: 0px">
+                                            <input type="password" class="form-control" id="RegisterDefaultPassword2" style="text-align: center" placeholder="確認密碼" aria-describedby="inputGroupPrepend2" required>
+                                        </div>       
+                                    </div>
+
+                                    <p></p>
+
+                                    <div class="card-body" style="background: #DDBEA9"></div>
+                                    
+
+                                    <div class="row removable"> 
+                                        <div class="col-lg-12">
+                                            <button class="btn btn-default col text-center" style="background:#CB997E; color: #FFFFFF" type="submit">註冊</button>
+                                        </div>          
+                                    </div>
+
+                                
+
+
+                                    <div class="card-body" style="background: #DDBEA9"></div>
+
+
+                                </div>
                             </div>
-
-                            <p></p>
-
-                            <div class="row removable">
-                                <p class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">Email</p>
-                                <div class="col-lg-9" style="margin-left: 20px"><input class="form-control" style="text-align: center" type="email" placeholder="輸入電郵"></div>
-                            </div>    
-
-                            <p></p>
-
-                            <div class="row removable">  
-                                <p class="text-lg-left" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">密碼</p>                         
-                                <div class="col-lg-9" style="margin-left: 30px"><input class="form-control" style="text-align: center" type="password" placeholder="輸入密碼"></div>                                                
-                            </div>
-
-                            <p></p>
-
-                            <div class="row removable">  
-                                <p class="text-lg-left" style="margin-left: 17px; font-size: 21px; font-weight: 500; color: #000; text-indent: 0%">確認密碼</p>                         
-                                <div class="col-lg-9" style="margin-left: 0px"><input class="form-control" style="text-align: center" type="password" placeholder="確認密碼"></div>                                                
-                            </div>
-
-                            <p></p>
-
-                            <div class="card-body" style="background: #DDBEA9"></div>
-                            
-
-                            <div class="row removable"> 
-                                <div class="col-lg-12"><button class="btn btn-default col text-center" style="background:#CB997E; color: #FFFFFF">註冊</button></div>          
-                            </div>
-
-                        
-
-
-                            <div class="card-body" style="background: #DDBEA9"></div>
-
-
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -148,7 +162,47 @@
 
 
     <script>
-        
+/*
+    // Check if passwords match
+    $("#pwdId, #confirmPassword").on("keyup", function () {
+        if (
+            $("#newPassword").val() != "" &&
+            $("#confirmPassword").val() != "" &&
+            $("#confirmPassword").val() == $("#confirmPassword").val()
+        ) {
+        }
+    });
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+    "use strict";
+    window.addEventListener(
+        "load",
+        function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName("needs-validation");
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener(
+            "submit",
+            function (event) {
+                if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+            },
+            false
+            );
+        });
+        },
+        false
+    );
+    })();
+*/
     </script>
-    <script src="../assets/js/loopple/loopple.js"></script>
+
+
+    <!-- Loople JavaScript -->
+    <script src="../src/JavaScript/loopple.js"></script>
 </body>

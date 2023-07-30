@@ -5,8 +5,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
-    <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/loopple/loopple.css">
+    <link rel="stylesheet" href="../src/css/theme.css">
+    <link rel="stylesheet" href="../src/css/loopple.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body class="g-sidenav-show" >
@@ -15,14 +18,14 @@
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start" id="sidenav-main" style="background: #FFE8D6">
         <div class="sidenav-header  align-items-center" style="background: #FFE8D6">
             <a class="navbar-brand" href="landing.html">
-                <img src="..\assets\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
+                <img src="..\src\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
             </a>           
         </div>
         <div class="navbar-inner" style="background: #FFE8D6">
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">
+                        <a class="nav-link" href="MyProfile.html">
                             <i class="fa fa-desktop text-primary"></i>
                             <span class="nav-link-text">我的資料</span>
                         </a>
@@ -99,6 +102,7 @@
     <!-- End of Left hand side Navbar -->
 
     <div class="main-content" id="panel" >
+        <!-- TopNav -->
         <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop" style="background: #FFE8D6" >
             <div class="container-fluid" >
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" >
@@ -112,179 +116,18 @@
                             </div>
                         </div>
                         <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-                            <span aria-hidden="true">�</span>
+                            <span aria-hidden="true">11111111111111111111111111111111111111111111</span>
                         </button>
                     </form>
-                    <ul class="navbar-nav align-items-center  ml-md-auto ">
-                        <li class="nav-item d-xl-none">
-                            <div class="pr-3 sidenav-toggler sidenav-toggler-dark active" data-action="sidenav-pin" data-target="#sidenav-main">
-                                <div class="sidenav-toggler-inner">
-                                    <i class="sidenav-toggler-line"></i>
-                                    <i class="sidenav-toggler-line"></i>
-                                    <i class="sidenav-toggler-line"></i>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item d-sm-none">
-                            <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
-                                <i class="ni ni-zoom-split-in"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
-                                <div class="px-3 py-3">
-                                    <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.</h6>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-1.jpg" class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>2 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">Lets meet at Starbucks at 11:30. Wdyt?</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-2.jpg" class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>3 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-3.jpg" class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>5 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">Your posts have been liked a lot.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg" class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>2 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">Lets meet at Starbucks at 11:30. Wdyt?</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#!" class="list-group-item list-group-item-action">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-5.jpg" class="avatar rounded-circle">
-                                            </div>
-                                            <div class="col ml--2">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h4 class="mb-0 text-sm">John Snow</h4>
-                                                    </div>
-                                                    <div class="text-right text-muted">
-                                                        <small>3 hrs ago</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-sm mb-0">A new issue has been reported for Argon.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-layer-group"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
-                                <div class="row shortcuts px-4">
-                                    <a href="#!" class="col-4 shortcut-item text-center">
-                                        <span class="shortcut-media avatar rounded-circle bg-gradient-red">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                        <small class="text-white">Calendar</small>
-                                    </a>
-                                    <a href="#!" class="col-4 shortcut-item text-center">
-                                        <span class="shortcut-media avatar rounded-circle bg-gradient-orange">
-                                            <i class="fa fa-envelope"></i>
-                                        </span>
-                                        <small class="text-white">Email</small>
-                                    </a>
-                                    <a href="#!" class="col-4 shortcut-item text-center">
-                                        <span class="shortcut-media avatar rounded-circle bg-gradient-info">
-                                            <i class="fa fa-credit-card"></i>
-                                        </span>
-                                        <small class="text-white">Payments</small>
-                                    </a>
-                                    <a href="#!" class="col-4 shortcut-item text-center">
-                                        <span class="shortcut-media avatar rounded-circle bg-gradient-green">
-                                            <i class="fa fa-book"></i>
-                                        </span>
-                                        <small class="text-white">Reports</small>
-                                    </a>
-                                    <a href="#!" class="col-4 shortcut-item text-center">
-                                        <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
-                                            <i class="fa fa-map"></i>
-                                        </span>
-                                        <small class="text-white">Maps</small>
-                                    </a>
-                                    <a href="#!" class="col-4 shortcut-item text-center">
-                                        <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
-                                            <i class="fa fa-store"></i>
-                                        </span>
-                                        <small class="text-white">Shop</small>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+
+                                        
+                    <!-- Dropdown Menu -->
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0 text-end">
                         <li class="nav-item dropdown">
                             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="https://loopple.s3.eu-west-3.amazonaws.com/images/35KfK97H5GmsfgcsnwAvfd71jurL9kOFjMP8E8bW.png">
+                                        <img alt="Image placeholder" src="..\src\images\head.png">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span class="mb-0 text-sm  font-weight-bold" style="color: black">粉頭</span>
@@ -322,7 +165,7 @@
                 </div>
             </div>
         </nav>
-
+        <!-- End of TopNav -->     
 
 
         <div class="container-fluid pt-3" style="background: #FFE8D6">
@@ -345,142 +188,146 @@
             <div class="row removable" >
                 <div class="col-lg-12">
 
-                    <div class="row removable">
-                        <!-- Left container -->
-                        <div class="col-lg-8">
+                    <form action="">
+                        <div class="row removable">
+                            <!-- Left container -->
+                            <div class="col-lg-8">
 
-                            <div class="row removable">
-                                <div class="col-lg-12">
+                                <div class="row removable">
+                                    <div class="col-lg-12">
 
-                                    <div class="row removable">
-                                        <div class="col-lg-12">
-                                            <div class="card" style="background: #FFF3F3">   
+                                        <div class="row removable">
+                                            <div class="col-lg-12">
+                                                <div class="card" style="background: #FFF3F3">   
 
-                                                <p></p>                
-                                                <!-- <div class="card-body"></div> -->
+                                                    <p></p>                
+                                                    <!-- <div class="card-body"></div> -->
 
-                                                <div class="row removable">
-                                                    <div class="col-lg-2">
-                                                        <p class="" data-dl-input-translation="true" style="margin-left: 50px">學年</p>
-                                                    </div>                                   
-                                                    <div class="col-lg-9">
-                                                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="請輸入民國年份例如：'109'">
-                                                        <datalist id="datalistOptions">
-                                                        <option value="100">
-                                                        <option value="101">
-                                                        <option value="102">
-                                                        <option value="103">
-                                                        <option value="104">
-                                                        <option value="105">
-                                                        <option value="106">
-                                                        <option value="107">
-                                                        <option value="108">
-                                                        <option value="109">
-                                                        <option value="110">
-                                                        <option value="111">
-                                                        <option value="112">                                          
-                                                        </datalist>
-                                                    </div>
-                                            </div><p></p>
-                                                                                                                          
+                                                    <div class="row removable">
+                                                        <div class="col-lg-2">
+                                                            <p class="" data-dl-input-translation="true" style="margin-left: 50px">學年</p>
+                                                        </div>                                   
+                                                        <div class="col-lg-9">
+                                                            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="請輸入民國年份例如：'109'" required>
+                                                            <datalist id="datalistOptions">
+                                                            <option value="100">
+                                                            <option value="101">
+                                                            <option value="102">
+                                                            <option value="103">
+                                                            <option value="104">
+                                                            <option value="105">
+                                                            <option value="106">
+                                                            <option value="107">
+                                                            <option value="108">
+                                                            <option value="109">
+                                                            <option value="110">
+                                                            <option value="111">
+                                                            <option value="112">                                          
+                                                            </datalist>
+                                                        </div>
+                                                    </div><p></p>
+                                                                                                                            
 
-                                            <div class="row removable">
-                                                <div class="col-lg-2">
-                                                    <p class="" data-dl-input-translation="true" style="margin-left: 50px">學期</p> 
-                                                </div>
-                                                <div class="col-lg-9"><input class="form-control" placeholder="請輸入：'上' 或 '下' "></div>
-                                            </div><p></p>
-                                            
-                                            
-                                            <div class="row removable">
-                                                <div class="col-lg-2">
-                                                    <p class="" data-dl-input-translation="true" style="margin-left: 50px">科目</p>
-                                                </div>
-                                                <div class="col-lg-9"><input class="form-control" placeholder="請輸入科目"></div>
-                                            </div><p></p>
+                                                    <div class="row removable">
+                                                        <div class="col-lg-2">
+                                                            <p class="" data-dl-input-translation="true" style="margin-left: 50px">學期</p> 
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <input class="form-control" placeholder="請輸入：'上' 或 '下' " required>
+                                                        </div>
+                                                    </div><p></p>
+                                                    
+                                                    
+                                                    <div class="row removable">
+                                                        <div class="col-lg-2">
+                                                            <p class="" data-dl-input-translation="true" style="margin-left: 50px">科目</p>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <input type="text" class="form-control" placeholder="請輸入科目" required>
+                                                        </div>
+                                                    </div><p></p>
 
 
-                                            <div class="row removable">
-                                                <div class="col-lg-2">
-                                                    <p class="" data-dl-input-translation="true" style="margin-left: 40px">授課教師</p>
-                                                </div>
-                                                <div class="col-lg-9"><input class="form-control" placeholder="請輸入教師全名"></div>
-                                            </div>
+                                                    <div class="row removable">
+                                                        <div class="col-lg-2">
+                                                            <p class="" data-dl-input-translation="true" style="margin-left: 35px">授課教師</p>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <input type="text" class="form-control" placeholder="請輸入教師全名" required>
+                                                        </div>
+                                                    </div><p></p>
 
-                                            <p></p>
-
-                                        </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row removable">
-                                        <div class="col-lg-12">
-                                            <div class="card" style="background: #E7E7E7">
-                                                <div class="card-body">
-                                                    <h3 class="card-title text-center" data-dl-input-translation="true">新增考古題</h3>
-
-                                                    <!-- <p class="card-text text-center" data-dl-input-translation="true">按這裡選擇檔案 +</p> -->
-
-                                                    <input class="form-control form-control-lg" id="formFileLg" type="file"><p></p>
-
-                                                    <!-- <a href="#" class="btn col text-center btn-default">上傳</a> -->
-                                                    <deepl-inline-translate style="z-index: 1999999999;"></deepl-inline-translate>
-                                                    <deepl-inline-translate style="z-index: 1999999999;"></deepl-inline-translate>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                        <div class="row removable">
+                                            <div class="col-lg-12">
+                                                <div class="card" style="background: #E7E7E7">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title text-center" data-dl-input-translation="true">新增考古題</h3>
 
-                                   
-                                    <div class="row removable">
-                                        <div class="col-lg-12">
-                                            <div class="card" style="background: #FFF3F3">
-                                                <div class="card-body">
-                                                    <h3 class="card-title text-center" data-dl-input-translation="true">考古題簡介</h3>
+                                                        <!-- <p class="card-text text-center" data-dl-input-translation="true">按這裡選擇檔案 +</p> -->
 
-                                                    <!-- <p class="card-text text-center">簡介</p> -->
-                                                    <label for="exampleFormControlTextarea1" class="form-label">簡介</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                                        <input class="form-control form-control-lg" id="formFileLg" type="file" required><p></p>
 
-                                                    <p></p>
-                                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <!-- move button to the right -->
-                                                        <input class="btn " type="submit" value="分享" style="background: #FFCCCC; color: black"></a>
+                                                        <!-- <a href="#" class="btn col text-center btn-default">上傳</a> -->
+                                                        <deepl-inline-translate style="z-index: 1999999999;"></deepl-inline-translate>
                                                         <deepl-inline-translate style="z-index: 1999999999;"></deepl-inline-translate>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+
+                                    
+                                        <div class="row removable">
+                                            <div class="col-lg-12">
+                                                <div class="card" style="background: #FFF3F3">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title text-center" data-dl-input-translation="true">考古題簡介</h3>
+
+                                                        <!-- <p class="card-text text-center">簡介</p> -->
+                                                        <label for="exampleFormControlTextarea1" class="form-label">描述考古題內容</label>
+                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" required></textarea>
+
+                                                        <p></p>
+                                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <!-- move button to the right -->
+                                                            <input class="btn " type="submit" value="分享" style="background: #FFCCCC; color: black"></a>
+                                                            <deepl-inline-translate style="z-index: 1999999999;"></deepl-inline-translate>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
-                                     
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Right container -->
-                        <div class="col-lg-4">
+                            <!-- Right container -->
+                            <div class="col-lg-4">
 
-                            <div class="col-lg-12">
-                                <div class="" style="background: #FFE8D6">   
+                                <div class="col-lg-12">
+                                    <div class="" style="background: #FFE8D6">   
 
-                                    <p></p>                
-                                    <!-- <div class="card-body"></div> -->
+                                        <p></p>                
+                                        <!-- <div class="card-body"></div> -->
 
-                                    <div class="row removable">
-                                        <div class="col-lg-4">
-                                        </div>                                   
-                                        <div class="col-lg-8">
-                                            <h1 class="text-xl-center h1" style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 1.8rem" data-dl-input-translation="true">可以的話我希望這邊有廣告</h1>
+                                        <div class="row removable">
+                                            <div class="col-lg-4">
+                                            </div>                                   
+                                            <div class="col-lg-8">
+                                                <h1 class="text-xl-center h1" style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 1.8rem" data-dl-input-translation="true">可以的話我希望這邊有廣告</h1>
+
+                                            </div>
 
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-
+                    </form>
 
                 </div>
             </div>
@@ -519,8 +366,7 @@
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
     
-    <script>   
-    </script>
-
-    <script src="../assets/js/loopple/loopple.js"></script>
+    <script></script>
+    <!-- Loople JavaScript -->
+    <script src="../src/JavaScript/loopple.js"></script>
 </body>
