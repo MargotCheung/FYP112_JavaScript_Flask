@@ -141,54 +141,7 @@
 </template>
   
   
-<script>
-// 記得要先 import axois
-import axios from "axios";
-export default {
-name: "Login",
-data() {
-    return {
-    // 與使用者輸入的帳密欄位 v-model 雙向綁定
-    user: {
-        email: "",
-        password: "",
-    },
-    // getData 時會先從瀏覽器 cookie 叫出 Token 存來此元件
-    token: "",
-    };
-},
-methods: {
-    login() {
-    // 如果一開始沒有 import axios 的話
-    // 用 require("axios").default 也可以讓我們使用 axios
-    // const axios = require("axios").default;
-    axios
-        .post(`你的 api 喔`, this.user)
-        .then((res) => {
-        const token = res.data.token;
-        const expired = res.data.expired;
-        // 將 token 與他的到期時間存到瀏覽器 cookie 裡
-        document.cookie = `loginToken = ${token}; expires = ${new Date(
-            expired * 1000
-        )};`;
-        });
-    },
-    getData() {
-    // 先從瀏覽器 cookie 取得 token
-    this.token = document.cookie.replace(/(?:(?:^|.*;\s*)loginToken\s*=\s*([^;]*).*$)|^.*$/, "$1");
-    const api = `你的 api 喔`;
+<script> </script>
 
-    // https://github.com/axios/axios#global-axios-defaults
-    // 並且 header 按照後端 api 文件的規格要求填上 Bearer token 字樣
-    axios.defaults.headers.common.Authorization = `this.token`;
-    axios.get(api).then((res) => {
-        console.log(res);
-    });
-    },
-    logout() {
-    // 清除瀏覽器 cookie 的 Token
-    document.cookie = `loginToken = ""; expires = "";`;
-    },
-},
-};
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
