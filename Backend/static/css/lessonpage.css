@@ -1,0 +1,282 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5ded0;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+
+/* 页眉样式 */
+header {
+    background-color: #DDBEA9;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+ 
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    margin-right: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-container button {
+    padding: 8px 16px;
+    background-color: #DDBEA9;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 100px;
+    /* background-color: #fff; */
+    padding: 20px;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 右側排序 */
+.ratings {
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 100%;
+    max-width: 100px;
+}
+
+.ratings h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ratings ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ratings li {
+    margin-bottom: 5px;
+}
+
+.ratings li a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+
+/* 页脚样式 */
+footer {
+    background-color: #2f343a;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 響應式網頁 */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        flex: 1 0 100%;
+    }
+    
+    .main {
+        flex: 1 0 100%;
+    }
+}
+
+/* 页面内容样式 */
+main {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.search-button {
+    padding: 6px 12px;
+    font-size: 16px;
+    height: 30px;
+    background-color: #c5a889;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #b5873e;
+}
+
+.search-button:focus {
+    outline: none;
+}
+
+/* main */
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.dropdown-container {
+    display: flex;
+}
+
+.dropdown {
+    margin-right: 10px;
+}
+
+  
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+}
+
+.post-title {
+    display: block;
+    width: 100%;
+    background-color: #e2ceb8;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .post-title:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .post-title:focus {
+    outline: none;
+  }
+  
+  
+
+.post-content {
+    margin-bottom: 10px;
+}
+
+.post-author {
+    font-style: italic;
+    color: #888;
+}
+
+
+
+
+/* 文字說明和留言版的css */
+.explanation,
+.comments {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+.comment:nth-child(even) {
+    background-color: #fef2e0;
+}
+
+.explanation p,
+.comments p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+

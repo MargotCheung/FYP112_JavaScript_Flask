@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dcard-like Interface</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/homepage.css') }}>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href={{ url_for('static', filename='css/lessonpage.css') }}>
+
+    <script id="add-comment-template" type="text/template">
+        <!-- 子頁面模板的內容... -->
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar-container">
+                <a href="/" class="logo">
+                    <img src={{ url_for('static', filename='icon/home-icon.png') }} alt="Home">
+                </a>
+                <div class="navbar-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="搜索...">
+                        <button type="submit">搜索</button>
+                    </div>
+                    <div class="login-container">
+                        {% if user %}
+                            <li>
+                                <span>{{ user.username }}</span>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('auth.logout') }}">登出</a>
+                            </li>
+                            {% else %}
+                            <a href="{{ url_for('auth.login') }}">登录</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#">大一</a></li>
+                <li><a href="#">大二</a></li>
+                <li><a href="#">大三</a></li>
+                <li><a href="#">大四</a></li>
+                <li><a href="#">通識</a></li>
+                <li><a href="#">考古題</a></li>
+                <li><a href="#">Coin Store</a></li>
+                <li><a href="#">換課區</a></li>
+                <!-- 更多目录项... -->
+            </ul>
+        </aside>
+
+        <main>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                  <!-- 添加更多指示符... -->
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src={{ url_for('static', filename='icon/FCU.jpg') }} class="d-block w-100" alt="照片 1">
+                    <div class="carousel-caption">
+                      <h2>公告标题 1</h2>
+                      <p>公告内容 1</p>
+                      <p>作者: John Doe</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src={{ url_for('static', filename='avatar.png') }} class="d-block w-100" alt="照片 2">
+                    <div class="carousel-caption">
+                      <h2>公告标题 2</h2>
+                      <p>公告内容 2</p>
+                      <p>作者: Jane Smith</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src={{ url_for('static', filename='FCU_Logo.png') }} class="d-block w-100" alt="照片 3">
+                    <div class="carousel-caption">
+                      <h2>公告标题 3</h2>
+                      <p>公告内容 3</p>
+                      <p>作者: Tom Johnson</p>
+                    </div>
+                  </div>
+                  <!-- 添加更多公告... -->
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">上一个</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">下一个</span>
+                </a>
+            </div>
+            <div class="content">
+                <h2>熱門</h2>
+                <div class="post">
+                    <button class="post-title">課程名稱 XXX老師</button>
+                    <p class="post-content">内容</p>
+                    <p class="post-author">作者: John Doe</p>
+                </div>
+                <div class="post">
+                    <button class="post-title">課程名稱 XXX老師</button>
+                    <p class="post-content">内容</p>
+                    <p class="post-author">作者: Jane Smith</p>
+                </div>
+                <div class="post">
+                    <button class="post-title">課程名稱 XXX老師</button>
+                    <p class="post-content">内容</p>
+                    <p class="post-author">作者: Tom Johnson</p>
+                </div>
+                <!-- 更多帖子... -->
+            </div>
+              
+        </main>
+        
+        
+        
+
+        <div class="ratings">
+            <h2>评分</h2>
+            <ul>
+                <li><a href="#">A XXXX 95</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+                <li><a href="#">D</a></li>
+                <li><a href="#">E</a></li>
+                <li><a href="#">F</a></li>
+                <li><a href="#">G</a></li>
+                <li><a href="#">H</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>版权所有 &copy; 2023 My Website</p>
+    </footer>
+
+     <!-- 引入 Bootstrap JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+     <script src={{ url_for('static', filename='script/lessonpage.js') }}></script>
+     <script src="scripts.js"></script>
+</body>
+
+</html>
