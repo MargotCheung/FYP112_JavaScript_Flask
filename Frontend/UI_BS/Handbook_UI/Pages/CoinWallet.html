@@ -4,22 +4,25 @@
     <title>My Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <link rel="stylesheet" href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
-    <link rel="stylesheet" href="../src/css/theme.css">
-    <link rel="stylesheet" href="../src/css/loopple.css">
+    <link rel="stylesheet"
+        href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
+    <link rel="stylesheet" href="/static/css/theme.css">
+    <link rel="stylesheet" href="/static/css/loopple.css">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body class="g-sidenav-show">
-    
+
     <!-- SideNav -->
-    <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start" id="sidenav-main" style="background: #FFE8D6">
+    <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start"
+        id="sidenav-main" style="background: #FFE8D6">
         <div class="sidenav-header  align-items-center" style="background: #FFE8D6">
             <a class="navbar-brand" href="landing.html">
-                <img src="..\src\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
-            </a>           
+                <img src="\static\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
+            </a>
         </div>
         <div class="navbar-inner" style="background: #FFE8D6">
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -31,7 +34,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="uploadPaper.html">    <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
+                        <a class="nav-link" href="uploadPaper.html">
+                            <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
                             <i class="fa fa-globe text-info"></i>
                             <span class="nav-link-text">上傳考古題</span>
                         </a>
@@ -60,7 +64,7 @@
                             <span class="nav-link-text">設定</span>
                         </a>
                     </li>
-                </ul>                
+                </ul>
 
                 <hr class="my-3">
                 <h6 class="navbar-heading p-0 text-muted">
@@ -92,10 +96,10 @@
                         </a>
                     </li>
                 </ul>
-                
+
             </div>
-            
-            
+
+
 
         </div>
     </nav>
@@ -103,31 +107,35 @@
 
     <div class="main-content" id="panel">
         <!-- TopNav -->
-        <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop" style="background: #FFE8D6" >
-            <div class="container-fluid" >
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                    <form class="navbar-search navbar-search-light form-inline mr-sm-3 mb-0" id="navbar-search-main" >
-                        <div class="form-group mb-0" >
+        <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop"
+            style="background: #FFE8D6">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="navbar-search navbar-search-light form-inline mr-sm-3 mb-0" id="navbar-search-main">
+                        <div class="form-group mb-0">
                             <div class="input-group input-group-alternative input-group-merge" style="background: #fff">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                                 </div>
-                                <input class="form-control me-2" type="search" placeholder="輸入課名 / 教師" aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="輸入課名 / 教師"
+                                    aria-label="Search">
                             </div>
                         </div>
-                        <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
+                        <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main"
+                            aria-label="Close">
                             <span aria-hidden="true">11111111111111111111111111111111111111111111</span>
                         </button>
                     </form>
 
-                                        
+
                     <!-- Dropdown Menu -->
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0 text-end">
                         <li class="nav-item dropdown">
-                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="..\src\images\head.png">
+                                        <img alt="Image placeholder" src="\static\images\head.png">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span class="mb-0 text-sm  font-weight-bold" style="color: black">粉頭</span>
@@ -174,12 +182,13 @@
 
                     <!-- Card profile -->
                     <div class="card card-profile">
-                        <img src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top" style="height: 80px;">
+                        <img src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/img-1-1000x600.jpg"
+                            alt="Image placeholder" class="card-img-top" style="height: 80px;">
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
                                     <a href="#">
-                                        <img src="..\src\images\head.png" class="rounded-circle">
+                                        <img src="\static\images\head.png" class="rounded-circle">
                                     </a>
                                 </div>
                             </div>
@@ -220,13 +229,12 @@
                     </div>
                     <!-- End of card profile -->
 
-                    
-                    
-                    <div class="row removable" >
+
+
+                    <div class="row removable">
                         <div class="col-lg-12">
 
 
-                            
 
 
 
@@ -234,10 +242,11 @@
 
 
 
-                    
-                            
-                            
-                            
+
+
+
+
+
 
 
                             <!-- Coin details excel table -->
@@ -245,28 +254,29 @@
                                 <div class="col-lg-12">
                                     <p class="">Coin 進出記錄</p>
                                 </div>
-                            </div>                           
+                            </div>
                             <div class="row removable">
                                 <div class="col-lg-12">
                                     <div class="card table-responsive" style="max-height: 300px;">
-                                        <div class="card-header border-bottom-0" >
+                                        <div class="card-header border-bottom-0">
                                             <h5>Coin 進出記錄</h5>
                                         </div>
 
-                                        <input class="form-control" id="myFilter" type="text" placeholder="輸入文字搜尋" style="text-align: right;" >
-                                        <table class="table table-hover" data-integration="excel" >
+                                        <input class="form-control" id="myFilter" type="text" placeholder="輸入文字搜尋"
+                                            style="text-align: right;">
+                                        <table class="table table-hover" data-integration="excel">
                                             <thead>
-                                                <tr>                                                   
+                                                <tr>
                                                     <th scope="col">日期</th>
                                                     <th scope="col">明細</th>
                                                     <th scope="col">減少</th>
                                                     <th scope="col">增加</th>
-                                                    <th scope="col">餘額</th>                                                    
+                                                    <th scope="col">餘額</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th scope="row">15/2</th>                                                    
+                                                    <th scope="row">15/2</th>
                                                     <td>上傳考古題</td>
                                                     <td></td>
                                                     <td>**20</td>
@@ -294,21 +304,21 @@
                                                     <td>**112</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">17/2</th>                                                    
+                                                    <th scope="row">17/2</th>
                                                     <td>上傳考古題</td>
                                                     <td></td>
                                                     <td>**20</td>
                                                     <td>**132</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">18/2</th>                                                    
+                                                    <th scope="row">18/2</th>
                                                     <td>上傳考古題</td>
                                                     <td></td>
                                                     <td>**20</td>
                                                     <td>**152</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">18/2</th>     
+                                                    <th scope="row">18/2</th>
                                                     <td>下載考古題</td>
                                                     <td>**10</td>
                                                     <td></td>
@@ -335,7 +345,7 @@
                             </div>
                             <!-- End of Coin details excel table -->
 
-                            
+
                         </div>
                     </div>
 
@@ -358,7 +368,7 @@
                             <p class="">F</p>
                             <p class="">G</p>
                         </div>
-                    </div>                   
+                    </div>
                 </div>
             </div>
         </div>
@@ -370,8 +380,10 @@
                 <div class="col-lg-6">
                     <div class="copyright text-center  text-lg-left  text-muted" style="text-indent: 20%">
                         © 來源參考:
-                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Argon Dashboard</a>
-                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Loopple</a>
+                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1"
+                            target="_blank" style="color: #6B705C">Argon Dashboard</a>
+                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank"
+                            style="color: #6B705C">Loopple</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -381,7 +393,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="javascript:;" class="nav-link" style="margin-right: 150px">網站負責人：校霸</a>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -393,17 +405,23 @@
 
 
     </div>
-    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
-    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
+    <script
+        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
+    <script
+        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
-    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
+    <script
+        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
+    <script
+        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
 
 
 
     <style>
-        th, td {
+        th,
+        td {
             font-size: 18px;
         }
     </style>
@@ -411,5 +429,5 @@
     <script> </script>
 
     <!-- Loople JavaScript -->
-    <script src="../src/JavaScript/loopple.js"></script>
+    <script src="/static/images/loopple.js"></script>
 </body>

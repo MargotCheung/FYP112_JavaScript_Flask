@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Search Result</title>
+    <title>Lesson Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet"
@@ -14,7 +14,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body class="g-sidenav-show">
+<body class="g-sidenav-show" style="background: #FFE8D6">
 
     <!-- SideNav -->
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start"
@@ -34,8 +34,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
                         <a class="nav-link" href="uploadPaper.html">
+                            <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
                             <i class="fa fa-globe text-info"></i>
                             <span class="nav-link-text">上傳考古題</span>
                         </a>
@@ -99,11 +99,9 @@
             </div>
         </div>
     </nav>
-    <!-- End of SideNav -->
+    <!-- End of TopNav -->
 
-
-    <div class="main-content" id="panel" style="background: #FFE8D6">
-
+    <div class="main-content" id="panel">
         <!-- TopNav -->
         <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop"
             style="background: #FFE8D6">
@@ -119,11 +117,10 @@
                                     aria-label="Search">
                             </div>
                         </div>
-                        <button type="submit" class="close" data-action="search-close" data-target="#navbar-search-main"
+                        <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main"
                             aria-label="Close">
                             <span aria-hidden="true">11111111111111111111111111111111111111111111</span>
                         </button>
-
                     </form>
 
 
@@ -173,77 +170,49 @@
             </div>
         </nav>
         <!-- End of TopNav -->
+        <div class="card-body"></div>
+
+
 
 
         <div class="container-fluid pt-3">
             <div class="row removable">
 
-                <!-- Main post content centre column -->
+                <!-- Main lesson MIDDLE column -->
                 <div class="col-lg-10">
-
+                    <!-- 走馬燈 -->
                     <div class="row removable">
-                        <div class="card-body col-lg-12" style="background: #FFE8D6">
-                            <p class="h1 text-center">帖子內容</p>
+                        <div class="col-lg-2">
+                            <button class="btn bg-gradient-green col text-center">程式設計I</button>
                         </div>
-                        <div class="card-body"></div>
-                    </div>
 
-
-                    <!-- Dropdown Searh filter -->
-                    <div class="row removable">
-                        <div class="col-lg-12">
-                            <div class="row removable">
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-dark dropdown-toggle mr-0" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">年份</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);"
-                                            x-placement="bottom-start">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-dark dropdown-toggle mr-0" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">課程</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);"
-                                            x-placement="bottom-start">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-dark dropdown-toggle mr-0" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">授課老師</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);"
-                                            x-placement="bottom-start">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3"><button class="btn btn-dark">搜尋</button></div>
-                            </div>
+                        <div class="col-lg-2">
+                            <button class="btn bg-gradient-info col text-center">微積分I</button>
                         </div>
+
+                        <div class="col-lg-2">
+                            <button class="btn bg-gradient-orange col text-center">邏輯設計</button>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="btn bg-gradient-purple col text-center">線性代數</button>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="btn bg-gradient-red col text-center">普通物理</button>
+                        </div>
+                        <div class="col-lg-2"><button class="btn btn-dark col text-center">&gt;</button></div>
                     </div>
-                    <!-- End of Dropdown Searh filter -->
+                    <!-- End of 走馬燈 -->
+
 
 
                     <div class="row removable">
-                        <div class="card-body col-lg-12" style="background: #FFF">
+                        <div class="col-lg-12"></div>
+                    </div>
+                    <div class="row removable">
+
+                        <div class=" card-body col-lg-12" style="background: #FFF">
+
+                            <!-- 白色row -->
                             <div class="card-body"></div>
 
                             <div class="row removable">
@@ -252,28 +221,42 @@
                                     <p></p>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h2">課程名稱 XXX老師</p>
+                                            <p class="">程式設計I</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">A: *****</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">D: **</p>
+                                        </div>
                                     </div>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h4">帖子內容</p>
+                                            <p class="">授課老師：</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">B: *</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">E: ***</p>
+                                        </div>
                                     </div>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h6">作者: John Doe</p>
+                                            <p class="">天使</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">C: ***</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">F: ****</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-1"></div>
                             </div>
                             <!-- 白色row -->
                             <div class="card-body"></div>
-
 
                             <div class="row removable">
                                 <div class="col-lg-1"></div>
@@ -281,28 +264,42 @@
                                     <p></p>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h2">帖子標題 2</p>
+                                            <p class="">程式設計I</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">A: *****</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">D: **</p>
+                                        </div>
                                     </div>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h4">帖子內容</p>
+                                            <p class="">授課老師：</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">B: *</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">E: ***</p>
+                                        </div>
                                     </div>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h6">作者: John Doe</p>
+                                            <p class="">天使</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">C: ***</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">F: ****</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-1"></div>
                             </div>
                             <!-- 白色row -->
                             <div class="card-body"></div>
-
 
                             <div class="row removable">
                                 <div class="col-lg-1"></div>
@@ -310,40 +307,100 @@
                                     <p></p>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h2">帖子標題 3</p>
+                                            <p class="">程式設計I</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">A: *****</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">D: **</p>
+                                        </div>
                                     </div>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h4">帖子內容</p>
+                                            <p class="">授課老師：</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">B: *</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">E: ***</p>
+                                        </div>
                                     </div>
                                     <div class="row removable">
                                         <div class="col-lg-6">
-                                            <p class="h6">作者: John Doe</p>
+                                            <p class="">天使</p>
                                         </div>
-
+                                        <div class="col-lg-3">
+                                            <p class="">C: ***</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">F: ****</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-1"></div>
                             </div>
                             <!-- 白色row -->
                             <div class="card-body"></div>
+
+                            <div class="row removable">
+                                <div class="col-lg-1"></div>
+                                <div class="card-body col-lg-10" style="background: #FFF3F3">
+                                    <p></p>
+                                    <div class="row removable">
+                                        <div class="col-lg-6">
+                                            <p class="">程式設計I</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">A: *****</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">D: **</p>
+                                        </div>
+                                    </div>
+                                    <div class="row removable">
+                                        <div class="col-lg-6">
+                                            <p class="">授課老師：</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">B: *</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">E: ***</p>
+                                        </div>
+                                    </div>
+                                    <div class="row removable">
+                                        <div class="col-lg-6">
+                                            <p class="">天使</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">C: ***</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="">F: ****</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1"></div>
+                            </div>
+                            <!-- 白色row -->
+                            <div class="card-body"></div>
+
                         </div>
                     </div>
-
-
+                    <div class="row removable">
+                        <div class="col-lg-12"></div>
+                    </div>
                 </div>
-                <!-- End of Main post content entre column -->
+                <!-- End of Main lesson MIDDLE column -->
 
 
-                <!--  Grading RIGHT column -->
+                <!-- Core ability RIGHT column -->
                 <div class="col-lg-2">
                     <div class="row removable">
                         <div class="col-lg-12">
-                            <p class="">評分</p>
+                            <p class="">基本/核心能力指標</p>
                         </div>
                     </div>
                     <div class="row removable">
@@ -357,11 +414,11 @@
                         </div>
                     </div>
                 </div>
-                <!--  End of Grading RIGHT column -->
+                <!-- End of Core ability RIGHT column -->
+
+
             </div>
         </div>
-
-
         <!-- Footer -->
         <footer class="footer pt-0 px-4" style="background: #FFE8D6">
             <div class="row align-items-center justify-content-lg-between">
@@ -386,8 +443,6 @@
                 </div>
             </div>
         </footer>
-        <!-- End of Footer -->
-
     </div>
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
@@ -400,8 +455,6 @@
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
-
-
     <script>
         if (document.querySelector(".chart-bar")) {
             var chartsBar = document.querySelectorAll(".chart-bar");
@@ -553,5 +606,5 @@
 
     <script></script>
     <!-- Loople JavaScript -->
-    <script src="/static/images/loopple.js"></script>
+    <script src="/static/js/loopple.js"></script>
 </body>
