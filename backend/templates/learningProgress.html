@@ -265,30 +265,30 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">應修學分</th>
-                                                        <td>16</td>
-                                                        <td>63</td>
-                                                        <td>28</td>
-                                                        <td>12</td>
-                                                        <td>9</td>
-                                                        <td>128</td>
+                                                        <td>{{ credit[0][5] }}</td>
+                                                        <td>{{ credit[0][7] }}</td>
+                                                        <td>{{ credit[0][9] }}</td>
+                                                        <td>{{ credit[0][11] }}</td>
+                                                        <td>{{ credit[0][13] }}</td>
+                                                        <td>{{ credit[0][5]+credit[0][7] +credit[0][9] +credit[0][11] +credit[0][13] }}</td>
                                                     </tr>
                                                     <tr style="color: green;">
                                                         <th scope="row">完成學分</th>
-                                                        <td>10</td>
-                                                        <td>50</td>
-                                                        <td>20</td>
-                                                        <td>8</td>
-                                                        <td>6</td>
-                                                        <td>194</td>
+                                                        <td>{{ credit[0][6] }}</td>
+                                                        <td>{{ credit[0][8] }}</td>
+                                                        <td>{{ credit[0][10] }}</td>
+                                                        <td>{{ credit[0][12] }}</td>
+                                                        <td>{{ credit[0][14] }}</td>
+                                                        <td>{{credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14]}}</td>
                                                     </tr>
                                                     <tr style="color: red;">
                                                         <th scope="row">待修學分</th>
-                                                        <td>6</td>
-                                                        <td>13</td>
-                                                        <td>8</td>
-                                                        <td>4</td>
-                                                        <td>3</td>
-                                                        <td>34</td>
+                                                        <td>{{credit[0][5]-credit[0][6]}}</td>
+                                                        <td>{{credit[0][7]-credit[0][8]}}</td>
+                                                        <td>{{credit[0][9]-credit[0][10]}}</td>
+                                                        <td>{{credit[0][11]-credit[0][12]}}</td>
+                                                        <td>{{credit[0][13]-credit[0][14]}}</td>
+                                                        <td>{{(credit[0][5]+credit[0][7] +credit[0][9] +credit[0][11] +credit[0][13])-(credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14])}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
