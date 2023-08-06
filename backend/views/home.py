@@ -4,9 +4,9 @@ from backend.db import cursor
 
 
 def home_view():
-    sql_query = 'SELECT * FROM course_info;'
-    cursor.execute(sql_query)
-    course_info = cursor.fetchall()
+    # sql_query = 'SELECT * FROM course_info;'
+    # cursor.execute(sql_query)
+    # course_info = cursor.fetchall()
     # cursor.close()
     return render_template('homepage.html', **locals())
 
