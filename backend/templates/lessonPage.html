@@ -182,25 +182,17 @@
                 <div class="col-lg-10">
                     <!-- 走馬燈 -->
                     <div class="row removable">
+                        {% for course_name in course_names %}
                         <div class="col-lg-2">
-                            <button class="btn bg-gradient-green col text-center">程式設計I</button>
+                            <p class="btn bg-gradient-green col text-center">{{ course_name }}</p>
                         </div>
-
+                        {% endfor %}
                         <div class="col-lg-2">
-                            <button class="btn bg-gradient-info col text-center">微積分I</button>
+                            <button id="load-more-btn" class="btn btn-dark col text-center" data-index="{{ current_index + 5 }}">&gt;</button>
                         </div>
-
-                        <div class="col-lg-2">
-                            <button class="btn bg-gradient-orange col text-center">邏輯設計</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <button class="btn bg-gradient-purple col text-center">線性代數</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <button class="btn bg-gradient-red col text-center">普通物理</button>
-                        </div>
-                        <div class="col-lg-2"><button class="btn btn-dark col text-center">&gt;</button></div>
                     </div>
+                    
+                             
                     <!-- End of 走馬燈 -->
 
 
@@ -473,4 +465,36 @@
     <script></script>
     <!-- Loople JavaScript -->
     <script src="/static/js/loopple.js"></script>
+
+    <!-- 做每五筆跳轉 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadMoreBtn = document.getElementById("load-more-btn");
+            const courseBtns = document.getElementsByClassName("btn bg-gradient-green col text-center");
+    
+            loadMoreBtn.addEventListener("click", function () {
+                const lastIndex = parseInt(loadMoreBtn.dataset.index);
+                // 發送 AJAX 請求獲取新的資料，這裡使用 jQuery 的 AJAX 方法
+                $.ajax({
+                    url: "/lessonPage", // 替換為您的路由地址
+                    type: "POST",
+                    data: { index: lastIndex },
+                    success: function (data) {
+                        // 將新的資料更新到前面五個按鈕的文字內容
+                        for (let i = 0; i < 5; i++) {
+                            courseBtns[i].innerText = data[i];
+                        }
+                        // 更新load-more-btn的data-index，使其顯示下一組五筆資料
+                        loadMoreBtn.dataset.index = lastIndex + 5;
+                    },
+                    error: function () {
+                        alert("發生錯誤，無法獲取新的資料。");
+                    }
+                });
+            });
+        });
+    </script>
+    
+
 </body>
