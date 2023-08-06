@@ -481,6 +481,7 @@
                     type: "POST",
                     data: { index: lastIndex },
                     success: function (data) {
+                        console.log("成功獲取到的新資料:", data);
                         // 將新的資料更新到前面五個按鈕的文字內容
                         for (let i = 0; i < 5; i++) {
                             courseBtns[i].innerText = data[i];
@@ -488,9 +489,11 @@
                         // 更新load-more-btn的data-index，使其顯示下一組五筆資料
                         loadMoreBtn.dataset.index = lastIndex + 5;
                     },
-                    error: function () {
+                    error: function (xhr, status, error) {
+                        console.log("發生錯誤:", error);
                         alert("發生錯誤，無法獲取新的資料。");
                     }
+
                 });
             });
         });

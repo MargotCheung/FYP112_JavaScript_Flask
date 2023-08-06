@@ -31,7 +31,7 @@ def CoinWallet():
 def landing():
     return landing_view()
 
-@app.route("/lessonPage")
+@app.route("/lessonPage", methods=["GET", "POST"])
 def lessonPage():
     return lessonPage_view()
 
