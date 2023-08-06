@@ -1,4 +1,4 @@
-from flask import render_template, url_for,request
+from flask import render_template, url_for, request, jsonify, abort
 from backend.db import cursor
 
 
@@ -15,3 +15,15 @@ def lessonPage_view():
 
     return render_template('lessonPage.html', **locals())
 
+def get_lesson_name():
+    amount = request.args.get('amount', None)
+    page = request.args.get('page', None)
+    if amount is None and page is None:
+        return abort(404)
+    amount = int(amount)
+    page = int(page)
+    sql_query = 'SELECT course_name FROM course_info;'
+    count = cursor.execute(sql_query)
+    course_names = [row[0] for row in cursor.fetchall()]
+    query_course_names = course_names[amount*page:amount*(page+1)]
+    return jsonify(query_course_names=query_course_names)

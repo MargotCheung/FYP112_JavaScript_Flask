@@ -21234,3 +21234,9 @@ pre > code.highlight {
 .ct-footer-links li + li {
     margin-left: 1rem;
 }
+
+.course-changing-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

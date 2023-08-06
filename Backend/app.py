@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 from path import Path
 
 from .views.home import home_view
@@ -7,7 +8,7 @@ from .views.learningProgress import learningProgress_view
 from .views.profile import profile_view
 from .views.CoinWallet import CoinWallet_view
 from .views.landing import landing_view
-from .views.lessonPage import lessonPage_view
+from .views.lessonPage import lessonPage_view, get_lesson_name
 from .views.MyQuestionBank import MyQuestionBank_view
 
 PROJECT_DIR = Path(__file__).parent.parent
@@ -34,6 +35,10 @@ def landing():
 @app.route("/lessonPage", methods=["GET", "POST"])
 def lessonPage():
     return lessonPage_view()
+
+@app.route('/lessonName', methods=['GET'])
+def lessonNameApi():
+    return get_lesson_name()    
 
 @app.route("/MyQuestionBank")
 def MyQuestionBank():

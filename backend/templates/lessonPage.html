@@ -181,17 +181,16 @@
                 <!-- Main lesson MIDDLE column -->
                 <div class="col-lg-10">
                     <!-- 走馬燈 -->
-                    <div class="row removable">
-                        {% for course_name in course_names %}
+                    <div class="row removable" id="course-list">
+                    </div>
+                    <div class="row removable course-changing-bar">
                         <div class="col-lg-2">
-                            <p class="btn bg-gradient-green col text-center">{{ course_name }}</p>
+                            <button id="load-less-btn" class="btn btn-dark col text-center">&lt;</button>
                         </div>
-                        {% endfor %}
                         <div class="col-lg-2">
-                            <button id="load-more-btn" class="btn btn-dark col text-center" data-index="{{ current_index + 5 }}">&gt;</button>
+                            <button id="load-more-btn" class="btn btn-dark col text-center">&gt;</button>
                         </div>
                     </div>
-                    
                              
                     <!-- End of 走馬燈 -->
 
@@ -469,25 +468,44 @@
     <!-- 做每五筆跳轉 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        let page = 0;
         document.addEventListener("DOMContentLoaded", function () {
             const loadMoreBtn = document.getElementById("load-more-btn");
             const courseBtns = document.getElementsByClassName("btn bg-gradient-green col text-center");
+            const course_list = document.querySelector('#course-list');
     
             loadMoreBtn.addEventListener("click", function () {
                 const lastIndex = parseInt(loadMoreBtn.dataset.index);
                 // 發送 AJAX 請求獲取新的資料，這裡使用 jQuery 的 AJAX 方法
                 $.ajax({
-                    url: "/lessonPage", // 替換為您的路由地址
-                    type: "POST",
-                    data: { index: lastIndex },
+                    url: "/lessonName", // 替換為您的路由地址
+                    type: "GET",
+                    data: {
+                        'amount': 6,
+                        'page': page,
+                    },
                     success: function (data) {
                         console.log("成功獲取到的新資料:", data);
+                        page++;
+                        let new_course_list = '';
+                        
+                        // 這裡的函式會被遍歷的每個元素呼叫一次
+                        // element 代表陣列中的當前元素值
+                        data['query_course_names'].forEach((element) => {
+                            new_course_list += `
+                            <div class="col-lg-2">
+                                <p class="btn bg-gradient-green col text-center">${element}</p>
+                            </div>
+                            `;
+                        });
+                        course_list.innerHTML = new_course_list;        // 設置該元素的內容為一個包含一個段落的 HTML 結構
                         // 將新的資料更新到前面五個按鈕的文字內容
-                        for (let i = 0; i < 5; i++) {
-                            courseBtns[i].innerText = data[i];
-                        }
-                        // 更新load-more-btn的data-index，使其顯示下一組五筆資料
-                        loadMoreBtn.dataset.index = lastIndex + 5;
+                        // const nextCourseNames = data.course_names;
+                        // for (let i = 0; i < 5; i++) {
+                        //     courseBtns[i].innerText = nextCourseNames[i];
+                        // }
+                        // // 更新load-more-btn的data-index，使其顯示下一組五筆資料
+                        // loadMoreBtn.dataset.index = lastIndex + 5;
                     },
                     error: function (xhr, status, error) {
                         console.log("發生錯誤:", error);
