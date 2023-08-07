@@ -15,6 +15,19 @@ def lessonPage_view():
 
     return render_template('lessonPage.html', **locals())
 
+[
+    {
+        'name': 'asdkjfaksj',
+        'id': 293,
+        'introduction': 'akdfj'
+    },
+    {
+        'name': 'qpweiruqwpi',
+        'id': 87,
+        'introduction': 'aqiwuerio'
+    }
+]
+
 def get_lesson_name():
     amount = request.args.get('amount', None)
     page = request.args.get('page', None)
@@ -22,8 +35,20 @@ def get_lesson_name():
         return abort(404)
     amount = int(amount)
     page = int(page)
-    sql_query = 'SELECT course_name FROM course_info;'
+    sql_query = 'SELECT * FROM course_info;'
     count = cursor.execute(sql_query)
-    course_names = [row[0] for row in cursor.fetchall()]
+    course_names = [{
+        'course_id': row[0],
+        'course_year': row[1],
+        'course_name': row[2],
+        'course_type': row[3],
+        'course_credit': row[4],
+        'course_intro': row[5],
+        'math': row[6],
+        'coding': row[7],
+        'logic': row[8],
+        'creative': row[9],
+        'slove': row[10],
+    } for row in cursor.fetchall()]
     query_course_names = course_names[amount*page:amount*(page+1)]
     return jsonify(query_course_names=query_course_names)

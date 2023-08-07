@@ -202,15 +202,9 @@
                     <div class="row removable">
 
                         <div class=" card-body col-lg-12" style="background: #FFF">
-
-                            <!-- 白色row -->
-                            <div class="card-body"></div>
-
-                            <div class="row removable">
-                                <div class="col-lg-1"></div>
+                            <div class="row removable" id="course_data">
                                 <div class="card-body col-lg-10" style="background: #FFF3F3">
-                                    <p></p>
-                                    <div class="row removable">
+                                    <!-- <div class="row removable">
                                         <div class="col-lg-6">
                                             <p class="">程式設計I</p>
                                         </div>
@@ -239,9 +233,8 @@
                                         <div class="col-lg-3">
                                             <p class="">解決問題: ***</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="col-lg-1"></div>
                             </div>
                             
                         </div>
@@ -468,54 +461,94 @@
     <!-- 做每五筆跳轉 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+        const success_func = (data) => {
+            let new_course_list = '';
+            let new_course_data = '';
+            data['query_course_names'].forEach((element) => {
+                new_course_list += `
+                <div class="col-lg-2">
+                    <p class="btn bg-gradient-green col text-center">${element['course_name']}</p>
+                </div>
+                `;
+
+                new_course_data += `
+                <div class="card-body col-lg-10" style="background: #FFF3F3">
+                    <div class="row removable">
+                        <div class="col-lg-6">
+                            <p class="">${element['course_name']}</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="">數學能力: ${element['math']}</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="">編程能力: ${element['coding']}</p>
+                        </div>
+                    </div>
+                    <div class="row removable">
+                        <div class="col-lg-6">
+                            <p class="">授課老師：</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="">邏輯思維: ${element['logic']}</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="">創新能力: ${element['creative']}</p>
+                        </div>
+                    </div>
+                    <div class="row removable">
+                        <div class="col-lg-6">
+                            <p class="">天使</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="">解決問題: ${element['slove']}</p>
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+            document.querySelector('#course-list').innerHTML = new_course_list; 
+            document.querySelector('#course_data').innerHTML = new_course_data;
+        };
+
+        const loadCourse = (type) => {
+            if (type == "more"){
+                page++;
+            } else if (type == "less") {
+                page--;
+            }
+            $.ajax({
+                url: "/lessonName", // 替換為您的路由地址
+                type: "GET",
+                data: {
+                    'amount': 6,
+                    'page': page,
+                },
+                success: success_func,
+                error: function (xhr, status, error) {
+                    console.log("發生錯誤:", error);
+                    alert("發生錯誤，無法獲取新的資料。");
+                },
+            });
+        }
+
         let page = 0;
         document.addEventListener("DOMContentLoaded", function () {
             const loadMoreBtn = document.getElementById("load-more-btn");
+            const loadLessBtn = document.getElementById("load-less-btn");
             const courseBtns = document.getElementsByClassName("btn bg-gradient-green col text-center");
-            const course_list = document.querySelector('#course-list');
-    
-            loadMoreBtn.addEventListener("click", function () {
-                const lastIndex = parseInt(loadMoreBtn.dataset.index);
-                // 發送 AJAX 請求獲取新的資料，這裡使用 jQuery 的 AJAX 方法
-                $.ajax({
-                    url: "/lessonName", // 替換為您的路由地址
-                    type: "GET",
-                    data: {
-                        'amount': 6,
-                        'page': page,
-                    },
-                    success: function (data) {
-                        console.log("成功獲取到的新資料:", data);
-                        page++;
-                        let new_course_list = '';
-                        
-                        // 這裡的函式會被遍歷的每個元素呼叫一次
-                        // element 代表陣列中的當前元素值
-                        data['query_course_names'].forEach((element) => {
-                            new_course_list += `
-                            <div class="col-lg-2">
-                                <p class="btn bg-gradient-green col text-center">${element}</p>
-                            </div>
-                            `;
-                        });
-                        course_list.innerHTML = new_course_list;        // 設置該元素的內容為一個包含一個段落的 HTML 結構
-                        // 將新的資料更新到前面五個按鈕的文字內容
-                        // const nextCourseNames = data.course_names;
-                        // for (let i = 0; i < 5; i++) {
-                        //     courseBtns[i].innerText = nextCourseNames[i];
-                        // }
-                        // // 更新load-more-btn的data-index，使其顯示下一組五筆資料
-                        // loadMoreBtn.dataset.index = lastIndex + 5;
-                    },
-                    error: function (xhr, status, error) {
-                        console.log("發生錯誤:", error);
-                        alert("發生錯誤，無法獲取新的資料。");
-                    }
+            loadCourse();
 
-                });
+            loadMoreBtn.addEventListener("click", () => {
+                loadCourse('more');
+            });
+
+            loadLessBtn.addEventListener("click", function () {
+                loadCourse('less');
             });
         });
     </script>
     
 
 </body>
+

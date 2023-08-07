@@ -21240,3 +21240,12 @@ pre > code.highlight {
     justify-content: space-between;
     align-items: center;
 }
+
+#course_data {
+    align-items: center;
+    justify-content: center;
+}
+
+#course_data .card-body {
+    margin: 10px 0px;
+}
