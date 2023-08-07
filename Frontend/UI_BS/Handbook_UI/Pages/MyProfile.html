@@ -2,69 +2,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- Awesome Font 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <link rel="stylesheet"
-        href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
-    <link rel="stylesheet" href="/static/css/theme.css">
-    <link rel="stylesheet" href="/static/css/loopple.css">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
+    <link rel="stylesheet" href="../src/css/theme.css">
+    <link rel="stylesheet" href="../src/css/loopple.css">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body class="g-sidenav-show">
-
+    
     <!-- SideNav -->
-    <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start"
-        id="sidenav-main" style="background: #FFE8D6">
+    <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start" id="sidenav-main" style="background: #FFE8D6">
         <div class="sidenav-header  align-items-center" style="background: #FFE8D6">
             <a class="navbar-brand" href="landing.html">
-                <img src="\static\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
-            </a>
+                <img src="..\src\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
+            </a>           
         </div>
         <div class="navbar-inner" style="background: #FFE8D6">
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="MyProfile.html">
-                            <i class="fa fa-desktop text-primary"></i>
-                            <span class="nav-link-text">我的資料</span>
+                            <i class="fa-solid fa-user text-primary"></i>
+                            <span class="nav-link-text">我的檔案</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="uploadPaper.html">
-                            <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
-                            <i class="fa fa-globe text-info"></i>
-                            <span class="nav-link-text">上傳考古題</span>
+                        <a class="nav-link" href="learningProgress.html">    <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
+                            <i class="fa-solid fa-book-open-reader text-info"></i>
+                            <span class="nav-link-text">個人學習進度</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:">
-                            <i class="fa fa-map-marker text-warning"></i>
-                            <span class="nav-link-text">我的貼文</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:">
-                            <i class="fa fa-table text-dark"></i>
-                            <span class="nav-link-text">我的收藏</span>
+                        <a class="nav-link" href="MyQuestionBank.html">    <!-- <a class="nav-link active" href="javascript:" remove 'active'> -->
+                            <i class="fa-solid fa-scroll text-warning"></i>
+                            <span class="nav-link-text">我的考古題</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="CoinWallet.html">
-                            <i class="fa fa-lock text-danger"></i>
+                            <i class="fa-solid fa-money-bill-1-wave text-danger"></i>
                             <span class="nav-link-text">COIN錢包</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:">
-                            <i class="fa fa-key text-success"></i>
-                            <span class="nav-link-text">設定</span>
+                        <a class="nav-link" href="searchResult.html">
+                            <i class="fa-solid fa-pencil text-success"></i>
+                            <span class="nav-link-text">我要發帖</span>
                         </a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lessonPage.html">
+                            <i class="fa-solid fa-person-chalkboard text-dark"></i>
+                            <span class="nav-link-text">課程總覽</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="UserSettings.html">
+                            <i class="fa-solid fa-gear text-muted"></i>
+                            <span class="nav-link-text">用戶設定</span>
+                        </a>
+                    </li>
+                </ul>                
 
                 <hr class="my-3">
                 <h6 class="navbar-heading p-0 text-muted">
@@ -95,47 +99,39 @@
                             <span class="nav-link-text">大四</span>
                         </a>
                     </li>
-                </ul>
-
-            </div>
-
-
-
+                </ul>                
+            </div>            
         </div>
     </nav>
     <!-- End of TopNav -->
 
     <div class="main-content" id="panel">
         <!-- TopNav -->
-        <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop"
-            style="background: #FFE8D6">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="navbar-search navbar-search-light form-inline mr-sm-3 mb-0" id="navbar-search-main">
-                        <div class="form-group mb-0">
+        <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop" style="background: #FFE8D6" >
+            <div class="container-fluid" >
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                    <form class="navbar-search navbar-search-light form-inline mr-sm-3 mb-0" id="navbar-search-main" >
+                        <div class="form-group mb-0" >
                             <div class="input-group input-group-alternative input-group-merge" style="background: #fff">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                                 </div>
-                                <input class="form-control me-2" type="search" placeholder="輸入課名 / 教師"
-                                    aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="輸入課名 / 教師" aria-label="Search">
                             </div>
                         </div>
-                        <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main"
-                            aria-label="Close">
+                        <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
                             <span aria-hidden="true">11111111111111111111111111111111111111111111</span>
                         </button>
                     </form>
 
-
+                                        
                     <!-- Dropdown Menu -->
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0 text-end">
                         <li class="nav-item dropdown">
-                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="\static\images\head.png">
+                                        <img alt="Image placeholder" src="..\src\images\head.png">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span class="mb-0 text-sm  font-weight-bold" style="color: black">粉頭</span>
@@ -178,104 +174,71 @@
 
         <div class="container-fluid pt-3" style="background: #FFE8D6">
             <div class="row removable">
-                <div class="col-lg-10">
+                <div class="col-lg-9">
 
                     <!-- Card profile -->
-                    <div class="card card-profile">
-                        <img src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/img-1-1000x600.jpg"
-                            alt="Image placeholder" class="card-img-top" style="height: 80px;">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-3 order-lg-2">
-                                <div class="card-profile-image">
-                                    <a href="#">
-                                        <img src="\static\images\head.png" class="rounded-circle">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                            <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect</a>
-                                <a href="#" class="btn btn-sm btn-default float-right">Message</a>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card-profile-stats d-flex justify-content-center">
-                                        <div>
-                                            <span class="heading">22</span>
-                                            <span class="description">Friends</span>
-                                        </div>
-                                        <div>
-                                            <span class="heading">10</span>
-                                            <span class="description">Photos</span>
-                                        </div>
-                                        <div>
-                                            <span class="heading">89</span>
-                                            <span class="description">Comments</span>
+                    <div class="card-body" style="height: 100%; height: 285px; background: #DDBEA9; border-radius: 5px;" >                                        
+                        <div class="card card-profile" style="background: #f8f9fa">                                           
+                            <div class="card-body pt-0" >
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card-profile-stats d-flex justify-content-center">
+                                            
+                                            <!-- Profile picture -->
+                                            <div class="col-lg-5">
+                                                <img src="..\src\images\head.png" class="rounded-circle">
+                                            </div>
+
+                                            <!-- Name card info -->
+                                            <div class="col-lg-7 card-profile-stats d-flex justify-content-left">
+                                                <div class="text-left" style="padding: 25px">   
+                                                    <h4>暱稱：粉頭 </h4>
+                                                    <h4>學系：資訊工程</h4>
+                                                    <h4>學期：3下</h4>                                                                                     
+                                                </div>
+                                            </div>                                            
+                                            <!-- End of Name card info -->
+
                                         </div>
                                     </div>
-                                </div>
+                                </div>                           
                             </div>
-                            <div class="text-center">
-                                <h5 class="h3"> 粉頭 <span class="font-weight-light">, </span>
-                                </h5>
-                                <h5 class="font-weight-300"> 臺中市, 臺中 </h5>
-                                <h5 class="h5 mt-4"> IECS </h5>
-                                <h5> 逢甲大學 </h5>
-                            </div>
-                        </div>
+                        </div>    
                     </div>
                     <!-- End of card profile -->
 
+                    <p style="padding: 15px "></p>
 
-
-                    <div class="row removable">
+                    
+                    
+                    <div class="row removable" >
                         <div class="col-lg-12">
-
-
-
-
-
-
-
-
-
-
-
 
                             <!-- First Row functions -->
                             <div class="row removable">
                                 <div class="col-lg-12">
                                     <div class="row removable">
-                                        <div class="col-lg-4">
-                                            <div class="card border-0" style="background: #fff;">
-                                                <!-- bg-gradient-green -->
-                                                <!-- Card body -->
-                                                <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <a href="learningProgress.html"><button class="btn btn-dark"
-                                                            style="background: #CB997E; width: 100%; height: 100%">待修學分<br>34</button></a>
+                                        <div class="col-lg-4" >
+                                            <div class="card border-0" style="background: #fff;">  <!-- bg-gradient-green -->
+                                                <!-- Card body --> 
+                                                <div class="card-body" style="height: 100%; height: 250px;">                                       
+                                                    <a href="learningProgress.html"><button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">待修學分<br>34</button></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <div class="card border-0" style="background: #fff;">
-                                                <!-- bg-gradient-green -->
-                                                <!-- Card body -->
-                                                <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <button class="btn btn-dark"
-                                                        style="background: #CB997E; width: 100%; height: 100%">留言愛心數</button>
+                                            <div class="card border-0" style="background: #fff;">  <!-- bg-gradient-green -->
+                                                <!-- Card body --> 
+                                                <div class="card-body" style="height: 100%; height: 250px;">                                       
+                                                    <a href="myQuestionBank.html"><button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">我的考古題<br>22</button></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <div class="card border-0" style="background: #fff;">
-                                                <!-- bg-gradient-green -->
-                                                <!-- Card body -->
-                                                <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <button class="btn btn-dark"
-                                                        style="background: #CB997E; width: 100%; height: 100%">發佈的留言</button>
+                                            <div class="card border-0" style="background: #fff;">  <!-- bg-gradient-green -->
+                                                <!-- Card body --> 
+                                                <div class="card-body" style="height: 100%; height: 250px;">                                       
+                                                    <a href="CoinWallet.html"><button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">COIN餘額<br>144</button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -284,69 +247,64 @@
                             </div>
                             <!-- End of First Row functions -->
 
+                            <p style="padding: 5px "></p>
 
                             <!-- Second Row functions -->
-                            <div class="row removable">
+                            <!-- <div class="row removable">
                                 <div class="col-lg-12">
                                     <div class="row removable">
                                         <div class="col-lg-4">
-                                            <div class="card card-stats">
-                                                <!-- Card body -->
-                                                <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <a href="myQuestionBank.html"><button class="btn btn-dark"
-                                                            style="background: #CB997E; width: 100%; height: 100%">我的考古題<br>11</button></a>
+                                            <div class="card card-stats">   
+
+                                                <div class="card-body" style="height: 100%; height: 250px;">                                       
+                                                    <button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">留言統計</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="card card-stats">
-                                                <!-- Card body -->
-                                                <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <button class="btn btn-dark"
-                                                        style="background: #CB997E; width: 100%; height: 100%">分享的考古題</button>
+
+                                                <div class="card-body" style="height: 100%; height: 250px;">                                       
+                                                    <button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">我的愛心數</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="card card-stats">
-                                                <!-- Card body -->
-                                                <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <button class="btn btn-dark"
-                                                        style="background: #CB997E; width: 100%; height: 100%">待定</button>
+                                                
+                                                <div class="card-body" style="height: 100%; height: 250px;">                                       
+                                                    <button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">待定</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>    -->
                             <!-- End of Second Row functions -->
 
 
-
+                            
                         </div>
                     </div>
 
                 </div>
 
                 <!-- Right container -->
-                <div class="col-lg-2">
-                    <div class="row removable">
-                        <div class="col-lg-12">
-                            <p class="">Grade</p>
-                        </div>
-                    </div>
-                    <div class="row removable">
-                        <div class="col-lg-12">
-                            <p class="">A</p>
-                            <p class="">B</p>
-                            <p class="">C</p>
-                            <p class="">D</p>
-                            <p class="">E</p>
-                            <p class="">F</p>
-                            <p class="">G</p>
+                <div class="col-lg-3">
+                    <div class="col-lg-12">
+                        <div class="" style="background: #FFE8D6">   
+                            <p></p>                
+                            <div class="row removable">
+                                <div class="col-lg-2"> </div>
+                                <div class="col-lg-8">
+                                    <h1 class="text-xl-center h1" style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 1.8rem" data-dl-input-translation="true">可以的話我希望這邊有廣告</h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- End of Right container -->
+
             </div>
         </div>
 
@@ -355,12 +313,10 @@
         <footer class="footer pt-0 px-4" style="background: #FFE8D6">
             <div class="row align-items-center justify-content-lg-between">
                 <div class="col-lg-6">
-                    <div class="copyright text-center  text-lg-left  text-muted" style="text-indent: 20%">
+                    <div class="copyright text-center  text-lg-left  text-muted" style="text-indent: 0%">
                         © 來源參考:
-                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1"
-                            target="_blank" style="color: #6B705C">Argon Dashboard</a>
-                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank"
-                            style="color: #6B705C">Loopple</a>
+                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Argon Dashboard</a>
+                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Loopple</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -369,8 +325,8 @@
                             <a href="javascript:void(0);" class="nav-link">網站投訴電話 : 04-24517250</a>
                         </li>
                         <li class="nav-item">
-                            <a href="javascript:;" class="nav-link" style="margin-right: 150px">網站負責人：校霸</a>
-                        </li>
+                            <a href="javascript:;" class="nav-link" style="margin-right: 10px">網站負責人：校霸</a>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -382,23 +338,17 @@
 
 
     </div>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
 
 
 
     <style>
-        th,
-        td {
+        th, td {
             font-size: 18px;
         }
     </style>
@@ -406,5 +356,5 @@
     <script> </script>
 
     <!-- Loople JavaScript -->
-    <script src="/static/images/loopple.js"></script>
+    <script src="../src/JavaScript/loopple.js"></script>
 </body>
