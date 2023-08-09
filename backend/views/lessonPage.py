@@ -15,18 +15,18 @@ def lessonPage_view():
 
     return render_template('lessonPage.html', **locals())
 
-[
-    {
-        'name': 'asdkjfaksj',
-        'id': 293,
-        'introduction': 'akdfj'
-    },
-    {
-        'name': 'qpweiruqwpi',
-        'id': 87,
-        'introduction': 'aqiwuerio'
-    }
-]
+# [
+#     {
+#         'name': 'asdkjfaksj',
+#         'id': 293,
+#         'introduction': 'akdfj'
+#     },
+#     {
+#         'name': 'qpweiruqwpi',
+#         'id': 87,
+#         'introduction': 'aqiwuerio'
+#     }
+# ]
 
 def get_lesson_name():
     amount = request.args.get('amount', None)

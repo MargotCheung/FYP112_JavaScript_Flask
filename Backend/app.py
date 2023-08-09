@@ -10,6 +10,8 @@ from .views.CoinWallet import CoinWallet_view
 from .views.landing import landing_view
 from .views.lessonPage import lessonPage_view, get_lesson_name
 from .views.MyQuestionBank import MyQuestionBank_view
+from .views.lessonDiscussion import lessonDiscussion_view
+
 
 PROJECT_DIR = Path(__file__).parent.parent
 FRONTEND_DIR = PROJECT_DIR / 'backend'
@@ -43,6 +45,10 @@ def lessonNameApi():
 @app.route("/MyQuestionBank")
 def MyQuestionBank():
     return MyQuestionBank_view()
+
+@app.route("/lessonDiscussion")
+def lessonDiscussion():
+    return lessonDiscussion_view()
 
 
 
