@@ -1,10 +1,23 @@
 from flask import render_template, url_for,request
-from backend.db import cursor
-import sqlite3
+from backend.db import cursor, connection
 
 def lessonDiscussion_view():
     # 获取 URL 中的 course_name 参数
     course_name = request.args.get("course_name")  
+    print("Course Name:", course_name)
+    # 留言板
+    if request.method == "POST":
+        course_name = request.form.get("course_name") 
+        message = request.form.get("message")
+        user_id="007"
+        if message and course_name:
+            sql_query = f'INSERT INTO lesson_response (course_name, user_id, response) VALUES ("{course_name}", "{user_id}", "{message}")'
+            # values = (course_name, user_id, message)
+            cursor.execute(sql_query)
+            connection.commit()  # 提交更改到数据库
+            # return "留言已提交"
+
+
 
     if course_name:
         # 使用 course_name 进行数据库查询
@@ -12,13 +25,14 @@ def lessonDiscussion_view():
         cursor.execute(sql_query)
         course_data = cursor.fetchall()
         # print(course_data)
-
         return render_template("lessonDiscussion.html", course_data=course_data)
-    
-    return "Course name parameter is missing."
+    else:
+        return "Course name parameter is missing."
+
+
+    return render_template('lessonDiscussion.html', **locals())
+
     # sql_query = f"SELECT * FROM course_response WHERE course_name = '{course_name}';"
     # cursor.execute(sql_query)
     # course_info = cursor.fetchall()
     # cursor.close()
-    return render_template('lessonDiscussion.html', **locals())
-

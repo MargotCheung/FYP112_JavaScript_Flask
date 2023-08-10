@@ -46,7 +46,7 @@ def lessonNameApi():
 def MyQuestionBank():
     return MyQuestionBank_view()
 
-@app.route("/lessonDiscussion")
+@app.route("/lessonDiscussion",methods=["GET", "POST"])
 def lessonDiscussion():
     return lessonDiscussion_view()
 
