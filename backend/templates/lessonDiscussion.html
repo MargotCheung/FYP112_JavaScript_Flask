@@ -388,26 +388,26 @@
     <!-- Loople JavaScript -->
     <script src="/static/js/loopple.js"></script>
 
-    <script>
+    <!-- <script>
         var course_name1 = {{ course_data[0][0] | tojson }};
         console.log("test:"+course_name1);
-    </script>
+    </script> -->
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#submit-button').click(function () {
                 const message = $('#exampleFormControlTextarea1').val();
-                const course_name = course_name1;
+                // const course_name = course_name1;
                 // 发送 AJAX 请求
                 $.ajax({
                     url: "/lessonDiscussion",  // 替换为服务器端处理请求的 URL
                     type: "POST",
                     data: { message: message,
-                            course_name: course_name
+                            course_name: {{ course_data[0][0] | tojson }}
                             },  // 将留言内容作为 POST 数据发送
                     success: function (response) {
-                        console.log("提交成功"+message+course_name);
+                        console.log("提交成功"+message);
                     },
                     error: function (xhr, status, error) {
                         console.log("提交失败:", error);
