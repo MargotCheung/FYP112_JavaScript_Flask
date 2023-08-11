@@ -12,10 +12,10 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    
+     -->
 </head>
 
 <body class="g-sidenav-show">
@@ -221,10 +221,7 @@
                     <!-- End of card profile -->
                     <p style="padding: 15px;"></p>
 
-                    
-
-
-
+                
                     <!-- A Learning Process excel table -->                                                
                     <div class="row removable">
                         <div class="col-lg-12">                                   
@@ -294,151 +291,209 @@
                         <div class="col-lg-12">
                             <div class="row removable" >
                                 <div class="col-lg-12">                                 
-                                    <div class="card-body" style="height: 100%; height: 400px; background: #DDBEA9; border-radius: 5px;" > 
-                                        <div class="card table-responsive" style="max-height: 360px; ">
-                                            <div class="card-header border-bottom-0">                                                           
-                                                <div class="row removable">   
-                                                    <div class="col-lg-6"><h5 style="font-weight: bold; ">我的成績單</h5></div>  
-                                                    <!-- <div class="col-lg-3 nav justify-content-lg-end">
-                                                        <input class="form-control" id="myFilter" type="text" placeholder="輸入文字搜尋" style="max-width: 200px; text-align: center;" >
-                                                    </div>                                                          -->
-                                                    <div class="col-lg-6 nav justify-content-lg-end">                                                                
-                                                        <button type="button" class="btn btn-sm btn-outline-secondary" disabled>直接在表格修改</button>
-                                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="insertRow()">新增</button>
-                                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="deleteRow()">刪除</button>
+                                    <div class="card-body" style="height: 100%; height: 450px; background: #DDBEA9; border-radius: 5px;" > 
 
+                                        <!-- Form: my result -->
+                                        <form action="">
+                                            <!-- Dropdown Searh filter -->
+                                            <div class="row removable">
+                                                <div class="col-lg-12">
+                                                    <div class="row removable">
+                                                        <div class="col-lg-2">                                                        
+                                                            <button class="btn dropdown-toggle mr-0 col text-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">年級</button>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 350px; overflow-y: auto;">
+                                                                <a class="dropdown-item" href="#">1</a>
+                                                                <a class="dropdown-item" href="#">2</a>
+                                                                <a class="dropdown-item" href="#">3</a>
+                                                                <a class="dropdown-item" href="#">4</a>
+                                                            </div>                                                        
+                                                        </div>
+                                                        <div class="col-lg-5">                                                        
+                                                            <button class="btn dropdown-toggle mr-0 col text-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">科目名稱</button>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 350px; overflow-y: scroll;">
+                                                                
+                                                                <a class="dropdown-item" href="#">	計算機概論	</a>
+                                                                <a class="dropdown-item" href="#">	程式設計(I)	</a>
+                                                                <a class="dropdown-item" href="#">	程式設計(II)	</a>
+                                                                <a class="dropdown-item" href="#">	普通物理-電、磁、光	</a>
+                                                                <a class="dropdown-item" href="#">	微積分(一)	</a>
+                                                                <a class="dropdown-item" href="#">	微積分(一)實習	</a>
+                                                                <a class="dropdown-item" href="#">	程式設計(III)	</a>
+                                                                <a class="dropdown-item" href="#">	程式設計(IV)	</a>
+                                                                <a class="dropdown-item" href="#">	普通物理-電、磁、光實驗	</a>
+                                                                <a class="dropdown-item" href="#">	微積分(二)	</a>
+                                                                <a class="dropdown-item" href="#">	微積分(二)實習	</a>
+                                                                <a class="dropdown-item" href="#">	線性代數	</a>
+                                                                <a class="dropdown-item" href="#">	邏輯設計	</a>
+                                                                <a class="dropdown-item" href="#">	邏輯設計實習	</a>
+                                                                <a class="dropdown-item" href="#">	通訊與網路概論	</a>
+                                                                <a class="dropdown-item" href="#">	資料結構	</a>
+                                                                <a class="dropdown-item" href="#">	資料結構實習	</a>
+                                                                <a class="dropdown-item" href="#">	離散數學	</a>
+                                                                <a class="dropdown-item" href="#">	系統程式	</a>
+                                                                <a class="dropdown-item" href="#">	資料庫系統	</a>
+                                                                <a class="dropdown-item" href="#">	幾率與統計	</a>
+                                                                <a class="dropdown-item" href="#">	大三英文	</a>
+                                                                <a class="dropdown-item" href="#">	作業系統(一)	</a>
+                                                                <a class="dropdown-item" href="#">	微處理機系統	</a>
+                                                                <a class="dropdown-item" href="#">	微處理機系統實習	</a>
+                                                                <a class="dropdown-item" href="#">	計算機演算法	</a>
+                                                                <a class="dropdown-item" href="#">	計算機結構學	</a>
 
-                                                    </div>    
+                                                            </div>                                                       
+                                                        </div>
+                                                        <div class="col-lg-3">                                                                                                                  
+                                                            <div class="form-group">                                                            
+                                                                <input type="text" id="input-username" class="form-control text-center" placeholder="輸入分數 0-100" aria-describedby="inputGroupPrepend1" >
+                                                            </div>                                                                                                         
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button class="btn col text-center" type="submit" style="background:#CB997E; color: #fff;" ><i class="fa-solid fa-right-to-bracket"></i> 新增成績</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <!-- End of Dropdown Searh filter -->
 
-                                            <input class="form-control" id="myFilter" type="text" placeholder="輸入文字搜尋" style="text-align: right;" >
-                                            <table contenteditable="true" id="myTable" class="table table-hover" data-integration="excel">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">學期</th>
-                                                        <th scope="col">課程名稱</th>
-                                                        <th scope="col">課程類別</th>
-                                                        <th scope="col">學分</th>
-                                                        <th scope="col">分數</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="productTable">
-                                                    <tr>
-                                                        <th scope="row">109-1</th>
-                                                        <td>程式設計(一)</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>80</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">109-2</th>
-                                                        <td>邏輯設計</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>87</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-1</th>
-                                                        <td>資料結構</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>100</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-1</th>
-                                                        <td>物件導向設計</td>
-                                                        <td>系院選修</td>
-                                                        <td>2</td>
-                                                        <td>60</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-1</th>
-                                                        <td>物件導向設計實習</td>
-                                                        <td>系院選修</td>
-                                                        <td>3</td>
-                                                        <td>60</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-1</th>
-                                                        <td>資料結構</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>100</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-1</th>
-                                                        <td>電子商務安全</td>
-                                                        <td>系院選修</td>
-                                                        <td>3</td>
-                                                        <td>88</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-2</th>
-                                                        <td>機率與統計</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>64</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">110-2</th>
-                                                        <td>大二英文(二) </td>
-                                                        <td>系院必修</td>
-                                                        <td>1</td>
-                                                        <td>91</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">111-1</th>
-                                                        <td>作業系統(一) </td>
-                                                        <td>系院必修</td>
-                                                        <td>1</td>
-                                                        <td>72</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">111-1</th>
-                                                        <td>微處理機系統</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>68</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">111-1</th>
-                                                        <td>微處理機系統實習</td>
-                                                        <td>系院必修</td>
-                                                        <td>1</td>
-                                                        <td>68</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">111-1</th>
-                                                        <td>資料探勘導論</td>
-                                                        <td>系院選修</td>
-                                                        <td>3</td>
-                                                        <td>71</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">111-2</th>
-                                                        <td>人工智慧導論</td>
-                                                        <td>系院選修</td>
-                                                        <td>3</td>
-                                                        <td>85</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">111-2</th>
-                                                        <td>計算機演算法</td>
-                                                        <td>系院必修</td>
-                                                        <td>3</td>
-                                                        <td>80</td>
-                                                    </tr>
-                                                    <tr>                                                       
-                                                        <th scope="row">111-2</th>
-                                                        <td>專題研究(一)</td>
-                                                        <td>系院必修</td>
-                                                        <td>2</td>
-                                                        <td>90</td>                          
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                            <!-- Responsive Table -->
+                                            <div class="card table-responsive" style="max-height: 360px; ">
+                                                <div class="card-header border-bottom-0">                                                           
+                                                    <div class="row removable">   
+                                                        <div class="col-lg-6"><h5 style="font-weight: bold; ">我的成績單</h5></div>                          
+                                                    </div>
+                                                </div>
+
+                                                <input class="form-control" id="myFilter" type="text" placeholder="輸入文字搜尋" style="text-align: right;" >
+                                                <table contenteditable="true" id="myTable" class="table table-hover" data-integration="excel">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">學期</th>
+                                                            <th scope="col">課程名稱</th>
+                                                            <th scope="col">課程類別</th>
+                                                            <th scope="col">學分</th>
+                                                            <th scope="col">分數</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="productTable">
+                                                        <tr>
+                                                            <th scope="row">109-1</th>
+                                                            <td>程式設計(一)</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>80</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">109-2</th>
+                                                            <td>邏輯設計</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>87</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-1</th>
+                                                            <td>資料結構</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-1</th>
+                                                            <td>物件導向設計</td>
+                                                            <td>系院選修</td>
+                                                            <td>2</td>
+                                                            <td>60</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-1</th>
+                                                            <td>物件導向設計實習</td>
+                                                            <td>系院選修</td>
+                                                            <td>3</td>
+                                                            <td>60</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-1</th>
+                                                            <td>資料結構</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-1</th>
+                                                            <td>電子商務安全</td>
+                                                            <td>系院選修</td>
+                                                            <td>3</td>
+                                                            <td>88</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-2</th>
+                                                            <td>機率與統計</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>64</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">110-2</th>
+                                                            <td>大二英文(二) </td>
+                                                            <td>系院必修</td>
+                                                            <td>1</td>
+                                                            <td>91</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">111-1</th>
+                                                            <td>作業系統(一) </td>
+                                                            <td>系院必修</td>
+                                                            <td>1</td>
+                                                            <td>72</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">111-1</th>
+                                                            <td>微處理機系統</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>68</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">111-1</th>
+                                                            <td>微處理機系統實習</td>
+                                                            <td>系院必修</td>
+                                                            <td>1</td>
+                                                            <td>68</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">111-1</th>
+                                                            <td>資料探勘導論</td>
+                                                            <td>系院選修</td>
+                                                            <td>3</td>
+                                                            <td>71</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">111-2</th>
+                                                            <td>人工智慧導論</td>
+                                                            <td>系院選修</td>
+                                                            <td>3</td>
+                                                            <td>85</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">111-2</th>
+                                                            <td>計算機演算法</td>
+                                                            <td>系院必修</td>
+                                                            <td>3</td>
+                                                            <td>80</td>
+                                                        </tr>
+                                                        <tr>                                                       
+                                                            <th scope="row">111-2</th>
+                                                            <td>專題研究(一)</td>
+                                                            <td>系院必修</td>
+                                                            <td>2</td>
+                                                            <td>90</td>                          
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- End of responsive table -->
+                                        </form>
+                                        <!-- End of Form: my result -->
+
                                     </div>
                                 </div>
                             </div>
@@ -577,25 +632,9 @@
         });
 
 
-        //Table insertRow() Method
-        function insertRow() {
-        var table = document.getElementById("productTable");
-        var row = table.insertRow(0);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        cell1.innerHTML = " edit here ";
-        cell2.innerHTML = " edit here ";
-        cell3.innerHTML = " edit here ";
-        cell4.innerHTML = " edit here ";
-        cell5.innerHTML = " edit here ";
-        }
-
-        function deleteRow() {
-            document.getElementById("productTable").deleteRow(0);
-        }
+        // function deleteRow() {
+        //     document.getElementById("productTable").deleteRow(0);
+        // }
 
 
 
@@ -608,11 +647,18 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
-    
+
+
+
+
+
+
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     
-    
+    <script></script>
+    <!-- Loople JavaScript -->
+    <script src="../src/JavaScript/loopple.js"></script>
 
     
 
