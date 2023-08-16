@@ -2,10 +2,11 @@ from flask import render_template, url_for,request
 from backend.db import cursor, connection
 
 def lessonDiscussion_view():
-    # 获取 URL 中的 course_name 参数
+    # 獲取 URL 中的 course_name 参数
     course_name = request.args.get("course_name")  
     print("Course Name:", course_name)
     # 留言板
+    # 獲取從ajax傳過來的參數
     if request.method == "POST":
         course_name = request.form.get("course_name") 
         message = request.form.get("message")
@@ -14,13 +15,12 @@ def lessonDiscussion_view():
             sql_query = f'INSERT INTO lesson_response (course_name, user_id, response) VALUES ("{course_name}", "{user_id}", "{message}")'
             # values = (course_name, user_id, message)
             cursor.execute(sql_query)
-            connection.commit()  # 提交更改到数据库
+            connection.commit()  # 提交更改到資料庫
             # return "留言已提交"
 
 
 
     if course_name:
-        # 使用 course_name 进行数据库查询
         sql_query = f"SELECT * FROM lesson_response WHERE course_name = '{course_name}'"
         cursor.execute(sql_query)
         course_data = cursor.fetchall()

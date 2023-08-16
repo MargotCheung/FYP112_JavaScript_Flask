@@ -1,10 +1,10 @@
 from flask import Flask
-from flask import jsonify
+from flask import jsonify,request
 from path import Path
 
 from .views.home import home_view
 from .views.lesson import lessonpage_view
-from .views.learningProgress import learningProgress_view
+from .views.learningProgress import learningProgress_view, save_data
 from .views.profile import profile_view
 from .views.CoinWallet import CoinWallet_view
 from .views.landing import landing_view
@@ -25,6 +25,12 @@ def profile():
 @app.route("/learningProgress/<user_id>")
 def learningProgress(user_id):
     return learningProgress_view(user_id)
+
+@app.route("/saveData", methods=["POST"])
+def save_data():
+    # data = request.json  # 接收前端发送的JSON数据
+    # save_data()  # 调用save_data()函数来保存数据
+    return jsonify({"message": "Data saved successfully"})
 
 @app.route("/CoinWallet")
 def CoinWallet():
