@@ -41,7 +41,8 @@ input[type="checkbox"]:checked + label:after {
   position: absolute;
   top: -1px;
   left: 1px;
-color: gold;
+color: red;
 transition:  .5s ease;
-}
+} 
+
 /*                       */
