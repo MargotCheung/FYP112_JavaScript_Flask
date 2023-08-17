@@ -882,17 +882,19 @@
         
 
     <script>
-        // 获取URL参数的函数
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
+           // 获取URL参数的函数
+        function getUrlParameter(parameterName) {
+            var url = window.location.href;
+            parameterName = parameterName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + parameterName + '=([^&#]*)');
+            var results = regex.exec(url);
+            console.log("user_id from URL:", results);
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
 
         $(document).ready(function () {
             $("#submitBtn").click(function () {
-                var user_id = getUrlParameter('user_id'); // 获取URL参数
+                // var user_id = $("#userLink").data("user_id"); // 获取自定义属性值
                 // console.log("user_id from URL:", user_id);
                 var selectedGrade = $("#gradeDropdownButton").text().trim();
                 var selectedCourseName = $("#courseNameDropdownButton").text().trim();
@@ -902,7 +904,7 @@
     
                 // 创建包含选择的菜单数据的对象
                 var selectedData = {
-                    user_id: user_id, // 将user_id添加到selectedData对象中
+                    // user_id: user_id, // 将user_id添加到selectedData对象中
                     grade: selectedGrade,
                     course_name: selectedCourseName,
                     course_type: selectedCourseType,

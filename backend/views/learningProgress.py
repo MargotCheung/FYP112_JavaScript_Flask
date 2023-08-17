@@ -9,11 +9,12 @@ def learningProgress_view(user_id):
     # print(credit[5])
     return render_template('learningProgress.html', **locals())
 
-def save_data():
+def save_data(data):
     # 接收通过AJAX发送的数据
-    data = request.json 
-    print(data)
-    user_id = data.get('user_id')
+    # data = request.json 
+    # print(data)
+    # user_id = data.get('user_id')
+    user_id="007"  
     grade = data.get('grade')
     course_name = data.get('course_name')
     course_type = data.get('course_type')
