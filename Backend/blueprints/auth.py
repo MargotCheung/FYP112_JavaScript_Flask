@@ -9,7 +9,7 @@ bp = Blueprint("auth", __name__, url_prefix="/auth")
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template("login.html")
+        return render_template("signIn.html")
     else:
         form = LoginForm(request.form)
         if form.validate():
@@ -33,7 +33,7 @@ def login():
 @bp.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
-        return render_template("login.html")
+        return render_template("signUp.html")
     else:
         form = RegisterForm(request.form)
         if form.validate():
