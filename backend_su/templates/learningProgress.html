@@ -436,120 +436,18 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody id="productTable">
+                                                        {% for data in grades %}
                                                         <tr>
-                                                            <th scope="row">109-1</th>
-                                                            <td>程式設計(一)</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>80</td>
+                                                            <th scope="row">{{ data[1] }}</th>
+                                                            <td>{{ data[2] }}</td>
+                                                            <td>{{ data[3] }}</td>
+                                                            <td>{{ data[4] }}</td>
+                                                            <td>{{ data[5] }}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <th scope="row">109-2</th>
-                                                            <td>邏輯設計</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>87</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-1</th>
-                                                            <td>資料結構</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>100</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-1</th>
-                                                            <td>物件導向設計</td>
-                                                            <td>系院選修</td>
-                                                            <td>2</td>
-                                                            <td>60</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-1</th>
-                                                            <td>物件導向設計實習</td>
-                                                            <td>系院選修</td>
-                                                            <td>3</td>
-                                                            <td>60</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-1</th>
-                                                            <td>資料結構</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>100</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-1</th>
-                                                            <td>電子商務安全</td>
-                                                            <td>系院選修</td>
-                                                            <td>3</td>
-                                                            <td>88</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-2</th>
-                                                            <td>機率與統計</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>64</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">110-2</th>
-                                                            <td>大二英文(二) </td>
-                                                            <td>系院必修</td>
-                                                            <td>1</td>
-                                                            <td>91</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">111-1</th>
-                                                            <td>作業系統(一) </td>
-                                                            <td>系院必修</td>
-                                                            <td>1</td>
-                                                            <td>72</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">111-1</th>
-                                                            <td>微處理機系統</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>68</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">111-1</th>
-                                                            <td>微處理機系統實習</td>
-                                                            <td>系院必修</td>
-                                                            <td>1</td>
-                                                            <td>68</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">111-1</th>
-                                                            <td>資料探勘導論</td>
-                                                            <td>系院選修</td>
-                                                            <td>3</td>
-                                                            <td>71</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">111-2</th>
-                                                            <td>人工智慧導論</td>
-                                                            <td>系院選修</td>
-                                                            <td>3</td>
-                                                            <td>85</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">111-2</th>
-                                                            <td>計算機演算法</td>
-                                                            <td>系院必修</td>
-                                                            <td>3</td>
-                                                            <td>80</td>
-                                                        </tr>
-                                                        <tr>                                                       
-                                                            <th scope="row">111-2</th>
-                                                            <td>專題研究(一)</td>
-                                                            <td>系院必修</td>
-                                                            <td>2</td>
-                                                            <td>90</td>                          
-                                                        </tr>
+                                                        {% endfor %}
                                                     </tbody>
                                                 </table>
+                                                
                                             </div>
                                             <!-- End of responsive table -->
                                         </form>
@@ -882,15 +780,15 @@
         
 
     <script>
-           // 获取URL参数的函数
-        function getUrlParameter(parameterName) {
-            var url = window.location.href;
-            parameterName = parameterName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + parameterName + '=([^&#]*)');
-            var results = regex.exec(url);
-            console.log("user_id from URL:", results);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+        // 获取URL参数的函数
+        // function getUrlParameter(parameterName) {
+        //     var url = window.location.href;
+        //     parameterName = parameterName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        //     var regex = new RegExp('[\\?&]' + parameterName + '=([^&#]*)');
+        //     var results = regex.exec(url);
+        //     console.log("user_id from URL:", results);
+        //     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        // }
 
         $(document).ready(function () {
             $("#submitBtn").click(function () {
@@ -923,6 +821,8 @@
                         console.log("Data sent successfully:", response);
                         console.log("selectedData:", selectedData); // 在这里输出 selectedData
                         // 可以在这里添加更新页面的逻辑，例如显示成功消息
+                        // 重载页面
+                        location.reload();
                     },
                     error: function (error) {
                         // 请求失败后的处理逻辑

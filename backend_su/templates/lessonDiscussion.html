@@ -408,6 +408,7 @@
                             },  // 将留言内容作为 POST 数据发送
                     success: function (response) {
                         console.log("提交成功"+message);
+                        location.reload();
                     },
                     error: function (xhr, status, error) {
                         console.log("提交失败:", error);
