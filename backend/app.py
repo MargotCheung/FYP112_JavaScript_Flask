@@ -4,7 +4,7 @@ from path import Path
 from backend.db import cursor, connection
 
 from .views.home import home_view
-from .views.lesson import lessonpage_view
+# from .views.lesson import lessonpage_view
 from .views.learningProgress import learningProgress_view, save_data
 from .views.profile import profile_view
 from .views.CoinWallet import CoinWallet_view
@@ -12,6 +12,7 @@ from .views.landing import landing_view
 from .views.lessonPage import lessonPage_view, get_lesson_name
 from .views.MyQuestionBank import MyQuestionBank_view
 from .views.lessonDiscussion import lessonDiscussion_view
+from .views.signIn import signIn_view
 
 
 PROJECT_DIR = Path(__file__).parent.parent
@@ -55,6 +56,9 @@ def MyQuestionBank():
 def lessonDiscussion():
     return lessonDiscussion_view()
 
+@app.route("/signIn")
+def signIn():
+    return signIn_view()
 
 
 if __name__ == "__main__":
