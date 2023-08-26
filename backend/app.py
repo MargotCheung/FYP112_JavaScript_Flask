@@ -1,7 +1,22 @@
+<<<<<<< HEAD:backend/app.py
 from flask import Flask
 from flask import jsonify,request
 from path import Path
 from backend.db import cursor, connection
+=======
+from flask import Flask, session, g
+from flask import jsonify
+from path import Path
+from . import config
+from .extends import db
+
+from .models import UserModel
+
+from .blueprints.course import bp as course_bp
+from .blueprints.auth import bp as auth_bp
+
+from flask_migrate import Migrate
+>>>>>>> hook__function:Backend/app.py
 
 from .views.home import home_view
 # from .views.lesson import lessonpage_view
@@ -19,6 +34,17 @@ PROJECT_DIR = Path(__file__).parent.parent
 FRONTEND_DIR = PROJECT_DIR / 'backend'
 app = Flask(__name__)
 
+# 綁定配置文件
+app.config.from_object(config)
+
+# 初始化
+db.init_app(app)
+
+migrate = Migrate(app, db)
+
+# 每一個blueprints都用這樣寫
+app.register_blueprint(course_bp)
+app.register_blueprint(auth_bp)
 
 @app.route('/profile')
 def profile():
@@ -56,10 +82,26 @@ def MyQuestionBank():
 def lessonDiscussion():
     return lessonDiscussion_view()
 
+<<<<<<< HEAD:backend/app.py
 @app.route("/signIn")
 def signIn():
     return signIn_view()
+=======
+# hook函數 （具體有點難解釋，可以去找一下相關内容）
+@app.before_request
+def my_before_request():
+    user_id = session.get("user_id")
+    if user_id:
+        user = UserModel.query.get(user_id)
+        setattr(g, "user", user)
+    else:
+        setattr(g, "user", None)
+>>>>>>> hook__function:Backend/app.py
 
+# 這個是在templete裏呼叫，以達到登入后用戶名可以顯示
+@app.context_processor
+def my_context_processor():
+    return {"user": g.user}
 
 if __name__ == "__main__":
     app.run(debug=True)
