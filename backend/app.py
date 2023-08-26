@@ -1,9 +1,7 @@
-<<<<<<< HEAD:backend/app.py
 from flask import Flask
 from flask import jsonify,request
 from path import Path
 from backend.db import cursor, connection
-=======
 from flask import Flask, session, g
 from flask import jsonify
 from path import Path
@@ -16,7 +14,6 @@ from .blueprints.course import bp as course_bp
 from .blueprints.auth import bp as auth_bp
 
 from flask_migrate import Migrate
->>>>>>> hook__function:Backend/app.py
 
 from .views.home import home_view
 # from .views.lesson import lessonpage_view
@@ -50,9 +47,9 @@ app.register_blueprint(auth_bp)
 def profile():
     return profile_view()
 
-@app.route("/learningProgress/<user_id>")
-def learningProgress(user_id):
-    return learningProgress_view(user_id)
+@app.route("/learningProgress")
+def learningProgress():
+    return learningProgress_view()
 
 @app.route("/saveData", methods=["POST"])
 def saveData():
@@ -82,11 +79,6 @@ def MyQuestionBank():
 def lessonDiscussion():
     return lessonDiscussion_view()
 
-<<<<<<< HEAD:backend/app.py
-@app.route("/signIn")
-def signIn():
-    return signIn_view()
-=======
 # hook函數 （具體有點難解釋，可以去找一下相關内容）
 @app.before_request
 def my_before_request():
@@ -96,7 +88,6 @@ def my_before_request():
         setattr(g, "user", user)
     else:
         setattr(g, "user", None)
->>>>>>> hook__function:Backend/app.py
 
 # 這個是在templete裏呼叫，以達到登入后用戶名可以顯示
 @app.context_processor

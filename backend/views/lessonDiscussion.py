@@ -1,4 +1,4 @@
-from flask import render_template, url_for,request
+from flask import render_template, url_for,request, g
 from backend.db import cursor, connection
 
 def lessonDiscussion_view():
@@ -10,7 +10,7 @@ def lessonDiscussion_view():
     if request.method == "POST":
         course_name = request.form.get("course_name") 
         message = request.form.get("message")
-        user_id="007"
+        user_id= g.user.username
         if message and course_name:
             sql_query = f'INSERT INTO lesson_response (course_name, user_id, response) VALUES ("{course_name}", "{user_id}", "{message}")'
             # values = (course_name, user_id, message)

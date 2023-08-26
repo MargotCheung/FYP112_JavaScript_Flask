@@ -1,8 +1,10 @@
-from flask import render_template, url_for, request, jsonify
+from flask import render_template, url_for, request, jsonify, g
 from backend.db import cursor, connection
 
 
-def learningProgress_view(user_id):
+def learningProgress_view():
+    user_id = g.user.username
+    print(user_id)
     sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
     cursor.execute(sql_query)
     credit = cursor.fetchall()
@@ -18,7 +20,7 @@ def save_data():
     data = request.form  # 接收前端发送的JSON数据
     # print(data)
     # save_data(data)  # 调用save_data()函数来保存数据
-    user_id="007"  
+    user_id= g.user.username 
     grade = data.get('grade')
     course_name = data.get('course_name')
     course_type = data.get('course_type')
