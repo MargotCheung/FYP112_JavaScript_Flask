@@ -65,7 +65,7 @@
 
                 <!-- Right container -->
                 <div class="col-lg-6">
-                    <form action="">
+                    <form method="POST">
                         <div class="form-row">
                             <div class="card-header col-lg-10" style="background: #FFE8D6">
                                 <div class="card-body" style="background: #FFE8D6"></div>
@@ -131,9 +131,14 @@
                                                 style="background:#CB997E; color: #FFFFFF" type="submit" id="register-btn">註冊</button>
                                         </div>
                                     </div>
-
-
-
+                                    <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                                        <li class="nav-item">
+                                            <span class="nav-link" style="color: #FFFFFF">已有賬號 ?</span>
+                                        </li>          
+                                        <li class="nav-item">
+                                            <a href="{{ url_for('auth.login') }}" class="nav-link" style="color: #FFFFFF">登入</a>   
+                                        </li>                          
+                                    </ul> 
 
                                     <div class="card-body" style="background: #DDBEA9"></div>
 

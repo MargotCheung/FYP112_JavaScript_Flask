@@ -1,13 +1,13 @@
 from flask import Flask, session, g
 from flask import jsonify
 from path import Path
-import config
-from extends import db
+from . import config
+from .extends import db
 
-from models import UserModel
+from .models import UserModel
 
-from blueprints.course import bp as course_bp
-from blueprints.auth import bp as auth_bp
+from .blueprints.course import bp as course_bp
+from .blueprints.auth import bp as auth_bp
 
 from flask_migrate import Migrate
 

@@ -1,4 +1,4 @@
-from extends import db
+from .extends import db
 from datetime import datetime
 class UserModel(db.Model):
     __tablename__ = "user"

@@ -1,12 +1,12 @@
 from flask import Blueprint, render_template, request
-from models import CourseInfoModel
+from ..models import CourseInfoModel
 # from flask_sqlalchemy import Article
 
 bp = Blueprint("course", __name__, url_prefix="/")
 
 @bp.route('/')
 def homePage():
-    return render_template("homepage.html")
+    return render_template("landing.html")
 
 @bp.route('/searchResult',methods=['GET', 'POST'])
 def searchResult():

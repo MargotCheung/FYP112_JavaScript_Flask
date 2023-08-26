@@ -2,36 +2,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>登入-避雷手札</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- Awesome Font 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <link rel="stylesheet"
-        href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/Loopple/loopple-public-assets/ad60f16c8a16d1dcad75e176c00d7f9e69320cd4/argon-dashboard/css/nucleo/css/nucleo.css">
     <link rel="stylesheet" href="/static/css/theme.css">
     <link rel="stylesheet" href="/static/css/loopple.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 
-<body class="g-sidenav-show" style="background: #FFE8D6">
+<body class="g-sidenav-show" style="background: #FFE8D6">    
 
-    <div class="main-content" id="panel">
+    <div class="main-content" id="panel" >
         <!-- TopNav -->
-        <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" style="background: #FFE8D6"
-            id="navbarTop">
-            <div class="container">
+        <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" style="background: #FFE8D6" id="navbarTop">
+            <div class="container" >
                 <a class="loopple-navbar-brand" href="landing.html" style="margin-right: 15px">
                     <img src="\static\images\logo.jpg" style="width:85px">
                 </a>
-                <a class="" style="color: #6B705C" href="landing.html">首頁</a>
-                <div class="collapse navbar-collapse" id="navbar-primary">
+                <a class="" style="color: #6B705C" href="landing.html" >首頁</a>
+                <div class="collapse navbar-collapse" id="navbar-primary">                
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
                             <a class="nav-link" style="color: #FFE8D6" href="signIn.html">登入 |</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" style="color: #FFE8D6" href="signUp.html">註冊</a>
+                            <a class="nav-link" style="color: #FFE8D6" href="signUp.html">註冊</a>                           
                         </li>
                     </ul>
                 </div>
@@ -42,74 +41,65 @@
 
 
         <div class="container-fluid pt-3">
-            <div class="row removable">
+            <div class="row removable" >
 
                 <!-- Left container -->
                 <div class="col-lg-6">
                     <!-- <div class="card bg-danger">  -->
-
-                    <div class="card-header" style="background: #FFE8D6">
-                        <div class="card-body"></div>
-                        <div class="card-body"></div>
-                        <div class="card-body"></div>
-                        <div class="card-body" style="text-indent: 18%">
-                            <p class="text-lg-left" style="font-size: 50px; font-weight: 400; color: #6B705C">逢甲選課避雷手札
-                            </p>
-                            <p class="text-lg-left" style="font-size: 30px; font-weight: 200; color: #6B705C">總有一些課不適合您
-                                ¯\_(ツ)_/¯</p>
+                    
+                        <div class="card-header"  style="background: #FFE8D6">                                            
+                            <div class="card-body"></div>
+                            <div class="card-body"></div>
+                            <div class="card-body"></div>
+                            <div class="card-body" style="text-indent: 18%"> 
+                                <p class="text-lg-left" style="font-size: 50px; font-weight: 400; color: #6B705C">逢甲選課避雷手札</p>
+                                <p class="text-lg-left" style="font-size: 30px; font-weight: 200; color: #6B705C">總有一些課不適合您 ¯\_(ツ)_/¯</p>
+                            </div>                           
+                            <div class="card-body"></div>
+                            <div class="card-body"></div>
+                            <div class="card-body"></div>
+                            <div class="card-body"></div>
+                            <div class="card-body"></div>                      
                         </div>
-                        <div class="card-body"></div>
-                        <div class="card-body"></div>
-                        <div class="card-body"></div>
-                        <div class="card-body"></div>
-                        <div class="card-body"></div>
-                    </div>
                     <!-- </div> -->
                 </div>
 
                 <!-- Right container -->
                 <div class="col-lg-6">
-                    <form action="">
+                    <form method="POST">
                         <div class="form-row">
-                            <div class="card-header col-lg-10" style="background: #FFE8D6">
+                            <div class="card-header col-lg-10"  style="background: #FFE8D6">
                                 <div class="card-body" style="background: #DDBEA9"></div>
-                                <div class="card-body" style="background: #DDBEA9"></div>
-
+                                <div class="card-body" style="background: #DDBEA9"></div>                                  
+                                
                                 <div class="card-body" style="background: #DDBEA9">
                                     <!-- Email container -->
                                     <div class="row removable">
-                                        <label for="validationEmail"
-                                            style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">Email</label>
+                                        <label for="validationEmail" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">Email</label>
                                         <div class="col-lg-9" style="margin-left: 20px">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                                 </div>
-                                                <input type="email" class="form-control" id="validationDefaultEmail" name="validationDefaultEmail"
-                                                    style="text-align: center" placeholder="輸入賬號"
-                                                    aria-describedby="inputGroupPrepend2" required>
+                                                <input type="text" class="form-control" id="validationDefaultEmail" name="validationDefaultEmail" style="text-align: center" placeholder="輸入賬號" aria-describedby="inputGroupPrepend2" required>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>    
                                     <!-- End of Email container -->
 
                                     <p></p>
 
                                     <!-- Password container -->
-                                    <div class="row removable">
-                                        <label for="validationPassword"
-                                            style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">密碼</label>
+                                    <div class="row removable">  
+                                        <label for="validationPassword" style="margin-left: 20px; font-size: 25px; font-weight: 500; color: #000; text-indent: 0%">密碼</label>
                                         <div class="col-lg-9" style="margin-left: 30px">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroupPrepend2"><i
-                                                            class="fa fa-key"></i></span>
+                                                    <span class="input-group-text" id="inputGroupPrepend2"><i class="fa fa-key"></i></span>
                                                 </div>
-                                                <input type="password" class="form-control"
-                                                    id="validationDefaultUsername" name="validationDefaultUsername" style="text-align: center"
-                                                    placeholder="輸入密碼" aria-describedby="inputGroupPrepend2" required>
+                                                <input type="password" class="form-control" id="validationDefaultUsername" name="validationDefaultUsername" style="text-align: center" placeholder="輸入密碼" aria-describedby="inputGroupPrepend2" required>
                                             </div>
-                                        </div>
+                                        </div>                                                
                                     </div>
                                     <!-- End of Password container -->
                                     <p></p>
@@ -119,22 +109,20 @@
                                     <div class="card-body" style="background: #DDBEA9"></div>
                                     <div class="card-body" style="background: #DDBEA9"></div>
 
-                                    <div class="row removable">
+                                    <div class="row removable"> 
                                         <div class="col-lg-12">
-<!--                                            <button class="btn btn-default col text-center"-->
-<!--                                                style="background:#CB997E; color: #FFFFFF" type="submit">Login</button>-->
-<!--                                            <a href="MyProfile.html" class="btn btn-default col text-center"-->
-<!--                                                style="background:#CB997E; color: #FFFFFF">登入</a>-->
-                                            <button class="btn btn-default col text-center"
-                                                style="background:#CB997E; color: #FFFFFF" type="submit" id="register-btn">登入</button>
-                                        </div>
+                                            <button class="btn btn-default col text-center" style="background:#CB997E; color: #FFFFFF" type="submit" id="login-btn">登入</button>
+                                        </div>                                                                 
                                     </div>
-
+                                                            
                                     <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                                         <li class="nav-item">
-                                            <a href="signUp.html" class="nav-link" style="color: #FFFFFF">沒有賬號 ？馬上註冊</a>
-                                        </li>
-                                    </ul>
+                                            <span class="nav-link" style="color: #FFFFFF">沒有賬號 ?</span>
+                                        </li>          
+                                        <li class="nav-item">
+                                            <a href="{{ url_for('auth.register') }}" class="nav-link" style="color: #FFFFFF">馬上註冊</a>
+                                        </li>                   
+                                    </ul>                            
 
                                     <div class="card-body" style="background: #DDBEA9"></div>
                                 </div>
@@ -150,10 +138,8 @@
                 <div class="col-lg-6">
                     <div class="copyright text-center  text-lg-left  text-muted" style="text-indent: 20%">
                         © 來源參考:
-                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1"
-                            target="_blank" style="color: #6B705C">Argon Dashboard</a>
-                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank"
-                            style="color: #6B705C">Loopple</a>
+                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Argon Dashboard</a>
+                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Loopple</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -163,7 +149,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="javascript:;" class="nav-link" style="margin-right: 150px">網站負責人：校霸</a>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -171,32 +157,21 @@
     </div>
 
     <!-- Loople JavaScript -->
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
-    <script
-        src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
-
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
+    <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
     <script></script>
-    <!-- Loople JavaScript -->    
-    <script src="/static/js/loopple.js"></script>
+    <!-- Loople JavaScript -->
+    <script src="../src/JavaScript/loopple.js"></script>
 </body>
