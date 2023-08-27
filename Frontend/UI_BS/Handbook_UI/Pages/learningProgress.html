@@ -1,6 +1,8 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>學習進度總覽</title>
     <!-- Awesome Font 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -12,9 +14,18 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+   
+
 </head>
 
 <body class="g-sidenav-show">
+
+    <!-- Include Chart.js library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+
     
     <!-- SideNav -->
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start" id="sidenav-main" style="background: #FFE8D6">
@@ -180,6 +191,8 @@
             <!-- Middle column container -->
             <div class="row removable">
                 <div class="col-lg-10">
+
+                    
                                                                        
                     <!-- Card profile -->
                     <div class="card-body" style="height: 100%; height: 425px; background: #DDBEA9; border-radius: 5px;" >                                        
@@ -822,6 +835,28 @@
     <!-- Loople JavaScript -->
     <script src="../src/JavaScript/loopple.js"></script>
 
+
+    <!-- Chart.js Canvas element for the chart -->
+        
+    <canvas id="myChart" width="40" height="30"></canvas>
+
+    <style>
+        #myChart {
+    /* Additional styles for the chart canvas */
+    border: 1px solid #ccc;
+}
+
+/* If you want to control the container size as well */
+.chart-container {
+    width: 50px;
+    height: 40px;
+}
+
+    </style>
     
+    <script src="../src/JavaScript/chartApi.js"></script>
+
+
+
 
 </body>
