@@ -2,6 +2,12 @@ from flask import render_template, url_for,request, g
 from backend.db import cursor, connection
 
 def lessonDiscussion_view():
+    user_id = g.user.username
+    #讀ability
+    sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
+    cursor.execute(sql_query)
+    credit = cursor.fetchall()
+
     # 獲取 URL 中的 course_name 参数
     course_name = request.args.get("course_name")  
     print("Course Name:", course_name)

@@ -255,10 +255,7 @@
                                                 <!-- Card body -->
                                                 <!-- 這裡的user_id要從登入來_勇傑 -->
                                                 <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <a href="{{ url_for('learningProgress') }}" id="userLink" data-user_id="007"><button class="btn btn-dark">按钮</button></a>
-
-         
-                                                            style="background: #CB997E; width: 100%; height: 100%">待修學分<br>34</button></a>
+                                                    <a href="{{ url_for('learningProgress') }}" id="userLink" data-user_id="007"><button class="btn btn-dark"style="background: #CB997E; width: 100%; height: 100%">待修學分<br></button></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -340,13 +337,11 @@
                     </div>
                     <div class="row removable">
                         <div class="col-lg-12">
-                            <p class="">A</p>
-                            <p class="">B</p>
-                            <p class="">C</p>
-                            <p class="">D</p>
-                            <p class="">E</p>
-                            <p class="">F</p>
-                            <p class="">G</p>
+                            <p class="">數學能力 : {{credit[0][15]}}</p>
+                            <p class="">編程能力 :  {{credit[0][16]}}</p>
+                            <p class="">邏輯思維能力 :  {{credit[0][17]}}</p>
+                            <p class="">創新能力 :  {{credit[0][18]}}</p>
+                            <p class="">解決問題能力 :  {{credit[0][19]}}</p>
                         </div>
                     </div>
                 </div>
