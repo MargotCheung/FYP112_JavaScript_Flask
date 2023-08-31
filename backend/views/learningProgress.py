@@ -8,6 +8,7 @@ def learningProgress_view():
     sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
     cursor.execute(sql_query)
     credit = cursor.fetchall()
+    chart_data=[credit[0][15],credit[0][16],credit[0][17],credit[0][18],credit[0][19]]
     # print(credit[5])
     sql_query = f"SELECT * FROM user_grades WHERE user_id = '{user_id}';"
     cursor.execute(sql_query)

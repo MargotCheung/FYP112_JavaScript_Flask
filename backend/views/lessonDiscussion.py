@@ -30,8 +30,14 @@ def lessonDiscussion_view():
         sql_query = f"SELECT * FROM lesson_response WHERE course_name = '{course_name}'"
         cursor.execute(sql_query)
         course_data = cursor.fetchall()
+
+        user_id = g.user.username
+        #讀ability
+        sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
+        cursor.execute(sql_query)
+        credit = cursor.fetchall()
         # print(course_data)
-        return render_template("lessonDiscussion.html", course_data=course_data)
+        return render_template("lessonDiscussion.html", course_data=course_data,credit=credit)
     else:
         return "Course name parameter is missing."
 

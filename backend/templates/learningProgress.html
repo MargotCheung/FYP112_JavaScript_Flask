@@ -195,54 +195,48 @@
                         <div class="col-lg-12">
 
 
-                            <!-- Card profile -->
-                            <div class="card card-profile">
-                                <img src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/img-1-1000x600.jpg"
-                                    alt="Image placeholder" class="card-img-top" style="height: 80px;">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-3 order-lg-2">
-                                        <div class="card-profile-image">
-                                            <a href="#">
-                                                <img src="\static\images\head.png" class="rounded-circle">
-                                            </a>
+                        <!-- Card profile -->
+                        <div class="card-body" style="height: 100%; height: 425px; background: #DDBEA9; border-radius: 5px;" >                                        
+                            <div class="card card-profile" style="background: #f8f9fa">                                           
+                                <div class="card-body pt-0" >
+
+                                    <!-- Name card info -->
+                                    <div class="card-profile-stats d-flex justify-content-center">
+                                        
+                                        <!-- Profile picture -->
+                                        <div class="col-lg-3 row justify-content-center align-self-center" >                                    
+                                            <img src="\static\images\head.png" class="rounded-circle">                                    
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                    <div class="d-flex justify-content-between">
-                                        <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect</a>
-                                        <a href="#" class="btn btn-sm btn-default float-right">Message</a>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-profile-stats d-flex justify-content-center">
-                                                <div>
-                                                    <span class="heading">22</span>
-                                                    <span class="description">Friends</span>
-                                                </div>
-                                                <div>
-                                                    <span class="heading">10</span>
-                                                    <span class="description">Photos</span>
-                                                </div>
-                                                <div>
-                                                    <span class="heading">89</span>
-                                                    <span class="description">Comments</span>
-                                                </div>
+                                    
+                                        <div class="col-lg-5 row justify-content-center align-self-center">
+                                            <div >   
+                                                <p class="h5">目前就讀學期：3 下 </p> 
+                                                <p class="h5">學程：網路與安全</p>
+                                                <p class="h5">待修學分：34</p>       
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <h5 class="h3"> 粉頭 <span class="font-weight-light">, </span>
-                                        </h5>
-                                        <h5 class="font-weight-300"> 臺中市, 臺中 </h5>
-                                        <h5 class="h5 mt-4"> IECS </h5>
-                                        <h5> 逢甲大學 </h5>
-                                    </div>
+                                        </div>  
+                                        
+                                        <div class="col-lg-4 row justify-content-center align-self-center">
+                                            <div class="text-lg-left" >
+                                                <!-- <img src="..\src\images\ability_before.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
+                                                <div class="row removable">
+                                                    <!-- <canvas id="myChart" style="width: 520px;"></canvas> -->
+                                                    <canvas id="myChart1" style="width: 520px;"></canvas>
+
+                                                </div>
+                                                
+                                                <p style="justify-content: center; text-align: center;">我的能力值</p>
+                                            </div>
+                                        </div> 
+
+                                    </div>   
+                                    <!-- End of Name card info -->
+                                    
                                 </div>
-                            </div>
-                            <!-- End of card profile -->
+                            </div>    
+                        </div>
+                        <!-- End of card profile -->
+                        <p style="padding: 15px;"></p>
 
 
                             <!-- A Learning Process excel table -->
@@ -465,87 +459,210 @@
 
 
 
-                            <div class="row removable">
-                                <div class="col-lg-12">
+                    <!-- Table: Stream Cybersecurity-->
+                    <div class="row removable" >                                                        
+                        <div class="col-lg-12">                             
+                        </div>
+                        
+                        <!-- Excel Table -->
+                        <div class="col-lg-12">
+                            <div class="row removable" >
+                                <div class="col-lg-12">                                 
+                                    <div class="card-body" style="height: 100%; height: 630px; background: #DDBEA9; border-radius: 5px;" > 
 
-                                    <div class="text-lg-left">
-                                        <img src="\static\images\ability.jpg" alt="Image placeholder"
-                                            class="card-img-top" style="width: 300px;">
+                                        <!-- Table: Cybersecurity -->
+                                        <div class="card table-responsive" style="max-height: 700px;">
+                                            <div class="card-header border-bottom-0" >
+                                                <div class="row removable" >
+                                                    <div class="col-lg-6"><h5 style="font-weight: bold;">學程地圖：網路與安全</h5></div>
+                                                    <div class="col-lg-6 nav justify-content-lg-end">                                                                
+                                                        
+                                                        <!-- <h5><span class="badge badge-pill badge-success"> 已修 </span></h5> 
+                                                        <h5><span class="badge badge-pill badge-warning"> 在修 </span></h5> 
+                                                        <h5><span class="badge badge-pill badge-danger"> 待修 </span></h5> -->
+
+                                                        <!-- <div class="col-lg-4"><span><button type="button" class="btn btn-sm btn-success">已修學分 <span class="badge badge-light">15</span></button></span></div>                                        
+                                                        <div class="col-lg-4"><span><button type="button" class="btn btn-sm btn-warning">在修學分 <span class="badge badge-light">9</span></button></span></div>
+                                                        <div class="col-lg-4"><span><button type="button" class="btn btn-sm btn-danger">待修學分 <span class="badge badge-light">6</span></button></span></div> -->
+
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <table class="table text-center table-hover" data-integration="excel" >
+                                                <thead>
+                                                    <tr>       
+                                                        <th scope="col">學期</th>
+                                                        <th scope="col">2上</th>
+                                                        <th scope="col">2下</th> 
+                                                        <th scope="col">3上</th>
+                                                        <th scope="col">3下</th>                       
+                                                        <th scope="col">4上</th>
+                                                        <th scope="col">4下</th>                                                    
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" >核心選修</th>                                                                                                        
+                                                        <td style="color: green;">密碼學</td>
+                                                        <td></td>
+                                                        <td style="color: green;">網路程式設計</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>                                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"></th>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td style="color: green;">網路程式設計實習</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>                                                        
+                                                    </tr>                                                                         
+                                                    <tr style="border-bottom: 2px solid grey">
+                                                        <th scope="row"></th>     
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td style="color: green;">資訊與網路安全</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>              
+                                                    </tr> 
+                                                    <tr>
+                                                        <th scope="row">非核心選修</th>     
+                                                        <td></td>
+                                                        <td style="color: green;">電子商務安全</td>
+                                                        <td style="color: red;">寬頻網路</td>
+                                                        <td style="color: #FFC107;">資訊安全管理</td>
+                                                        <td style="color: red;">無線網路系統</td>
+                                                        <td></td>                
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"></th>     
+                                                        <td></td>
+                                                        <td style="color: green;">互聯網路</td>
+                                                        <td></td>
+                                                        <td style="color: #FFC107;">安全程式設計</td>
+                                                        <td></td>
+                                                        <td></td>              
+                                                    </tr>  
+                                                    <tr>
+                                                        <th scope="row"></th>     
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td style="color: #FFC107;">系統安全</td>
+                                                        <td></td>
+                                                        <td></td>              
+                                                    </tr>                                                         
+                                                </tbody>
+                                            </table>  
+                                            <div class="card">
+                                                <!-- <div class="card-header"><h5 style="font-weight: bold;">學程修課建議</h5></div> -->
+                                                <div class="card-body">
+
+                                                    <blockquote class="blockquote mb-0">
+                                                        <div class="container" style="font-weight: bold;">
+                                                            <p >核心選修學分：9 || <span style="color: green;">已修學分：9 </span> || <span style="color: #FFC107;"> 在修學分：0 </span> || <span style="color: red;"> 待修學分：0 </span> </p>
+                                                            <p>非核心選修學分：21 || <span style="color: green;">已修學分：6 </span> || <span style="color: #FFC107;"> 在修學分：9 </span> || <span style="color: red;"> 待修學分：6 </span> </p>
+                                                        </div><p></p>                                                    
+
+                                                        <!-- Badges -->
+                                                        <!-- <div class="row removable">
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-light">核心選修學分 <span class="badge badge-light">9</span></button></span>
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-success">已修學分 <span class="badge badge-light">9</span></button></span>
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-warning">在修學分 <span class="badge badge-light">0</span></button></span>
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-danger">待修學分 <span class="badge badge-light">0</span></button></span>
+                                                        </div>
+                                                    
+                                                        <div class="row removable">
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-light">核心選修學分 <span class="badge badge-light">9</span></button></span>
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-success">已修學分 <span class="badge badge-light">9</span></button></span>
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-warning">在修學分 <span class="badge badge-light">0</span></button></span>
+                                                            <span><button type="button" class="btn badge-pill btn-sm btn-danger">待修學分 <span class="badge badge-light">0</span></button></span>
+                                                        </div> -->
+                                                        <!-- End of Badges -->    
+                                                        
+                                                        <div class="container">
+                                                            <h5 style="font-weight: bold;">學程建議：</h5>                                                        
+                                                            <p>建議於學期<span style="font-weight: bold;"> 4上 </span>選修剩下的<span style="color: red;"> 寬頻網路 </span>、<span style="color: red;"> 無線網路系統 </span>以修畢<span style="font-weight: bold;"> 網路與安全 </span>學程。</p>
+                                                        </div>
+                                                    </blockquote>
+                                                </div>
+                                            </div>                                          
+                                        </div>
+                                        <!-- End of Table: Stream Cybersecurity -->
+                                       
                                     </div>
-
-                                    <div class="progress-wrapper">
-                                        <div class="progress-info">
-                                            <div class="progress-label">
-                                                <span>六角形</span>
-                                            </div>
-                                            <div class="progress-percentage">
-                                                <span>60%</span>
-                                            </div>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                                role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                                aria-valuemax="100" style="width: 60%"></div>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-
-
-
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <p class="">修課進度條</p>
-                                </div>
-                            </div>
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <div class="progress-wrapper">
-                                        <div class="progress-info">
-                                            <div class="progress-label">
-                                                <span>修課進度條</span>
-                                            </div>
-                                            <div class="progress-percentage">
-                                                <span>60%</span>
-                                            </div>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-default" role="progressbar" aria-valuenow="60"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <p class="">剩餘學分：34 <br>
-                                        剩餘學期：3 <br>
-                                        每學期平均學分：13</p>
-                                </div>
-                            </div>
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <p class="">修課進度：優</p>
-                                </div>
-                            </div>
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <p class="">選課建議回饋：</p>
-                                </div>
-                            </div>
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <p class="">剩下39學分，剩下3個學期，修課進度理想，按目前進度可以按自己意願選課。</p>
-                                </div>
-                            </div>
-                            <div class="row removable">
-                                <div class="col-lg-12"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="row removable">
-                        <div class="col-lg-12"></div>
+                    <!-- End of Table: Cybersecurity-->
+                                             
+                    <p style="padding: 15px;"></p>
+                           
+                    <!-- Card Message board -->
+                    <div class="card-body" style="height: 100%; height: 565px; background: #DDBEA9; border-radius: 5px;" >                                       
+                        <div class="card table-responsive" style="max-height: 525px;">
+
+                            <div class="card">
+                                <div class="card-header"><h4 style="font-weight: bold;">學習進度回饋</h4></div>
+                                <div class="card-body">
+                                    
+                                    <!-- Progress bar GOOD -->
+                                    <div class="progress-info">
+                                        <div class="progress-label">
+                                            <span>修課完成度</span>
+                                        </div>
+                                        <div class="progress-percentage">
+                                            <span>73%</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%;"></div>
+                                    </div>                                   
+                                 
+                                    <p style="padding: 5px;"></p>
+
+                                    <div class="row removable" >                                                        
+                                        <div class="col-lg-12">  
+
+
+                                            <div class="row removable" >                                                        
+                                                <div class="col-lg-6">  
+                                                    <blockquote class="blockquote mb-0">
+                                                        <p>剩餘學分：34</p>
+                                                        <p>剩餘學期：3</p>
+                                                        <p>每學期平均學分：12</p>
+                                                        <p>修課進度：優</p>
+                                                        <p></p>
+                                                        <h5 style="font-weight: bold;">選課建議：</h5>
+                                                        <p>修課進度理想，可按自己興趣意願選課 </p>
+                                                    </blockquote>
+                                                </div>
+                                                                                                       
+                                                <div class="col-lg-6">  
+                                                    <div class="text-lg-center" >
+                                                        <!-- <img src="..\src\images\ability_after.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
+                                                        <div class="row removable">
+                                                            <!-- <canvas id="myChart" style="width: 520px;"></canvas> -->
+                                                            <canvas id="myChart2" style="width: 520px;"></canvas>           
+                                                        </div>
+                                                        
+                                                        <p style="justify-content: center; text-align: center;">我的能力值</p>
+                                                    </div>  
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- End of Card Message board -->
                 </div>
 
 
@@ -600,7 +717,7 @@
         </footer>
     </div>
 
-    <script>
+    <!-- <script>
         if (document.querySelector(".chart-bar")) {
             var chartsBar = document.querySelectorAll(".chart-bar");
 
@@ -746,8 +863,8 @@
 
             });
         }
-    </script>
-
+    </script> -->
+    
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script>
         $(document).ready(function () {
@@ -777,6 +894,8 @@
     <!-- 使用jQuery来捕捉表单提交事件，并使用AJAX来发送数据到后端： -->
         
 
+
+    
     <script>
         // 获取URL参数的函数
         // function getUrlParameter(parameterName) {
@@ -832,6 +951,7 @@
         });
     </script>
 
+    
 
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
@@ -851,11 +971,48 @@
     <!-- Bootstrap -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"> -->
+        crossorigin="anonymous"> 
+    </script>-->
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+
+    <!-- 實現API -->
+    <script>
+        const chartData = {{ chart_data | tojson }};
+        const ctx1 = document.getElementById('myChart1');
+        const myChart1 = new Chart(ctx1, {
+            type: 'radar',
+            data: {
+                labels: ['數學', '編程', '創新', '解題', '邏輯'],
+                datasets: [{
+                    label: '個人能力',
+                    // data: [1, 3, 3, 3, 5],
+                    data: chartData,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: false, // Set to true to maintain aspect ratio, false to adjust independently
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        suggestedMax: 10, // 设置最大值
+                        suggestedMin: 0 // 设置最小值为0
+                    },
+                    // min: 0.0,
+                    // max: 5.0,
+                    // ticks: {
+                    //     // forces step size to be 50 units
+                    // stepSize: 1.0
+                    //}
+                }
+            }
+        });
     </script>
 
-
-
+    <!-- <script src="/static/js/chartApi.js"></script> -->
 
 
 </body>
