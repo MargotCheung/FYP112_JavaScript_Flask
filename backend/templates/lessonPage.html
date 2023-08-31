@@ -130,12 +130,30 @@
                             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <div class="media align-items-center">
-                                    <span class="avatar avatar-sm rounded-circle">
+                                    <!-- <span class="avatar avatar-sm rounded-circle">
                                         <img alt="Image placeholder" src="\static\images\head.png">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span class="mb-0 text-sm  font-weight-bold" style="color: black">粉頭</span>
-                                    </div>
+                                    </div> -->
+                                    {% if user %}
+                                        <li  class="nav-item">
+                                            <span class="nav-link" style="color: #6B705C">{{ user.username }}</span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.logout') }}">登出</a>
+                                        </li>
+                                        {% else %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.login') }}">登入</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <span class="nav-link" style="color: #6B705C">|</span>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.register') }}">註冊</a>
+                                        </li>
+                                    {% endif %}
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
@@ -255,12 +273,11 @@
                     </div>
                     <div class="row removable">
                         <div class="col-lg-12">
-                            <p class="">A</p>
-                            <p class="">B</p>
-                            <p class="">C</p>
-                            <p class="">D</p>
-                            <p class="">E</p>
-                            <p class="">F</p>
+                            <p class="">數學能力 : {{credit[0][15]}}</p>
+                            <p class="">編程能力 :  {{credit[0][16]}}</p>
+                            <p class="">邏輯思維能力 :  {{credit[0][17]}}</p>
+                            <p class="">創新能力 :  {{credit[0][18]}}</p>
+                            <p class="">解決問題能力 :  {{credit[0][19]}}</p>
                         </div>
                     </div>
                 </div>
@@ -471,8 +488,7 @@
                     <a class="btn bg-gradient-green col text-center" href="/lessonDiscussion?course_name=${element['course_name']}">${element['course_name']}</a>
                     </div>
                 `;
-                // href="{{ url_for('learningProgress', user_id="007") }}"
-                // <p class="btn bg-gradient-green col text-center">${element['course_name']}</p>
+                
                 new_course_data += `
                 <div class="card-body col-lg-10" style="background: #FFF3F3">
                     <div class="row removable">

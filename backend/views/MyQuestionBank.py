@@ -1,11 +1,12 @@
-from flask import render_template, url_for
+from flask import render_template, url_for,g
 from backend.db import cursor
 
 
 def MyQuestionBank_view():
-    # sql_query = 'SELECT * FROM course_info;'
-    # cursor.execute(sql_query)
-    # course_info = cursor.fetchall()
-    # cursor.close()
+    user_id = g.user.username
+    #讀ability
+    sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
+    cursor.execute(sql_query)
+    credit = cursor.fetchall()
     return render_template('MyQuestionBank.html', **locals())
 
