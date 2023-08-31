@@ -1,4 +1,34 @@
-// -------------------------- myChart1 -------------------------------- //
+// // -------------------------- myChart1 -------------------------------- //
+// const ctx1 = document.getElementById('myChart1');
+// const myChart1 = new Chart(ctx1, {
+//     type: 'radar',
+//     data: {
+//         labels: ['數學', '編程', '創新', '解題', '邏輯'],
+//         datasets: [{
+//             label: '個人能力',
+//             // data: [1, 3, 3, 3, 5],
+//             //data: [1, 2, 4, 3, 2],
+//             data: [0, 0, 0, 0, 0],
+//             borderWidth: 2
+//         }]
+//     },
+//     options: {
+//         maintainAspectRatio: false, // Set to true to maintain aspect ratio, false to adjust independently
+//         scales: {
+//             y: {
+//                 beginAtZero: true
+//             },
+//             min: 0.0,
+//             max: 5.0,
+//             ticks: {
+//                 // forces step size to be 50 units
+//                 stepSize: 1.0
+//             }
+//         }
+//     }
+// });
+
+
 const ctx1 = document.getElementById('myChart1');
 const myChart1 = new Chart(ctx1, {
     type: 'radar',
@@ -6,26 +36,38 @@ const myChart1 = new Chart(ctx1, {
         labels: ['數學', '編程', '創新', '解題', '邏輯'],
         datasets: [{
             label: '個人能力',
-            // data: [1, 3, 3, 3, 5],
-            data: [1, 2, 4, 3, 2],
+            data: [0, 0, 0, 0, 0],
             borderWidth: 2
         }]
     },
     options: {
-        maintainAspectRatio: false, // Set to true to maintain aspect ratio, false to adjust independently
+        maintainAspectRatio: false,
         scales: {
             y: {
-                beginAtZero: true
-            },
-            min: 0.0,
-            max: 5.0,
-            ticks: {
-                // forces step size to be 50 units
-                stepSize: 1.0
+                beginAtZero: false, // Let the y-axis not always begin at 0 initially
+                suggestedMax: 5,
+                ticks: {
+                    stepSize: 1
+                }
+            }
+        },
+        plugins: {
+            afterLayout: ctx1 => {
+                // Manually set y-axis minimum to 0 if all data values are 0
+                const datasets = myChart1.data.datasets;
+                const allZero = datasets.every(dataset => dataset.data.every(value => value === 0));
+                if (allZero) {
+                    myChart1.scales.y.options.min = 0;
+                }
             }
         }
     }
 });
+
+
+
+
+
 
 
 
