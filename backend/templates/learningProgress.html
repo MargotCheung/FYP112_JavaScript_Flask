@@ -23,6 +23,9 @@
 
 <body class="g-sidenav-show">
 
+    <!-- Include Chart.js library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- SideNav -->
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start"
         id="sidenav-main" style="background: #FFE8D6">
@@ -243,6 +246,53 @@
                                 </div>
                             </div>
                             <!-- End of card profile -->
+                            <p style="padding: 15px;"></p>
+
+
+                            <!-- ChartAPI NEW Card profile -->
+                            <div class="card-body" style="height: 100%; height: 425px; background: #DDBEA9; border-radius: 5px;" >                                        
+                                <div class="card card-profile" style="background: #f8f9fa">                                           
+                                    <div class="card-body pt-0" >
+
+                                        <!-- Name card info -->
+                                        <div class="card-profile-stats d-flex justify-content-center">
+                                            
+                                            <!-- Profile picture -->
+                                            <div class="col-lg-3 row justify-content-center align-self-center" >                                    
+                                                <img src="\static\images\head.png" class="rounded-circle">                                    
+                                            </div>
+                                        
+                                            <div class="col-lg-5 row justify-content-center align-self-center">
+                                                <div >   
+                                                    <p class="h5">目前就讀學期：3 下 </p> 
+                                                    <p class="h5">學程：網路與安全</p>
+                                                    <p class="h5">待修學分：34</p>       
+                                                </div>
+                                            </div>  
+                                            
+                                            <div class="col-lg-4 row justify-content-center align-self-center">
+                                                <div class="text-lg-left" >
+                                                    <!-- <img src="..\src\images\ability_before.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
+                                                    <div class="row removable">
+                                                        <canvas id="myChart1" style="width: 520px;"></canvas>
+
+                                                    </div>
+                                                    
+                                                    <p style="justify-content: center; text-align: center;">我的能力值</p>
+                                                </div>
+                                            </div> 
+
+                                        </div>   
+                                        <!-- End of Name card info -->
+                                        
+                                    </div>
+                                </div>    
+                            </div>
+                            <!-- End of ChartAPI NEW  card profile -->
+                            <p style="padding: 15px;"></p>
+
+
+
 
 
                             <!-- A Learning Process excel table -->
@@ -602,8 +652,14 @@
         </footer>
     </div>
 
-    <!-- Include Chart.js library from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    <!-- ChartAPI Javascript -->
+    <!-- <script src="\static\js\chartApi.js"></script> -->
+    <script src="../static/js/chartApi.js"></script>
+
+
+
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script>
@@ -689,14 +745,12 @@
         });
     </script>
 
-
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/js.cookie.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script
         src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
     <script

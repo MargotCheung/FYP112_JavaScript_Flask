@@ -217,7 +217,12 @@
                                     
                                     <div class="col-lg-4 row justify-content-center align-self-center">
                                         <div class="text-lg-left" >
-                                            <img src="..\src\images\ability_before.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;">
+                                            <!-- <img src="..\src\images\ability_before.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
+                                            
+                                            <div class="row removable">
+                                                <canvas id="myChart1" style="width: 520px;"></canvas>
+                                            </div>
+                                            
                                             <p style="justify-content: center; text-align: center;">我的能力值</p>
                                         </div>
                                     </div> 
@@ -722,7 +727,10 @@
                                                                                                        
                                                 <div class="col-lg-6">  
                                                     <div class="text-lg-center" >
-                                                        <img src="..\src\images\ability_after.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;">
+                                                        <!-- <img src="..\src\images\ability_after.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
+                                                        <div class="row removable">
+                                                            <canvas id="myChart2" style="width: 520px;"></canvas>
+                                                        </div>
                                                         <p style="justify-content: center; text-align: center;">我的期望能力</p>
                                                     </div>  
                                                 </div>
@@ -835,25 +843,6 @@
     <!-- Loople JavaScript -->
     <script src="../src/JavaScript/loopple.js"></script>
 
-
-    <!-- Chart.js Canvas element for the chart -->
-        
-    <canvas id="myChart" width="40" height="30"></canvas>
-
-    <style>
-        #myChart {
-    /* Additional styles for the chart canvas */
-    border: 1px solid #ccc;
-}
-
-/* If you want to control the container size as well */
-.chart-container {
-    width: 50px;
-    height: 40px;
-}
-
-    </style>
-    
     <script src="../src/JavaScript/chartApi.js"></script>
 
 
