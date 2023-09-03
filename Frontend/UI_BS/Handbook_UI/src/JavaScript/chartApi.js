@@ -5,22 +5,17 @@ const myChart1 = new Chart(ctx1, {
         labels: ['數學', '編程', '創新', '解題', '邏輯'],
         datasets: [{
             label: '個人能力',
-            // data: [1, 3, 3, 3, 5],
-            data: [1, 2, 4, 3, 2],
+            data: [1, 3, 3, 3, 5],
             borderWidth: 2
         }]
     },
     options: {
-        maintainAspectRatio: false, // Set to true to maintain aspect ratio, false to adjust independently
-        scales: {
-            y: {
-                beginAtZero: true
-            },
-            min: 0.0,
-            max: 5.0,
+        scale: {
             ticks: {
-                // forces step size to be 50 units
-                stepSize: 1.0
+                beginAtZero: true, // 刻度从0开始
+                stepSize: 1,       // 刻度间距
+                max: 5,            // 刻度的最大值
+                min: 0             // 刻度的最小值
             }
         }
     }
