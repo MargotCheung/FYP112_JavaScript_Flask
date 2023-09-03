@@ -281,30 +281,30 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">應修學分</th>
-                                                        <td>{{ credit[0][5] }}</td>
-                                                        <td>{{ credit[0][7] }}</td>
-                                                        <td>{{ credit[0][9] }}</td>
-                                                        <td>{{ credit[0][11] }}</td>
-                                                        <td>{{ credit[0][13] }}</td>
-                                                        <td>{{ credit[0][5]+credit[0][7] +credit[0][9] +credit[0][11] +credit[0][13] }}</td>
-                                                    </tr>
-                                                    <tr style="color: green;">
-                                                        <th scope="row">完成學分</th>
                                                         <td>{{ credit[0][6] }}</td>
                                                         <td>{{ credit[0][8] }}</td>
                                                         <td>{{ credit[0][10] }}</td>
                                                         <td>{{ credit[0][12] }}</td>
                                                         <td>{{ credit[0][14] }}</td>
-                                                        <td>{{credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14]}}</td>
+                                                        <td>{{ credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14] }}</td>
+                                                    </tr>
+                                                    <tr style="color: green;">
+                                                        <th scope="row">完成學分</th>
+                                                        <td>{{ credit[0][7] }}</td>
+                                                        <td>{{ credit[0][9] }}</td>
+                                                        <td>{{ credit[0][11] }}</td>
+                                                        <td>{{ credit[0][13] }}</td>
+                                                        <td>{{ credit[0][15] }}</td>
+                                                        <td>{{credit[0][7]+credit[0][9] +credit[0][11] +credit[0][13] +credit[0][15]}}</td>
                                                     </tr>
                                                     <tr style="color: red;">
                                                         <th scope="row">待修學分</th>
-                                                        <td>{{credit[0][5]-credit[0][6]}}</td>
-                                                        <td>{{credit[0][7]-credit[0][8]}}</td>
-                                                        <td>{{credit[0][9]-credit[0][10]}}</td>
-                                                        <td>{{credit[0][11]-credit[0][12]}}</td>
-                                                        <td>{{credit[0][13]-credit[0][14]}}</td>
-                                                        <td>{{(credit[0][5]+credit[0][7] +credit[0][9] +credit[0][11] +credit[0][13])-(credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14])}}</td>
+                                                        <td>{{credit[0][6]-credit[0][7]}}</td>
+                                                        <td>{{credit[0][8]-credit[0][9]}}</td>
+                                                        <td>{{credit[0][10]-credit[0][11]}}</td>
+                                                        <td>{{credit[0][12]-credit[0][13]}}</td>
+                                                        <td>{{credit[0][14]-credit[0][15]}}</td>
+                                                        <td>{{(credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14])-(credit[0][7]+credit[0][9] +credit[0][11] +credit[0][13] +credit[0][15])}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -345,10 +345,10 @@
                                                             <div class="dropdown">
                                                                 <button class="btn btn-sm dropdown-toggle mr-0 col text-center" type="button" id="gradeDropdownButton" data-toggle="dropdown" name="grade" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">年級</button>
                                                                 <div class="dropdown-menu" aria-labelledby="gradeDropdownButton" style="max-height: 350px; overflow-y: auto;">
-                                                                    <a class="dropdown-item" data-value="大一">大一</a>
-                                                                    <a class="dropdown-item" data-value="大二">大二</a>
-                                                                    <a class="dropdown-item" data-value="大三">大三</a>
-                                                                    <a class="dropdown-item" data-value="大四">大四</a>
+                                                                    <a class="dropdown-item" data-value="1">大一</a>
+                                                                    <a class="dropdown-item" data-value="2">大二</a>
+                                                                    <a class="dropdown-item" data-value="3">大三</a>
+                                                                    <a class="dropdown-item" data-value="4">大四</a>
                                                                 </div>   
                                                             </div>                                                     
                                                         </div>
@@ -394,10 +394,9 @@
                                                                 <button class="btn btn-sm dropdown-toggle mr-0 col text-center" type="button" id="courseTypeDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">課程類別</button>
                                                                 <div class="dropdown-menu" aria-labelledby="courseTypeDropdownButton" style="max-height: 350px; overflow-y: auto;">
                                                                     <a class="dropdown-item" data-value="基礎課程">基礎課程</a>
-                                                                    <a class="dropdown-item" data-value="系院必修">系院必修</a>
-                                                                    <a class="dropdown-item" data-value="系院選修">	系院選修</a>
+                                                                    <a class="dropdown-item" data-value="必修">必修</a>
+                                                                    <a class="dropdown-item" data-value="選修">	選修</a>
                                                                     <a class="dropdown-item" data-value="通識">	通識</a>
-                                                                    <a class="dropdown-item" data-value="系外選修">	系外選修</a>
                                                                 </div> 
                                                             </div>                                                        
                                                         </div>
@@ -1011,20 +1010,30 @@
                     borderWidth: 2
                 }]
             },
+            // options: {
+            //     maintainAspectRatio: false, // Set to true to maintain aspect ratio, false to adjust independently
+            //     scales: {
+            //         r: {
+            //             beginAtZero: true,
+            //             suggestedMax: 10, // 设置最大值
+            //             suggestedMin: 0 // 设置最小值为0
+            //         },
+            //         // min: 0.0,
+            //         // max: 5.0,
+            //         // ticks: {
+            //         //     // forces step size to be 50 units
+            //         // stepSize: 1.0
+            //         //}
+            //     }
+            // }
             options: {
-                maintainAspectRatio: false, // Set to true to maintain aspect ratio, false to adjust independently
-                scales: {
-                    r: {
-                        beginAtZero: true,
-                        suggestedMax: 10, // 设置最大值
-                        suggestedMin: 0 // 设置最小值为0
-                    },
-                    // min: 0.0,
-                    // max: 5.0,
-                    // ticks: {
-                    //     // forces step size to be 50 units
-                    // stepSize: 1.0
-                    //}
+                scale: {
+                    ticks: {
+                        beginAtZero: true, // 刻度从0开始
+                        stepSize: 1,       // 刻度间距
+                        max: 5,            // 刻度的最大值
+                        min: 0             // 刻度的最小值
+                    }
                 }
             }
         });
