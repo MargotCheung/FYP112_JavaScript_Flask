@@ -6,7 +6,7 @@ const myChart1 = new Chart(ctx1, {
         labels: ['數學', '編程', '創新', '解題', '邏輯'],
         datasets: [{
             label: '目前能力值', 
-            data: [2, 3, 4, 2, 4],
+            data: [2, 3, 4, 4, 4],
             borderWidth: 2,
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgb(54, 162, 235)',
@@ -65,7 +65,7 @@ const myChart2 = new Chart(ctx2, {
         labels: ['數學', '編程', '創新', '解題', '邏輯'],
         datasets: [{
             label: '目前能力值', 
-            data: [2, 3, 4, 2, 4],
+            data: [2, 3, 4, 4, 4],
             borderWidth: 2,
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgb(54, 162, 235)',
