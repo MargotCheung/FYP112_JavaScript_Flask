@@ -84,4 +84,5 @@ class PassExamPaperModel(db.Model):
     year = db.Column(db.Integer, nullable=False)
     course_name = db.Column(db.String(30), db.ForeignKey('course_info.course_name'))
     user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
+    # course_id = db.Column(db.Integer, db.ForeignKey('course_teacher.course_id'))
     paper_info = db.Column(db.Text)
