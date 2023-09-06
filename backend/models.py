@@ -27,6 +27,7 @@ class UserModel(db.Model):
     join_time = db.Column(db.DateTime, default=datetime.now)
 
     commands = db.relationship("CommandModel", backref="user")
+    paper = db.relationship("PassExamPaperModel", backref="user")
 
 class CourseInfoModel(db.Model):
     __tablename__ = "course_info"
@@ -50,6 +51,7 @@ class CourseInfoModel(db.Model):
 
     commands = db.relationship("CommandModel", backref="course")
     teacher = db.relationship("CourseTeacherModel", backref="course")
+    paper = db.relationship("PassExamPaperModel", backref="course")
 
 class CourseTeacherModel(db.Model):
     __tablename__ = "course_teacher"
@@ -75,3 +77,11 @@ class UserGradeModel(db.Model):
     # course_type = db.Column(db.String(30), db.ForeignKey('course_info.course_type'))
     # course_credit = db.Column(db.Integer, db.ForeignKey('course_info.course_credit'))
     score = db.Column(db.Integer, nullable=False)
+
+class PassExamPaperModel(db.Model):
+    __tablename__ = "pass_exam_paper"
+    index = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    year = db.Column(db.Integer, nullable=False)
+    course_name = db.Column(db.String(30), db.ForeignKey('course_info.course_name'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
+    paper_info = db.Column(db.Text)
