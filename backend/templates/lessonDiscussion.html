@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>程式設計(I)</title>
+    <title>{{ course_name }}</title>
     <!-- Awesome Font 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -126,12 +126,6 @@
 
                     <div class="collapse navbar-collapse" id="navbar-primary">                
                         <ul class="navbar-nav ml-lg-auto">
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" style="color: #6B705C" href="signIn.html">登入 |</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" style="color: #6B705C" href="signUp.html">註冊</a>                           
-                            </li> -->
                             {% if user %}
                                 <li  class="nav-item">
                                     <span class="nav-link" style="color: #6B705C">{{ user.username }}</span>
@@ -162,9 +156,6 @@
         
                 <!-- Main lesson MIDDLE column -->                               
                 <div class="col-lg-10">
-
-                    
-
                     <!-- Heading -->
                     <div class="row removable" >
                         <div class="card-body col-lg-12" style="background: #FFE8D6">
@@ -173,7 +164,6 @@
                         <div class="card-body"></div>
                     </div>
                     <!-- End of Heading -->
-
 
                     <!-- 走馬燈 -->
                     <div class="row removable" >
@@ -197,10 +187,6 @@
                         <div class="col-lg-2"><button class="btn btn-dark col text-center">&gt;</button></div>
                     </div>
                     <!-- End of 走馬燈 -->
-
-
-                    
-
                                         
                     <div class=" card-body col-lg-12" style="background: #FFF; border-radius: 10px; " >
 
@@ -213,7 +199,7 @@
                                 <p></p>
                                 <div class="row removable">
                                     <div class="col-lg-6">                                           
-                                        <p class="h3">{{course_data[0][0]}}</p>
+                                        <p class="h3">{{ course_name }}</p>
                                     </div>
                                     <div class="col-lg-3">                                           
                                         <p class="">A: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
@@ -275,7 +261,7 @@
                             <div class="col-lg-1"></div>
                             <div class="card-body col-lg-10" style="background: #FFF3F3">
 
-                                <form action="">
+                                <form method="POST">
                                     <div class="row removable">
                                         <div class="col-lg-6"><h5>留言</h5></div>
                                         <!-- <div class="col-lg-2 text-right"><h5>熱門</h5></div>
@@ -284,44 +270,48 @@
 
                                         <div class="col-lg-6 nav justify-content-lg-end">                                                                
                                             <button type="button" class="btn btn-sm btn-outline-secondary">熱門</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">從新到舊</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">從舊到新</button>
+                                            <button type="submit" name="sort_by_latest" class="btn btn-sm btn-outline-secondary dropdown-toggle" value="1">由新到舊</button>
+                                            <button type="submit" name="sort_by_oldest" class="btn btn-sm btn-outline-secondary dropdown-toggle" value="1">由舊到新</button>
                                         </div>
                                     </div>
                                     <p style="padding: 5px;"></p>
                                
                                     <!-- Sample message #1 -->
                                     <div class="row removable">
-                                        {% for data in course_data %}
-                                        <div class="col-lg-12">
-                                            <div class="row removable">
-                                                <div class="col-lg-1">
-                                                    <span class="avatar avatar-sm rounded-circle">
-                                                        <img alt="Image placeholder" src="\static\images\head.png">
-                                                    </span>
-                                                </div>
-                                                <div class="col-lg-11">
-                                                    <span>ID: {{ data[1] }}</span>
-                                                    <div class="row removable">
-                                                        <div class="col-lg-12">
-                                                            <p class="">{{ data[2] }}</p>
-                                                        </div>
+                                        {% for post in posts %}
+                                            <div class="col-lg-12">
+                                                <div class="row removable">
+                                                    <div class="col-lg-1">
+                                                        <span class="avatar avatar-sm rounded-circle">
+                                                            <img alt="Image placeholder" src="\static\images\head.png">
+                                                        </span>
                                                     </div>
+                                                    <div class="col-lg-11">
+                                                        <span>{{ user_id_to_username[post.user_id] }}</span>
+                                                        <div class="row removable">
+                                                            <div class="col-lg-12">
+                                                                <p class="">{{ post.response }}</p>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <p class="">{{ post.command_time }}</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <p></p>
                                                 </div>
-                                                <p></p>
                                             </div>
-                                        </div>
                                         {% endfor %}
                                     </div>
                                     
-
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">輸入留言</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                        <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea> -->
+                                        <textarea class="form-control" id="commandcontent" name="commandcontent" rows="4"></textarea>
                                     </div>
 
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <!-- move button to the right -->
-                                        <button class="btn btn-default" style="background:#FFCCCC; color: #000" id="submit-button" type="button">提交</button>
+                                        <button class="btn btn-default" style="background:#FFCCCC; color: #000" id="submit-button" type="submit">提交</button>
                                     </div>
                                 </form>                                                               
                             </div>                               
@@ -329,20 +319,9 @@
                         </div>
                         <!-- 白色row -->
                         <div class="card-body"></div>
-                        
-
-
-
-
-
-
-
                     </div>
                 </div>                              
                 <!-- End of Main lesson MIDDLE column -->
-
-
-
 
                 <!-- Core ability RIGHT column -->
                 <div class="col-lg-2">
@@ -353,11 +332,11 @@
                     </div>
                     <div class="row removable">
                         <div class="col-lg-12">
-                            <p class="">數學能力 : {{credit[0][15]}}</p>
-                            <p class="">編程能力 :  {{credit[0][16]}}</p>
-                            <p class="">邏輯思維能力 :  {{credit[0][17]}}</p>
-                            <p class="">創新能力 :  {{credit[0][18]}}</p>
-                            <p class="">解決問題能力 :  {{credit[0][19]}}</p>
+                            <p class="">數學能力 : {{ user.ability_math }}</p>
+                            <p class="">編程能力 :  {{user.ability_coding}}</p>
+                            <p class="">邏輯思維能力 :  {{user.ability_logic}}</p>
+                            <p class="">創新能力 :  {{user.ability_creative}}</p>
+                            <p class="">解決問題能力 :  {{user.ability_math}}</p>
                         </div>
                     </div>
                 </div>
@@ -389,9 +368,6 @@
                 </div>
             </div>
         </footer>
-
-
-
     </div>
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/jquery.min.js"></script>
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/bootstrap.bundle.min.js"></script>
@@ -405,33 +381,7 @@
     <!-- Loople JavaScript -->
     <script src="/static/js/loopple.js"></script>
 
-    <!-- <script>
-        var course_name1 = {{ course_data[0][0] | tojson }};
-        console.log("test:"+course_name1);
-    </script> -->
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#submit-button').click(function () {
-                const message = $('#exampleFormControlTextarea1').val();
-                // const course_name = course_name1;
-                // 发送 AJAX 请求
-                $.ajax({
-                    url: "/lessonDiscussion",  // 替换为服务器端处理请求的 URL
-                    type: "POST",
-                    data: { message: message,
-                            course_name: {{ course_data[0][0] | tojson }}
-                            },  // 将留言内容作为 POST 数据发送
-                    success: function (response) {
-                        console.log("提交成功"+message);
-                        location.reload();
-                    },
-                    error: function (xhr, status, error) {
-                        console.log("提交失败:", error);
-                    }
-                });
-            });
-        });
-    </script>
+    
 </body>

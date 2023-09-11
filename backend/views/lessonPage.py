@@ -3,9 +3,9 @@ from backend.db import cursor
 
 
 def lessonPage_view():
-    user_id = g.user.username
+    user_id = g.user.id
     #讀ability
-    sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
+    sql_query = f"SELECT * FROM user_profile WHERE id = {user_id};"
     cursor.execute(sql_query)
     credit = cursor.fetchall()
 
@@ -44,17 +44,27 @@ def get_lesson_name():
     sql_query = 'SELECT * FROM course_info;'
     count = cursor.execute(sql_query)
     course_names = [{
-        'course_id': row[0],
+        # 'course_id': row[0],
+        # 'course_year': row[1],
+        # 'course_name': row[2],
+        # 'course_type': row[3],
+        # 'course_credit': row[4],
+        # 'course_intro': row[5],
+        # 'math': row[6],
+        # 'coding': row[7],
+        # 'logic': row[8],
+        # 'creative': row[9],
+        # 'slove': row[10],
+        'course_name': row[0],
         'course_year': row[1],
-        'course_name': row[2],
-        'course_type': row[3],
-        'course_credit': row[4],
-        'course_intro': row[5],
-        'math': row[6],
-        'coding': row[7],
-        'logic': row[8],
-        'creative': row[9],
-        'slove': row[10],
+        'course_type': row[2],
+        'course_credit': row[3],
+        'course_intro': row[4],
+        'math': row[5],
+        'coding': row[6],
+        'logic': row[7],
+        'creative': row[8],
+        'slove': row[9],
     } for row in cursor.fetchall()]
     query_course_names = course_names[amount*page:amount*(page+1)]
     return jsonify(query_course_names=query_course_names)

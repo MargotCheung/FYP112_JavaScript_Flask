@@ -19,3 +19,8 @@ class RegisterForm(wtforms.Form):
 class LoginForm(wtforms.Form):
     validationDefaultEmail = wtforms.StringField('validationDefaultEmail', validators=[Length(min=3, max=20, message="用戶名長度必須在3到20字内!")])
     validationDefaultUsername = wtforms.PasswordField('validationDefaultUsername', validators=[Length(min=6, max=20, message="密碼長度必須在6到20字内!")])
+
+class CommandForm(wtforms.Form):
+    commandcontent = wtforms.TextAreaField('commandcontent', validators=[Length(min=1)])
+    sort_by_latest = wtforms.SubmitField('由新到舊')
+    sort_by_oldest = wtforms.SubmitField('由舊到新')

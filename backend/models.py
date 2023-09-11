@@ -28,6 +28,7 @@ class UserModel(db.Model):
 
     commands = db.relationship("CommandModel", backref="user")
     paper = db.relationship("PassExamPaperModel", backref="user")
+    likes = db.relationship("LikeModel", backref="user")
 
 class CourseInfoModel(db.Model):
     __tablename__ = "course_info"
@@ -66,7 +67,8 @@ class CommandModel(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
     response = db.Column(db.Text)
     command_time = db.Column(db.DateTime, default=datetime.now)
-    liked = db.Column(db.Integer, default=0)
+    
+    likes = db.relationship("LikeModel", backref="comment")
 
 class UserGradeModel(db.Model):
     __tablename__ = "user_grades"
@@ -84,5 +86,12 @@ class PassExamPaperModel(db.Model):
     year = db.Column(db.Integer, nullable=False)
     course_name = db.Column(db.String(30), db.ForeignKey('course_info.course_name'))
     user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
-    # course_id = db.Column(db.Integer, db.ForeignKey('course_teacher.course_id'))
+    course_id = db.Column(db.Integer, db.ForeignKey('course_teacher.course_id'))
     paper_info = db.Column(db.Text)
+
+class LikeModel(db.Model):
+    __tablename__ = "likes"
+    index = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    author = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
+    comment_index = db.Column(db.Integer, db.ForeignKey('lesson_response.index'))
+    liked_time = db.Column(db.DateTime, default=datetime.now)

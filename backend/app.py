@@ -23,7 +23,7 @@ from .views.CoinWallet import CoinWallet_view
 from .views.landing import landing_view
 from .views.lessonPage import lessonPage_view, get_lesson_name
 from .views.MyQuestionBank import MyQuestionBank_view
-from .views.lessonDiscussion import lessonDiscussion_view
+from .views.lessonDiscussion import lessonDiscussion_view, liked_view
 from .views.signIn import signIn_view
 
 
@@ -78,6 +78,10 @@ def MyQuestionBank():
 @app.route("/lessonDiscussion",methods=["GET", "POST"])
 def lessonDiscussion():
     return lessonDiscussion_view()
+
+@app.route("/like-post/<comment_index>",methods=["GET", "POST"])
+def likedFunction():
+    return liked_view()
 
 # hook函數 （具體有點難解釋，可以去找一下相關内容）
 @app.before_request
