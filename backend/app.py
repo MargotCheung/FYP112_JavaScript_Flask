@@ -75,11 +75,11 @@ def lessonNameApi():
 def MyQuestionBank():
     return MyQuestionBank_view()
 
-@app.route("/lessonDiscussion",methods=["GET", "POST"])
-def lessonDiscussion():
-    return lessonDiscussion_view()
+@app.route("/lessonDiscussion/course_name=<course_name>",methods=["GET", "POST"])
+def lessonDiscussion(course_name):
+    return lessonDiscussion_view(course_name)
 
-@app.route("/like-comment/<course_name>/<comment_index>",methods=["GET", "POST"])
+@app.route("/like-comment/course_name=<course_name>/<comment_index>",methods=["GET", "POST"])
 def likedFunction(course_name,comment_index):
     return liked_view(course_name,comment_index)
 
