@@ -14,4 +14,4 @@ def searchResult():
         # page = request.args.get('page', 1)
         # articles = Article.query.paginate()
         # course_list = CourseInfoModel.query.order_by(CourseInfoModel.id).all()
-        return render_template("search_result.html", course_list=course_list)
+        return render_template("search_result.html")

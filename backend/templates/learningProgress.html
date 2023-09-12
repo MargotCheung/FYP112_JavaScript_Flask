@@ -22,12 +22,14 @@
 </head>
 
 <body class="g-sidenav-show">
-
+    <!-- Include Chart.js library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- SideNav -->
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start"
         id="sidenav-main" style="background: #FFE8D6">
         <div class="sidenav-header  align-items-center" style="background: #FFE8D6">
-            <a class="navbar-brand" href="landing.html">
+            <a class="navbar-brand" href="/">
                 <img src="\static\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
             </a>
         </div>
@@ -102,18 +104,23 @@
                             <span class="nav-link-text">大四</span>
                         </a>
                     </li>
-                </ul>
-
-            </div>
-
-
-
+                </ul>                
+            </div>                       
         </div>
     </nav>
     <!-- End of TopNav -->
 
 
     <div class="main-content" id="panel">
+        {%- with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <script>
+                    alert('{{ message }}');
+                    </script>
+                {% endfor %}
+            {% endif %}
+        {% endwith -%}
 
         <!-- TopNav -->
         <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" id="navbarTop"
@@ -140,32 +147,16 @@
                     <!-- Dropdown Menu -->
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0 text-end">
                         <li class="nav-item dropdown">
-                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="media align-items-center">
-                                    <!-- <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="\static\images\head.png">
-                                    </span>
-                                    <div class="media-body  ml-2  d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold" style="color: black">粉頭</span>
-                                    </div> -->
                                     {% if user %}
-                                        <li  class="nav-item">
-                                            <span class="nav-link" style="color: #6B705C">{{ user.username }}</span>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.logout') }}">登出</a>
-                                        </li>
-                                        {% else %}
-                                        <li class="nav-item">
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.login') }}">登入</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <span class="nav-link" style="color: #6B705C">|</span>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.register') }}">註冊</a>
-                                        </li>
+                                        <!-- <span class="avatar avatar-sm rounded-circle">
+                                            <img alt="Image placeholder" src="\static\images\head.png">
+                                        </span> -->
+                                        <div class="media-body  ml-2  d-none d-lg-block">
+                                            <span class="mb-0 text-sm  font-weight-bold" style="color: #6B705C">{{ user.username }}</span>
+                                        </div>
+                                        <a class="mb-0 text-sm  font-weight-bold" style="color: #6B705C" href="{{ url_for('auth.logout') }}">登出</a>
                                     {% endif %}
                                 </div>
                             </a>
@@ -209,125 +200,113 @@
             <!-- Middle column container -->
             <div class="row removable">
                 <div class="col-lg-10">
+
+
+                    <!-- Card profile -->
+                    <div class="card-body" style="height: 100%; height: 425px; background: #DDBEA9; border-radius: 5px;" >                                        
+                        <div class="card card-profile" style="background: #f8f9fa">                                           
+                            <div class="card-body pt-0" >
+
+                                <!-- Name card info -->
+                                <div class="card-profile-stats d-flex justify-content-center">
+                                    
+                                    <!-- Profile picture -->
+                                    <div class="col-lg-3 row justify-content-center align-self-center" >                                    
+                                        <img src="\static\images\head.png" class="rounded-circle">                                    
+                                    </div>
+                                
+                                    <div class="col-lg-5 row justify-content-center align-self-center">
+                                        <div >   
+                                            <p class="h5">目前就讀學期：3 下 </p> 
+                                            <p class="h5">學程：網路與安全</p>
+                                            <p class="h5">待修學分：34</p>       
+                                        </div>
+                                    </div>  
+                                    
+                                    <div class="col-lg-4 row justify-content-center align-self-center">
+                                        <div class="text-lg-left" >
+                                            <!-- <img src="..\src\images\ability_before.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
+                                            <div class="row removable">
+                                                <!-- <canvas id="myChart" style="width: 520px;"></canvas> -->
+                                                <canvas id="myChart1" style="width: 520px;"></canvas>
+
+                                            </div>
+                                            
+                                            <p style="justify-content: center; text-align: center;">我的能力值</p>
+                                        </div>
+                                    </div> 
+
+                                </div>   
+                                <!-- End of Name card info -->
+                                
+                            </div>
+                        </div>    
+                    </div>
+                    <!-- End of card profile -->
+                    <p style="padding: 15px;"></p>
+
+
+                    <!-- A Learning Process excel table -->
                     <div class="row removable">
                         <div class="col-lg-12">
-
-
-                        <!-- Card profile -->
-                        <div class="card-body" style="height: 100%; height: 425px; background: #DDBEA9; border-radius: 5px;" >                                        
-                            <div class="card card-profile" style="background: #f8f9fa">                                           
-                                <div class="card-body pt-0" >
-
-                                    <!-- Name card info -->
-                                    <div class="card-profile-stats d-flex justify-content-center">
-                                        
-                                        <!-- Profile picture -->
-                                        <div class="col-lg-3 row justify-content-center align-self-center" >                                    
-                                            <img src="\static\images\head.png" class="rounded-circle">                                    
-                                        </div>
-                                    
-                                        <div class="col-lg-5 row justify-content-center align-self-center">
-                                            <div >   
-                                                <p class="h5">目前就讀學期：3 下 </p> 
-                                                <p class="h5">學程：網路與安全</p>
-                                                <p class="h5">待修學分：34</p>       
-                                            </div>
-                                        </div>  
-                                        
-                                        <div class="col-lg-4 row justify-content-center align-self-center">
-                                            <div class="text-lg-left" >
-                                                <!-- <img src="..\src\images\ability_before.jpg" alt="Image placeholder" class="card-img-top" style="width: 290px;"> -->
-                                                <div class="row removable">
-                                                    <!-- <canvas id="myChart" style="width: 520px;"></canvas> -->
-                                                    <canvas id="myChart1" style="width: 520px;"></canvas>
-
-                                                </div>
-                                                
-                                                <p style="justify-content: center; text-align: center;">我的能力值</p>
-                                            </div>
-                                        </div> 
-
-                                    </div>   
-                                    <!-- End of Name card info -->
-                                    
-                                </div>
-                            </div>    
-                        </div>
-                        <!-- End of card profile -->
-                        <p style="padding: 15px;"></p>
-
-
-                            <!-- A Learning Process excel table -->
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <div class="card-body"
-                                        style="height: 100%; height: 270px; background: #DDBEA9; border-radius: 5px;">
-                                        <div class="card table-responsive" style="max-height: 300px;">
-                                            <div class="card-header border-bottom-0">
-                                                <h5 style="font-weight: bold;">修課進度</h5>
-                                            </div>
-                                            <table class="table table-hover" data-integration="excel">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col"></th>
-                                                        <th scope="col">基礎課程</th>
-                                                        <th scope="col">系院必修</th>
-                                                        <th scope="col">系院選修</th>
-                                                        <th scope="col">通識</th>
-                                                        <th scope="col">系外選修</th>
-                                                        <th scope="col">畢業學分</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">應修學分</th>
-                                                        <td>{{ credit[0][6] }}</td>
-                                                        <td>{{ credit[0][8] }}</td>
-                                                        <td>{{ credit[0][10] }}</td>
-                                                        <td>{{ credit[0][12] }}</td>
-                                                        <td>{{ credit[0][14] }}</td>
-                                                        <td>{{ credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14] }}</td>
-                                                    </tr>
-                                                    <tr style="color: green;">
-                                                        <th scope="row">完成學分</th>
-                                                        <td>{{ credit[0][7] }}</td>
-                                                        <td>{{ credit[0][9] }}</td>
-                                                        <td>{{ credit[0][11] }}</td>
-                                                        <td>{{ credit[0][13] }}</td>
-                                                        <td>{{ credit[0][15] }}</td>
-                                                        <td>{{credit[0][7]+credit[0][9] +credit[0][11] +credit[0][13] +credit[0][15]}}</td>
-                                                    </tr>
-                                                    <tr style="color: red;">
-                                                        <th scope="row">待修學分</th>
-                                                        <td>{{credit[0][6]-credit[0][7]}}</td>
-                                                        <td>{{credit[0][8]-credit[0][9]}}</td>
-                                                        <td>{{credit[0][10]-credit[0][11]}}</td>
-                                                        <td>{{credit[0][12]-credit[0][13]}}</td>
-                                                        <td>{{credit[0][14]-credit[0][15]}}</td>
-                                                        <td>{{(credit[0][6]+credit[0][8] +credit[0][10] +credit[0][12] +credit[0][14])-(credit[0][7]+credit[0][9] +credit[0][11] +credit[0][13] +credit[0][15])}}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                            <div class="card-body"
+                                style="height: 100%; height: 270px; background: #DDBEA9; border-radius: 5px;">
+                                <div class="card table-responsive" style="max-height: 300px;">
+                                    <div class="card-header border-bottom-0">
+                                        <h5 style="font-weight: bold;">修課進度</h5>
                                     </div>
+                                    <table class="table table-hover" data-integration="excel">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">基礎課程</th>
+                                                <th scope="col">系院必修</th>
+                                                <th scope="col">系院選修</th>
+                                                <th scope="col">通識</th>
+                                                <th scope="col">系外選修</th>
+                                                <th scope="col">畢業學分</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">應修學分</th>
+                                                <td>{{ user.required_credit_basic }}</td>
+                                                <td>{{ user.required_credit_major }}</td>
+                                                <td>{{ user.required_credit_elec }}</td>
+                                                <td>{{ user.required_credit_general }}</td>
+                                                <td>{{ user.required_credit_outer }}</td>
+                                                <td>{{ user.required_credit_basic + user.required_credit_major + user.required_credit_elec + user.required_credit_general + user.required_credit_outer }}</td>
+                                            </tr>
+                                            <tr style="color: green;">
+                                                <th scope="row">完成學分</th>
+                                                <td>{{ user.complete_credit_basic }}</td>
+                                                <td>{{ user.complete_credit_major }}</td>
+                                                <td>{{ user.complete_credit_elec }}</td>
+                                                <td>{{ user.complete_credit_general }}</td>
+                                                <td>{{ user.complete_credit_outer }}</td>
+                                                <td>{{ user.complete_credit_basic + user.complete_credit_major + user.complete_credit_elec + user.complete_credit_general + user.complete_credit_outer }}</td>
+                                            </tr>
+                                            <tr style="color: red;">
+                                                <th scope="row">待修學分</th>
+                                                <td>{{ user.required_credit_basic-user.complete_credit_basic }}</td>
+                                                <td>{{ user.required_credit_major-user.complete_credit_major }}</td>
+                                                <td>{{ user.required_credit_elec-user.complete_credit_elec }}</td>
+                                                <td>{{ user.required_credit_general-user.complete_credit_general }}</td>
+                                                <td>{{ user.required_credit_outer-user.complete_credit_outer }}</td>
+                                                <td>{{(user.required_credit_basic + user.required_credit_major + user.required_credit_elec + user.required_credit_general + user.required_credit_outer)-(user.complete_credit_basic + user.complete_credit_major + user.complete_credit_elec + user.complete_credit_general + user.complete_credit_outer)}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <!-- A End of Learning Process excel table -->
+                        </div>
+                    </div>
+                    <!-- A End of Learning Process excel table -->
 
-
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                    <p></p>
-                                </div>
-                            </div>
-
-
-                            <!-- Learning Progress Table-->
-                            <div class="row removable">
-                                <div class="col-lg-12">
-                                </div>
-
-
+                    <!-- Form: my result-->
+                    <div class="row removable" >                                                        
+                        <div class="col-lg-12">                             
+                        </div>
                    
                         <!-- Excel Table -->
                         <div class="col-lg-12">
@@ -336,91 +315,30 @@
                                     <div class="card-body" style="height: 100%; height: 450px; background: #DDBEA9; border-radius: 5px;" > 
 
                                         <!-- Form: my result -->
-                                        <form action="">
-                                            <!-- Dropdown Searh filter -->
+                                        <form method="POST">
                                             <div class="row removable">
                                                 <div class="col-lg-12">
                                                     <div class="row removable">
-                                                        <div class="col-lg-2">                                                        
-                                                            <div class="dropdown">
-                                                                <button class="btn btn-sm dropdown-toggle mr-0 col text-center" type="button" id="gradeDropdownButton" data-toggle="dropdown" name="grade" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">年級</button>
-                                                                <div class="dropdown-menu" aria-labelledby="gradeDropdownButton" style="max-height: 350px; overflow-y: auto;">
-                                                                    <a class="dropdown-item" data-value="1">大一</a>
-                                                                    <a class="dropdown-item" data-value="2">大二</a>
-                                                                    <a class="dropdown-item" data-value="3">大三</a>
-                                                                    <a class="dropdown-item" data-value="4">大四</a>
-                                                                </div>   
-                                                            </div>                                                     
-                                                        </div>
-                                                        
-                                                        <div class="col-lg-2">   
-                                                            <div class="dropdown">
-                                                                <button class="btn btn-sm dropdown-toggle mr-0 col text-center" type="button" id="courseNameDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">科目名稱</button>
-                                                                <div class="dropdown-menu" aria-labelledby="courseNameDropdownButton" style="max-height: 350px; overflow-y: scroll;">
-                                                                    <a class="dropdown-item" data-value="計算機概論">計算機概論</a>
-                                                                    <a class="dropdown-item" data-value="程式設計(I)">程式設計(I)</a>
-                                                                    <a class="dropdown-item" data-value="程式設計(II)">	程式設計(II)	</a>
-                                                                    <a class="dropdown-item" data-value="普通物理-電、磁、光">	普通物理-電、磁、光	</a>
-                                                                    <a class="dropdown-item" data-value="微積分(一)">	微積分(一)	</a>
-                                                                    <a class="dropdown-item" data-value="微積分(一)實習">	微積分(一)實習	</a>
-                                                                    <a class="dropdown-item" data-value="程式設計(III)">	程式設計(III)	</a>
-                                                                    <a class="dropdown-item" data-value="程式設計(IV)">	程式設計(IV)	</a>
-                                                                    <a class="dropdown-item" data-value="普通物理-電、磁、光實驗">	普通物理-電、磁、光實驗	</a>
-                                                                    <a class="dropdown-item" data-value="微積分(二)">	微積分(二)	</a>
-                                                                    <a class="dropdown-item" data-value="微積分(二)實習">	微積分(二)實習	</a>
-                                                                    <a class="dropdown-item" data-value="線性代數">	線性代數	</a>
-                                                                    <a class="dropdown-item" data-value="邏輯設計">	邏輯設計	</a>
-                                                                    <a class="dropdown-item" data-value="邏輯設計實習">	邏輯設計實習	</a>
-                                                                    <a class="dropdown-item" data-value="通訊與網路概論">	通訊與網路概論	</a>
-                                                                    <a class="dropdown-item" data-value="資料結構">	資料結構	</a>
-                                                                    <a class="dropdown-item" data-value="資料結構實習">	資料結構實習	</a>
-                                                                    <a class="dropdown-item" data-value="離散數學">	離散數學	</a>
-                                                                    <a class="dropdown-item" data-value="系統程式">	系統程式	</a>
-                                                                    <a class="dropdown-item" data-value="資料庫系統">	資料庫系統	</a>
-                                                                    <a class="dropdown-item" data-value="幾率與統計">	幾率與統計	</a>
-                                                                    <a class="dropdown-item" data-value="大三英文">	大三英文	</a>
-                                                                    <a class="dropdown-item" data-value="作業系統">	作業系統(一)	</a>
-                                                                    <a class="dropdown-item" data-value="微處理機系統">	微處理機系統	</a>
-                                                                    <a class="dropdown-item" data-value="微處理機系統實習">	微處理機系統實習	</a>
-                                                                    <a class="dropdown-item" data-value="計算機演算法">	計算機演算法	</a>
-                                                                    <a class="dropdown-item" data-value="計算機結構學">	計算機結構學	</a>
-                                                                </div>  
-                                                            </div>                                                     
-                                                                                                                 
-                                                        </div>
-
-                                                        <div class="col-lg-2">                                                        
-                                                            <div class="dropdown">
-                                                                <button class="btn btn-sm dropdown-toggle mr-0 col text-center" type="button" id="courseTypeDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">課程類別</button>
-                                                                <div class="dropdown-menu" aria-labelledby="courseTypeDropdownButton" style="max-height: 350px; overflow-y: auto;">
-                                                                    <a class="dropdown-item" data-value="基礎課程">基礎課程</a>
-                                                                    <a class="dropdown-item" data-value="必修">必修</a>
-                                                                    <a class="dropdown-item" data-value="選修">	選修</a>
-                                                                    <a class="dropdown-item" data-value="通識">	通識</a>
-                                                                </div> 
-                                                            </div>                                                        
-                                                        </div>
-
-                                                        <div class="col-lg-2">                                                        
-                                                            <div class="dropdown">
-                                                                <button class="btn btn-sm dropdown-toggle mr-0 col text-center" type="button" id="courseCreditDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:#CB997E; color: #fff;">學分</button>
-                                                                <div class="dropdown-menu" aria-labelledby="courseCreditDropdownButton" style="max-height: 350px; overflow-y: auto;">
-                                                                    <a class="dropdown-item" data-value="1">1</a>
-                                                                    <a class="dropdown-item" data-value="2">2</a>
-                                                                    <a class="dropdown-item" data-value="3">3</a>
-                                                                    <a class="dropdown-item" data-value="4">4</a>
-                                                                </div>                                                        
-                                                            </div>                                                       
-                                                        </div>
-
-                                                        <div class="col-lg-2">                                                                                                                  
-                                                            <div class="form-group">                                                            
-                                                                <input type="text" id="input-username" class="form-control text-center" style="height: 30px; width: 135px;" placeholder="輸入分數 0-100" name="score"aria-describedby="inputGroupPrepend1" >
-                                                            </div>                                                                                                         
-                                                        </div>
-
+                                                        {{ posts.crsf_token }}
                                                         <div class="col-lg-2">
-                                                            <button class="btn btn-sm col text-center" type="button" id="submitBtn" style="background:#CB997E; color: #fff;"><i class="fa-solid fa-right-to-bracket"></i> 新增成績</button>
+                                                            {{ posts.course_year(
+                                                                class_="btn btn-sm  dropdown-toggle mr-0 col text-center", 
+                                                                style="background:#CB997E; color: #fff;",
+                                                                placeholder="年級"
+                                                                ) }}
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            {{ posts.course_name(
+                                                                class_="btn btn-sm  dropdown-toggle mr-0 col text-center", 
+                                                                style="background:#CB997E; color: #fff;",
+                                                                placeholder="科目名稱"
+                                                                ) }}
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            {{ posts.score }}
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button class="btn btn-sm col text-center" type="submit" id="submitBtn" style="background:#CB997E; color: #fff;"><i class="fa-solid fa-right-to-bracket"></i>新增成績</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -439,7 +357,6 @@
                                                 <table contenteditable="true" id="myTable" class="table table-hover" data-integration="excel">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">學期</th>
                                                             <th scope="col">課程名稱</th>
                                                             <th scope="col">課程類別</th>
                                                             <th scope="col">學分</th>
@@ -447,13 +364,12 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody id="productTable">
-                                                        {% for data in grades %}
+                                                        {% for data in allgrades %}
                                                         <tr>
-                                                            <th scope="row">{{ data[1] }}</th>
-                                                            <td>{{ data[2] }}</td>
-                                                            <td>{{ data[3] }}</td>
-                                                            <td>{{ data[4] }}</td>
-                                                            <td>{{ data[5] }}</td>
+                                                            <th scope="row">{{ data.course_name }}</th>
+                                                            <td>{{ course_type[data.index] }}</td>
+                                                            <td>{{ course_credit[data.index] }}</td>
+                                                            <td>{{ data.score }}</td>
                                                         </tr>
                                                         {% endfor %}
                                                     </tbody>
@@ -680,23 +596,23 @@
                         </div>
                     </div>
                     <!-- End of Card Message board -->
-                </div>
 
+                </div>
 
                 <!-- Right container -->
                 <div class="col-lg-2">
                     <div class="row removable">
                         <div class="col-lg-12">
-                            <p class="">Ability</p>
+                            <p class="">基本/核心能力指標</p>
                         </div>
                     </div>
                     <div class="row removable">
                         <div class="col-lg-12">
-                            <p class="">數學能力 : {{credit[0][15]}}</p>
-                            <p class="">編程能力 :  {{credit[0][16]}}</p>
-                            <p class="">邏輯思維能力 :  {{credit[0][17]}}</p>
-                            <p class="">創新能力 :  {{credit[0][18]}}</p>
-                            <p class="">解決問題能力 :  {{credit[0][19]}}</p>
+                            <p class="">數學能力 : {{ user.ability_math }}</p>
+                            <p class="">編程能力 :  {{user.ability_coding}}</p>
+                            <p class="">邏輯思維能力 :  {{user.ability_logic}}</p>
+                            <p class="">創新能力 :  {{user.ability_creative}}</p>
+                            <p class="">解決問題能力 :  {{user.ability_solve}}</p>
                         </div>
                     </div>
                 </div>
@@ -708,16 +624,15 @@
                 <div class="col-lg-6"></div>
             </div>
         </div>
+
         <!-- Footer -->
         <footer class="footer pt-0 px-4" style="background: #FFE8D6">
             <div class="row align-items-center justify-content-lg-between">
                 <div class="col-lg-6">
-                    <div class="copyright text-center  text-lg-left  text-muted" style="text-indent: 20%">
+                    <div class="copyright text-center  text-lg-left  text-muted" style="text-indent: 0%">
                         © 來源參考:
-                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1"
-                            target="_blank" style="color: #6B705C">Argon Dashboard</a>
-                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank"
-                            style="color: #6B705C">Loopple</a>
+                        <a href="https://www.creative-tim.com/product/argon-dashboard" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Argon Dashboard</a>
+                        &amp;<a href="https://www.loopple.com" class="font-weight-bold ml-1" target="_blank" style="color: #6B705C">Loopple</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -733,154 +648,6 @@
             </div>
         </footer>
     </div>
-
-    <!-- <script>
-        if (document.querySelector(".chart-bar")) {
-            var chartsBar = document.querySelectorAll(".chart-bar");
-
-            chartsBar.forEach(function (chart) {
-                new Chart(chart, {
-                    type: "bar",
-                    data: {
-                        labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        datasets: [
-                            {
-                                label: "Sales",
-                                tension: 0.4,
-                                borderWidth: 0,
-                                pointRadius: 0,
-                                backgroundColor: "#fb6340",
-                                data: [25, 20, 30, 22, 17, 29],
-                                maxBarThickness: 10,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        legend: {
-                            display: false,
-                        },
-                        tooltips: {
-                            enabled: true,
-                            mode: "index",
-                            intersect: false,
-                        },
-                        scales: {
-                            yAxes: [
-                                {
-                                    gridLines: {
-                                        borderDash: [2],
-                                        borderDashOffset: [2],
-                                        drawTicks: false,
-                                        drawBorder: false,
-                                        lineWidth: 1,
-                                        zeroLineWidth: 0,
-                                        zeroLineBorderDash: [0],
-                                        zeroLineBorderDashOffset: [2],
-                                    },
-                                    ticks: {
-                                        beginAtZero: true,
-                                        padding: 10,
-                                        fontSize: 13,
-                                        lineHeight: 5,
-                                        fontColor: "#8898aa",
-                                        fontFamily: "Open Sans",
-                                    },
-                                },
-                            ],
-                            xAxes: [
-                                {
-                                    gridLines: {
-                                        display: false,
-                                        drawBorder: false,
-                                        drawOnChartArea: false,
-                                        drawTicks: false,
-                                    },
-                                    ticks: {
-                                        padding: 20,
-                                        fontSize: 13,
-                                        fontColor: "#8898aa",
-                                        fontFamily: "Open Sans",
-                                    },
-                                },
-                            ],
-                        },
-                    },
-                });
-            });
-        }
-
-        if (document.querySelector(".chart-line")) {
-
-            var chartsLine = document.querySelectorAll(".chart-line");
-
-            chartsLine.forEach(function (chart) {
-
-                new Chart(chart, {
-                    type: "line",
-                    data: {
-                        labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        datasets: [{
-                            label: "Performance",
-                            tension: 0.4,
-                            borderWidth: 4,
-                            borderColor: "#5e72e4",
-                            pointRadius: 0,
-                            backgroundColor: "transparent",
-                            data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
-                        },],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        legend: {
-                            display: false,
-                        },
-                        tooltips: {
-                            enabled: true,
-                            mode: "index",
-                            intersect: false,
-                        },
-                        scales: {
-                            yAxes: [{
-                                barPercentage: 1.6,
-                                gridLines: {
-                                    drawBorder: false,
-                                    color: "rgba(29,140,248,0.0)",
-                                    zeroLineColor: "transparent",
-                                },
-                                ticks: {
-                                    padding: 0,
-                                    fontColor: "#8898aa",
-                                    fontSize: 13,
-                                    fontFamily: "Open Sans",
-                                },
-                            },],
-                            xAxes: [{
-                                barPercentage: 1.6,
-                                gridLines: {
-                                    drawBorder: false,
-                                    color: "rgba(29,140,248,0.0)",
-                                    zeroLineColor: "transparent",
-                                },
-                                ticks: {
-                                    padding: 10,
-                                    fontColor: "#8898aa",
-                                    fontSize: 13,
-                                    fontFamily: "Open Sans",
-                                },
-                            },],
-                        },
-                        layout: {
-                            padding: 0,
-                        },
-                    },
-                });
-
-            });
-        }
-    </script> -->
     
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script>
@@ -898,74 +665,24 @@
     </script>
     
     <script>
-        $(document).ready(function () {
-            $(".dropdown-item").click(function () {
-                var newValue = $(this).data("value");
-                var dropdownButton = $(this).closest(".dropdown").find(".dropdown-toggle");
-                dropdownButton.text(newValue);
-            });
-        });
+        let course_year_select = document.getElementById('course_year');
+        let course_name_select = document.getElementById('course_name');
 
-    </script>
+        course_year_select.onchange = function(){
+            course_year = course_year_select.value;
+            
+            fetch('/profileDroplist/' + course_year).then(function(response){
+                response.json().then(function(data){
+                    let optionHTML = '';
 
-    <!-- 使用jQuery来捕捉表单提交事件，并使用AJAX来发送数据到后端： -->
-        
-
-
-    
-    <script>
-        // 获取URL参数的函数
-        // function getUrlParameter(parameterName) {
-        //     var url = window.location.href;
-        //     parameterName = parameterName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        //     var regex = new RegExp('[\\?&]' + parameterName + '=([^&#]*)');
-        //     var results = regex.exec(url);
-        //     console.log("user_id from URL:", results);
-        //     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        // }
-
-        $(document).ready(function () {
-            $("#submitBtn").click(function () {
-                // var user_id = $("#userLink").data("user_id"); // 获取自定义属性值
-                // console.log("user_id from URL:", user_id);
-                var selectedGrade = $("#gradeDropdownButton").text().trim();
-                var selectedCourseName = $("#courseNameDropdownButton").text().trim();
-                var selectedCourseType = $("#courseTypeDropdownButton").text().trim();
-                var selectedCourseCredit = $("#courseCreditDropdownButton").text().trim();
-                var enteredScore = $("#input-username").val();
-    
-                // 创建包含选择的菜单数据的对象
-                var selectedData = {
-                    // user_id: user_id, // 将user_id添加到selectedData对象中
-                    grade: selectedGrade,
-                    course_name: selectedCourseName,
-                    course_type: selectedCourseType,
-                    course_credit: selectedCourseCredit,
-                    score: enteredScore
-                };
-    
-                // 使用 AJAX 发送 POST 请求
-                $.ajax({
-                    type: "POST",
-                    url: "/saveData", // 替换为您的后端 API 端点
-                    data: selectedData,
-                    // contentType: "application/json",  // 指定请求的Content-Type
-                    success: function (response) {
-                        // 请求成功后的处理逻辑
-                        console.log("Data sent successfully:", response);
-                        console.log("selectedData:", selectedData); // 在这里输出 selectedData
-                        // 可以在这里添加更新页面的逻辑，例如显示成功消息
-                        // 重载页面
-                        location.reload();
-                    },
-                    error: function (error) {
-                        // 请求失败后的处理逻辑
-                        console.error("Error sending data:", error);
-                        // 可以在这里添加更新页面的逻辑，例如显示错误消息
+                    for (let course of data.courses){
+                        optionHTML += '<option value="' + course.course_name + '">' + course.course_name + '</option>';
                     }
+
+                    course_name_select.innerHTML = optionHTML;
                 });
             });
-        });
+        }
     </script>
 
     
@@ -994,6 +711,9 @@
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     
+    <script></script>
+    <!-- Loople JavaScript -->
+    <script src="/static/JavaScript/loopple.js"></script>
 
     <!-- 實現API -->
     <script>
@@ -1005,7 +725,6 @@
                 labels: ['數學', '編程', '創新', '解題', '邏輯'],
                 datasets: [{
                     label: '個人能力',
-                    // data: [1, 3, 3, 3, 5],
                     data: chartData,
                     borderWidth: 2
                 }]

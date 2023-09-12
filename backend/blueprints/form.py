@@ -1,5 +1,5 @@
 import wtforms
-from wtforms.validators import Email, Length, EqualTo
+from wtforms.validators import Email, Length, EqualTo, NumberRange
 from ..models import UserModel
 
 # 驗證數據是否符合要求
@@ -24,3 +24,8 @@ class CommandForm(wtforms.Form):
     commandcontent = wtforms.TextAreaField('commandcontent', validators=[Length(min=1)])
     sort_by_latest = wtforms.SubmitField('由新到舊')
     sort_by_oldest = wtforms.SubmitField('由舊到新')
+
+class MyResultSearchForm(wtforms.Form):
+    course_year = wtforms.SelectField('年級', choices=[(0,'年級'),(1,'大一'),(2,'大二'),(3,'大三'),(4,'大四')])
+    course_name = wtforms.SelectField('科目名稱', choices=[])
+    score = wtforms.IntegerField('分數', validators=[NumberRange(min=0, max=100, message="less then 0 or more then 100")])

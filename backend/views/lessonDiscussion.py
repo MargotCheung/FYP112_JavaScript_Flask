@@ -7,8 +7,6 @@ from ..extends import db
 def lessonDiscussion_view(course_name):
     user_id = g.user.id
 
-    # 獲取 URL 中的 course_name 参数
-    # course_name = request.args.get("course_name")  
     # 留言板
     if request.method == "POST":
         form = CommandForm(request.form)
@@ -63,7 +61,6 @@ def liked_view(course_name,comment_index):
     user_id = g.user.id
     comment = CommandModel.query.filter_by(index=comment_index)
     like = LikeModel.query.filter_by(author=user_id, comment_index=comment_index).first()
-    # course_name = request.args.get("course_name") 
 
     if not comment:
         flash('Comment does exist.', category='error')

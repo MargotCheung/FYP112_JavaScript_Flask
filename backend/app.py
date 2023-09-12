@@ -17,7 +17,7 @@ from flask_migrate import Migrate
 
 from .views.home import home_view
 # from .views.lesson import lessonpage_view
-from .views.learningProgress import learningProgress_view, save_data
+from .views.learningProgress import learningProgress_view, profileDroplist_view
 from .views.profile import profile_view
 from .views.CoinWallet import CoinWallet_view
 from .views.landing import landing_view
@@ -30,6 +30,7 @@ from .views.signIn import signIn_view
 PROJECT_DIR = Path(__file__).parent.parent
 FRONTEND_DIR = PROJECT_DIR / 'backend'
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret'
 
 # 綁定配置文件
 app.config.from_object(config)
@@ -47,13 +48,17 @@ app.register_blueprint(auth_bp)
 def profile():
     return profile_view()
 
-@app.route("/learningProgress")
+@app.route("/learningProgress", methods=["GET", "POST"])
 def learningProgress():
     return learningProgress_view()
 
-@app.route("/saveData", methods=["POST"])
-def saveData():
-    return save_data()
+# @app.route("/saveData/<course_name>", methods=["POST"])
+# def saveData(course_name):
+#     return save_data(course_name)
+
+@app.route("/profileDroplist/<course_year>")
+def profileDroplist(course_year):
+    return profileDroplist_view(course_year)
 
 @app.route("/CoinWallet")
 def CoinWallet():
