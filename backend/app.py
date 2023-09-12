@@ -79,9 +79,9 @@ def MyQuestionBank():
 def lessonDiscussion():
     return lessonDiscussion_view()
 
-@app.route("/like-post/<comment_index>",methods=["GET", "POST"])
-def likedFunction():
-    return liked_view()
+@app.route("/like-comment/<course_name>/<comment_index>",methods=["GET", "POST"])
+def likedFunction(course_name,comment_index):
+    return liked_view(course_name,comment_index)
 
 # hook函數 （具體有點難解釋，可以去找一下相關内容）
 @app.before_request

@@ -26,7 +26,7 @@ class UserModel(db.Model):
     ability_solve = db.Column(db.Float, default=0)
     join_time = db.Column(db.DateTime, default=datetime.now)
 
-    commands = db.relationship("CommandModel", backref="user")
+    comments = db.relationship("CommandModel", backref="user")
     paper = db.relationship("PassExamPaperModel", backref="user")
     likes = db.relationship("LikeModel", backref="user")
 
@@ -50,7 +50,7 @@ class CourseInfoModel(db.Model):
     solve_txt = db.Column(db.Text)
     # teacher_name = db.Column(db.String(10), nullable=False)
 
-    commands = db.relationship("CommandModel", backref="course")
+    comments = db.relationship("CommandModel", backref="course")
     teacher = db.relationship("CourseTeacherModel", backref="course")
     paper = db.relationship("PassExamPaperModel", backref="course")
 
@@ -66,7 +66,7 @@ class CommandModel(db.Model):
     course_name = db.Column(db.String(30), db.ForeignKey('course_info.course_name'))
     user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
     response = db.Column(db.Text)
-    command_time = db.Column(db.DateTime, default=datetime.now)
+    comment_time = db.Column(db.DateTime, default=datetime.now)
     
     likes = db.relationship("LikeModel", backref="comment")
 
