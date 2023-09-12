@@ -324,21 +324,23 @@
                                                             {{ posts.course_year(
                                                                 class_="btn btn-sm  dropdown-toggle mr-0 col text-center", 
                                                                 style="background:#CB997E; color: #fff;",
-                                                                placeholder="年級"
                                                                 ) }}
                                                         </div>
                                                         <div class="col-lg-2">
                                                             {{ posts.course_name(
                                                                 class_="btn btn-sm  dropdown-toggle mr-0 col text-center", 
                                                                 style="background:#CB997E; color: #fff;",
-                                                                placeholder="科目名稱"
                                                                 ) }}
                                                         </div>
                                                         <div class="col-lg-2">
-                                                            {{ posts.score }}
+                                                            {{ posts.score(
+                                                                class="form-control text-center", 
+                                                                style="height: 30px; width: 150px;",
+                                                                placeholder="輸入分數 0-100"
+                                                                ) }}
                                                         </div>
                                                         <div class="col-lg-2">
-                                                            <button class="btn btn-sm col text-center" type="submit" id="submitBtn" style="background:#CB997E; color: #fff;"><i class="fa-solid fa-right-to-bracket"></i>新增成績</button>
+                                                            <button class="btn btn-sm  col text-center" type="submit" style="background:#CB997E; color: #fff;" ><i class="fa-solid fa-right-to-bracket"></i>上傳</button>
                                                         </div>
                                                     </div>
                                                 </div>
