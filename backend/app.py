@@ -92,7 +92,20 @@ def likedFunction(course_name,comment_index):
 def update_users():
     # Get the data you want to update from the request or any other source.
     updated_data = [
-        {'name': '計算機概論', 'math': 1, 'coding': 1, 'logic': 1, 'creative': 1, 'solve': 1},
+        {'name': '計算機概論', 
+         'math':        3, 
+         'coding':      3, 
+         'logic':       3, 
+         'creative':    3, 
+         'solve':       3
+         },
+         {'name': '程式設計(I)', 
+         'math':        1, 
+         'coding':      3, 
+         'logic':       4, 
+         'creative':    2, 
+         'solve':       2
+         },
         # Add more data as needed
     ]
 
