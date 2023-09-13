@@ -38,37 +38,84 @@ def learningProgress_view():
         grade = postform.course_year.data
         course_name = postform.course_name.data
         score = postform.score.data
+        
 
         course = CourseInfoModel.query.filter_by(course_name=course_name).first()
         # 檢查有沒有該course，主要是防呆
         if course:
+            #找出course_info 中的course_type
+            sql_query = f"SELECT course_type FROM course_info WHERE course_name = '{course_name}';"
+            cursor.execute(sql_query)
+            course_type_data= cursor.fetchone()
+            # if course_type_data[0] == '選修':
+            #     print(course_type_data[0])
+            star_math = 0
+            star_coding = 0
+            star_logic = 0
+            star_creative = 0
+            star_solve = 0
+
+            if course_type_data[0]=='必修':
+                # 計算每個年級的必修各自能力值星號的加權
+                sql_query = f"SELECT * FROM course_info WHERE course_year = '{grade}' AND course_type = '必修';"
+                cursor.execute(sql_query)
+                ability_data_major = cursor.fetchall()
+
+                for item in ability_data_major:
+                    star_math += item[5]
+                    star_coding += item[6]
+                    star_logic += item[7]
+                    star_creative += item[8]
+                    star_solve += item[9]
+
+                star_math = round(1 / star_math, 2)
+                star_coding = round(1 / star_coding, 2)
+                star_logic = round(1 / star_logic, 2)
+                star_creative = round(1 / star_creative, 2)
+                star_solve = round(1 / star_solve, 2)
+                
+
+
             # 確認想要上傳的成績是不是已經存在，如果是已經存在會變成更新分數
             isUpdate = UserGradeModel.query.filter_by(user_id=user_id,course_name=course_name).first()
             if isUpdate:
                 # 先減去原本已加入的能力值
                 beforeUpdate = isUpdate.score
-                course_math = (course.math * beforeUpdate) / 100
-                course_coding = (course.coding * beforeUpdate) / 100
-                course_logic = (course.logic * beforeUpdate) / 100
-                course_creative = (course.creative * beforeUpdate) / 100
-                course_solve = (course.solve * beforeUpdate) / 100
+                beforeMath = isUpdate.course_math
+                beforeCoding = isUpdate.course_coding
+                beforeLogic = isUpdate.course_logic
+                beforeCreative = isUpdate.course_creative
+                beforeSolve = isUpdate.course_solve
+                # print(beforeMath)
 
-                user.ability_math -= course_math
-                user.ability_coding -= course_coding
-                user.ability_logic -= course_logic
-                user.ability_creative -= course_creative
-                user.ability_solve -= course_solve
+                user.ability_math -= beforeMath
+                user.ability_coding -= beforeCoding
+                user.ability_logic -= beforeLogic
+                user.ability_creative -= beforeCreative
+                user.ability_solve -= beforeSolve
                 
                 db.session.commit()
                 
                 # 計算更新後的成績能力值后，加入user的能力值 
                 isUpdate.score = score
-                           
-                Update_course_math = (course.math * score) / 100
-                Update_course_coding = (course.coding * score) / 100
-                Update_course_logic = (course.logic * score) / 100
-                Update_course_creative = (course.creative * score) / 100
-                Update_course_solve = (course.solve * score) / 100
+                if course_type_data[0]=='必修':
+                    course_math = (course.math *star_math* score) / 100
+                    course_coding = (course.coding *star_coding* score) / 100
+                    course_logic = (course.logic *star_logic* score) / 100
+                    course_creative = (course.creative *star_creative* score) / 100
+                    course_solve = (course.solve *star_solve* score) / 100
+                elif course_type_data[0]=='選修':
+                    course_math = (course.math *0.02* score) / 100
+                    course_coding = (course.coding *0.02* score) / 100
+                    course_logic = (course.logic *0.02* score) / 100
+                    course_creative = (course.creative *0.02* score) / 100
+                    course_solve = (course.solve *0.02* score) / 100
+                    
+                Update_course_math = course_math
+                Update_course_coding = course_coding
+                Update_course_logic = course_logic
+                Update_course_creative = course_creative
+                Update_course_solve = course_solve
 
                 user.ability_math += Update_course_math
                 user.ability_coding += Update_course_coding
@@ -77,23 +124,32 @@ def learningProgress_view():
                 user.ability_solve += Update_course_solve
                 db.session.commit()
             else:
-                # 新增成績
-                addgrade = UserGradeModel(user_id=user_id, grade=grade, course_name=course_name, score=score)
-                db.session.add(addgrade)
-
                 # 計算成績能力值加入user的能力值
-                course_math = (course.math * score) / 100
-                course_coding = (course.coding * score) / 100
-                course_logic = (course.logic * score) / 100
-                course_creative = (course.creative * score) / 100
-                course_solve = (course.solve * score) / 100
-
+                # 計算必修的能力值
+                if course_type_data[0]=='必修':
+                    course_math = (course.math *star_math* score) / 100
+                    course_coding = (course.coding *star_coding* score) / 100
+                    course_logic = (course.logic *star_logic* score) / 100
+                    course_creative = (course.creative *star_creative* score) / 100
+                    course_solve = (course.solve *star_solve* score) / 100
+                elif course_type_data[0]=='選修':
+                    course_math = (course.math *0.02* score) / 100
+                    course_coding = (course.coding *0.02* score) / 100
+                    course_logic = (course.logic *0.02* score) / 100
+                    course_creative = (course.creative *0.02* score) / 100
+                    course_solve = (course.solve *0.02* score) / 100
+                    
                 user.ability_math += course_math
                 user.ability_coding += course_coding
                 user.ability_logic += course_logic
                 user.ability_creative += course_creative
                 user.ability_solve += course_solve
                 db.session.commit()
+
+                # 新增成績
+                addgrade = UserGradeModel(user_id=user_id, grade=grade, course_name=course_name, score=score,course_math=course_math,course_coding=course_coding,course_logic=course_logic,course_creative=course_creative,course_solve=course_solve)
+                db.session.add(addgrade)
+
             return redirect(url_for('learningProgress'))
         else:
             flash('請選擇列表')

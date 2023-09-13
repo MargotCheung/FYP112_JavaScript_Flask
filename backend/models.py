@@ -69,7 +69,8 @@ class CommandModel(db.Model):
     comment_time = db.Column(db.DateTime, default=datetime.now)
     
     likes = db.relationship("LikeModel", backref="comment")
-
+#  addgrade = UserGradeModel(course_math=course_math,course_coding=course_coding,course_logic=course_logic,course_creative=course_creative,course_solve=course_solve)
+               
 class UserGradeModel(db.Model):
     __tablename__ = "user_grades"
     index = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -79,6 +80,11 @@ class UserGradeModel(db.Model):
     # course_type = db.Column(db.String(30), db.ForeignKey('course_info.course_type'))
     # course_credit = db.Column(db.Integer, db.ForeignKey('course_info.course_credit'))
     score = db.Column(db.Integer, nullable=False)
+    course_math = db.Column(db.Float, nullable=False)
+    course_coding = db.Column(db.Float, nullable=False)
+    course_logic = db.Column(db.Float, nullable=False)
+    course_creative = db.Column(db.Float, nullable=False)
+    course_solve = db.Column(db.Float, nullable=False)
 
 class PassExamPaperModel(db.Model):
     __tablename__ = "pass_exam_paper"
