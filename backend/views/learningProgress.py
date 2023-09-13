@@ -12,26 +12,26 @@ def learningProgress_view():
     # 得到user的全部内容，後續都會用到
     user = UserModel.query.filter_by(id=user_id).first()
     
+    # 蜘蛛網圖的資料
     chart_data = [user.ability_math, user.ability_coding, user.ability_creative, user.ability_solve, user.ability_logic]
-    # chart_data=[credit[0][16],credit[0][17],credit[0][18],credit[0][19],credit[0][20]]
-    print(chart_data)
+
     # 利用course_name找出對應的coursetype和coursecredit，存在dictionary裏
     grades = UserGradeModel.query.filter_by(user_id=user_id).all()
     coursetype = {}
     for course in grades:
-            course_name = course.course_name
-            course_info = CourseInfoModel.query.get(course_name)
-            if course_info:
-                coursetype[course.index] = course_info.course_type
+        course_name = course.course_name
+        course_info = CourseInfoModel.query.get(course_name)
+        if course_info:
+            coursetype[course.index] = course_info.course_type
 
     coursecredit = {}
     for course in grades:
-            course_name = course.course_name
-            course_info = CourseInfoModel.query.get(course_name)
-            if course_info:
-                coursecredit[course.index] = course_info.course_credit
+        course_name = course.course_name
+        course_info = CourseInfoModel.query.get(course_name)
+        if course_info:
+            coursecredit[course.index] = course_info.course_credit
 
-    # 當按下“新增成績”
+    # 當按下“上傳”
     if request.method == "POST":
         # 上傳成績
         postform = MyResultSearchForm(request.form)
@@ -40,6 +40,7 @@ def learningProgress_view():
         score = postform.score.data
 
         course = CourseInfoModel.query.filter_by(course_name=course_name).first()
+        # 檢查有沒有該course，主要是防呆
         if course:
             # 確認想要上傳的成績是不是已經存在，如果是已經存在會變成更新分數
             isUpdate = UserGradeModel.query.filter_by(user_id=user_id,course_name=course_name).first()
@@ -59,9 +60,10 @@ def learningProgress_view():
                 user.ability_solve -= course_solve
                 
                 db.session.commit()
-
+                
+                # 計算更新後的成績能力值后，加入user的能力值 
                 isUpdate.score = score
-                # 計算更新後的成績能力值后，加入user的能力值            
+                           
                 Update_course_math = (course.math * score) / 100
                 Update_course_coding = (course.coding * score) / 100
                 Update_course_logic = (course.logic * score) / 100
@@ -75,6 +77,7 @@ def learningProgress_view():
                 user.ability_solve += Update_course_solve
                 db.session.commit()
             else:
+                # 新增成績
                 addgrade = UserGradeModel(user_id=user_id, grade=grade, course_name=course_name, score=score)
                 db.session.add(addgrade)
 
@@ -97,16 +100,18 @@ def learningProgress_view():
 
     return render_template('learningProgress.html', posts=form, allgrades=grades, course_type=coursetype, course_credit=coursecredit, **locals())
 
+# 動態下拉式選單
 def profileDroplist_view(course_year):
     courseArray=[]
     
+    # course_year=0是因爲0="年級"
     if course_year == '0':
         courseObj = {}
         courseObj['course_name'] = '科目名稱'
         courseArray.append(courseObj)
     else:
+        # 把年級傳進來后，找出對應的course_name，再用json檔傳出去
         courses = CourseInfoModel.query.filter_by(course_year=course_year).all()
-        
         for course in courses:
             courseObj = {}
             courseObj['course_name'] = course.course_name
