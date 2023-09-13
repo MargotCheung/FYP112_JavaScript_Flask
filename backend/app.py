@@ -8,7 +8,7 @@ from path import Path
 from . import config
 from .extends import db
 
-from .models import UserModel
+from .models import UserModel, CourseInfoModel
 
 from .blueprints.course import bp as course_bp
 from .blueprints.auth import bp as auth_bp
@@ -87,6 +87,30 @@ def lessonDiscussion(course_name):
 @app.route("/like-comment/course_name=<course_name>/<comment_index>",methods=["GET", "POST"])
 def likedFunction(course_name,comment_index):
     return liked_view(course_name,comment_index)
+
+@app.route('/updateCourse', methods=["GET", "POST"])
+def update_users():
+    # Get the data you want to update from the request or any other source.
+    updated_data = [
+        {'name': '計算機概論', 'math': 1, 'coding': 1, 'logic': 1, 'creative': 1, 'solve': 1},
+        # Add more data as needed
+    ]
+
+    # Update the rows in the database using a loop.
+    for data in updated_data:
+        course_name = data['name']
+        course = CourseInfoModel.query.get(course_name)
+        
+        if course:
+            course.math = data['math']
+            course.coding = data['coding']
+            course.logic = data['logic']
+            course.creative = data['creative']
+            course.solve = data['solve']
+            db.session.commit()
+
+    return "Updated successfully"
+
 
 # hook函數 （具體有點難解釋，可以去找一下相關内容）
 @app.before_request
