@@ -20,8 +20,8 @@
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start"
         id="sidenav-main" style="background: #FFE8D6">
         <div class="sidenav-header  align-items-center" style="background: #FFE8D6">
-            <a class="navbar-brand" href="landing.html">
-                <img src="\static\images\logo.jpg" class="navbar-brand-img" alt="..."> 首頁
+            <a class="navbar-brand" href="/">
+                <img src="\static\images\logo.jpg" class="navbar-brand-img" alt="/"> 首頁
             </a>
         </div>
         <div class="navbar-inner" style="background: #FFE8D6">
@@ -141,22 +141,13 @@
                                         <span class="mb-0 text-sm  font-weight-bold" style="color: black">粉頭</span>
                                     </div> -->
                                     {% if user %}
-                                        <li  class="nav-item">
-                                            <span class="nav-link" style="color: #6B705C">{{ user.username }}</span>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.logout') }}">登出</a>
-                                        </li>
-                                        {% else %}
-                                        <li class="nav-item">
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.login') }}">登入</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <span class="nav-link" style="color: #6B705C">|</span>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.register') }}">註冊</a>
-                                        </li>
+                                        <!-- <span class="avatar avatar-sm rounded-circle">
+                                            <img alt="Image placeholder" src="\static\images\head.png">
+                                        </span> -->
+                                        <div class="media-body  ml-2  d-none d-lg-block">
+                                            <span class="mb-0 text-sm  font-weight-bold" style="color: #6B705C">{{ user.username }}</span>
+                                        </div>
+                                        <a class="mb-0 text-sm  font-weight-bold" style="color: #6B705C" href="{{ url_for('auth.logout') }}">登出</a>
                                     {% endif %}
                                 </div>
                             </a>
@@ -273,7 +264,7 @@
                                                 <!-- Card body -->
                                                 <!-- 這裡的user_id要從登入來_勇傑 -->
                                                 <div class="card-body" style="height: 100%; height: 250px;">
-                                                    <a href="{{ url_for('learningProgress') }}" id="userLink" data-user_id="007"><button class="btn btn-dark"style="background: #CB997E; width: 100%; height: 100%">待修學分<br></button></a>
+                                                    <a href="{{ url_for('learningProgress') }}"><button class="btn btn-dark" style="background: #CB997E; width: 100%; height: 100%">待修學分<br></button></a>
                                                 </div>
                                             </div>
                                         </div>

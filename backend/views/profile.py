@@ -3,9 +3,9 @@ from backend.db import cursor
 
 
 def profile_view():
-    user_id = g.user.username
+    user_id = g.user.id
     #讀ability
-    sql_query = f"SELECT * FROM user_profile WHERE user_id = '{user_id}';"
+    sql_query = f"SELECT * FROM user_profile WHERE id = {user_id};"
     cursor.execute(sql_query)
     credit = cursor.fetchall()
     return render_template('MyProfile.html', **locals())

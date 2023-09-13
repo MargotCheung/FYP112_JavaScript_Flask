@@ -22,10 +22,18 @@
         <nav class="navbar navbar-top navbar-expand navbar-dark border-bottom" style="background: #FFE8D6"
             id="navbarTop">
             <div class="container">
-                <a class="loopple-navbar-brand" href="landing.html" style="margin-right: 15px">
+                <a class="loopple-navbar-brand" href="/" style="margin-right: 15px">
                     <img src="\static\images\logo.jpg" style="width:85px">
                 </a>
-                <a class="" style="color: #6B705C" href="landing.html">首頁</a>
+                <div>
+                    <a class="" style="color: #6B705C" href="/">首頁</a>
+                </div>
+                <div>
+                    <a class="" style="color: #6B705C" href="{{ url_for('profile') }}">Profile</a>
+                </div>
+                <div>
+                    <a class="" style="color: #6B705C" href="/lessonPage">課程檢索</a>
+                </div>
                 <div class="collapse navbar-collapse" id="navbar-primary">
                     <ul class="navbar-nav ml-lg-auto">
                         {% if user %}
