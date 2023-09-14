@@ -288,14 +288,18 @@
                                                     </div>
                                                     <div class="col-lg-11">
                                                         <span>{{ user_id_to_username[comment.user_id] }}</span>
+
+                                                        
+                                                       <div style="float: right" >                 
+                                                            <a href="/like-comment/course_name={{ comment.course_name }}/{{ comment.index }}"><i class="fa-regular fa-thumbs-up"></i></a>
+                                                            <span class="">{{ comment.likes|length }}</span>
+                                                        </div>
+
+                                                    
                                                         <div class="row removable">
                                                             <div class="col-lg-12">
                                                                 <p class="">{{ comment.response }}</p>
-                                                            </div>
-                                                            <div class="col-lg-12">
-                                                                <a href="/like-comment/course_name={{ comment.course_name }}/{{ comment.index }}">like</a>
-                                                                <p class="">{{ comment.likes|length }}</p>
-                                                            </div>
+                                                            </div>                                                          
                                                             <div class="col-lg-12">
                                                                 <p class="">{{ comment.comment_time }}</p>
                                                             </div>

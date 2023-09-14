@@ -25,7 +25,7 @@ from .views.lessonPage import lessonPage_view, get_lesson_name
 from .views.MyQuestionBank import MyQuestionBank_view
 from .views.lessonDiscussion import lessonDiscussion_view, liked_view
 from .views.signIn import signIn_view
-
+from .views.UploadExamPaper import UploadExamPaper_view
 
 PROJECT_DIR = Path(__file__).parent.parent
 FRONTEND_DIR = PROJECT_DIR / 'backend'
@@ -87,6 +87,10 @@ def lessonDiscussion(course_name):
 @app.route("/like-comment/course_name=<course_name>/<comment_index>",methods=["GET", "POST"])
 def likedFunction(course_name,comment_index):
     return liked_view(course_name,comment_index)
+
+@app.route("/UploadExamPaper", methods=["GET", "POST"])
+def UploadExamPaper():
+    return UploadExamPaper_view()
 
 @app.route('/updateCourse', methods=["GET", "POST"])
 def update_users():

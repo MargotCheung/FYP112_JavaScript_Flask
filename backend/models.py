@@ -52,7 +52,6 @@ class CourseInfoModel(db.Model):
 
     comments = db.relationship("CommandModel", backref="course")
     teacher = db.relationship("CourseTeacherModel", backref="course")
-    paper = db.relationship("PassExamPaperModel", backref="course")
 
 class CourseTeacherModel(db.Model):
     __tablename__ = "course_teacher"
@@ -90,10 +89,11 @@ class PassExamPaperModel(db.Model):
     __tablename__ = "pass_exam_paper"
     index = db.Column(db.Integer, primary_key=True, autoincrement=True)
     year = db.Column(db.Integer, nullable=False)
-    course_name = db.Column(db.String(30), db.ForeignKey('course_info.course_name'))
+    course = db.Column(db.String(30), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
-    course_id = db.Column(db.Integer, db.ForeignKey('course_teacher.course_id'))
-    paper_info = db.Column(db.Text)
+    teacher = db.Column(db.String(10), nullable=False)
+    info = db.Column(db.Text)
+    file_data = db.Column(db.LargeBinary, nullable=False)
 
 class LikeModel(db.Model):
     __tablename__ = "likes"
