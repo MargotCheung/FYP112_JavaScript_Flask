@@ -85,7 +85,7 @@ class UserGradeModel(db.Model):
     course_logic = db.Column(db.Float, nullable=False)
     course_creative = db.Column(db.Float, nullable=False)
     course_solve = db.Column(db.Float, nullable=False)
-
+ 
 class PassExamPaperModel(db.Model):
     __tablename__ = "pass_exam_paper"
     index = db.Column(db.Integer, primary_key=True, autoincrement=True)

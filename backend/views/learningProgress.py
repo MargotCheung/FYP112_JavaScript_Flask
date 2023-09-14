@@ -48,9 +48,9 @@ def learningProgress_view():
             cursor.execute(sql_query)
             course_type_data= cursor.fetchone()
             #找出course_info 中的course_credit
-            # sql_query = f"SELECT course_credit FROM course_info WHERE course_name = '{course_name}';"
-            # cursor.execute(sql_query)
-            # course_credit_data= cursor.fetchone()
+            sql_query = f"SELECT course_credit FROM course_info WHERE course_name = '{course_name}';"
+            cursor.execute(sql_query)
+            course_credit_data= cursor.fetchone()
             # print("看這裡"+course_credit_data[0])
 
             star_math = 0
@@ -154,28 +154,28 @@ def learningProgress_view():
                 db.session.add(addgrade)
                 db.session.commit()
 
-                # # 更新用户的学分数据&&能力值
-                # user_profile_query = f"SELECT * FROM user_profile WHERE username = '{user_id}';"
-                # cursor.execute(user_profile_query)
-                # user_profile_data = cursor.fetchone()
-                # # print(user_profile_data)
-                # if user_profile_data: 
-                #     print("有近來")
-                #     if course_type_data[0]=='必修':
-                #         updated_credit = user_profile_data[9] + int(course_credit_data[0])
-                #         # 使用 UPDATE 查询更新数据库中的数据
-                #         update_query = f"UPDATE user_profile SET complete_credit_major = {updated_credit} WHERE username = '{user_id}';"
-                #     elif course_type_data[0]=='選修': 
-                #         updated_credit = user_profile_data[11] + int(course_credit_data[0])
-                #         update_query = f"UPDATE user_profile SET complete_credit_elec = {updated_credit} WHERE username = '{user_id}';"    
-                #     elif course_type_data[0]=='通識':    
-                #         updated_credit = user_profile_data[13] + int(course_credit_data[0])
-                #         update_query = f"UPDATE user_profile SET complete_credit_general = {updated_credit} WHERE username = '{user_id}';"
-                #     elif course_type_data[0]=='系外選修':    
-                #         updated_credit = user_profile_data[15] + int(course_credit_data[0])
-                #         update_query = f"UPDATE user_profile SET complete_credit_outer = {updated_credit} WHERE username = '{user_id}';"    
-                #     cursor.execute(update_query)
-                #     connection.commit()
+                # 更新用户的学分数据&&能力值
+                user_profile_query = f"SELECT * FROM user_profile WHERE id = {user_id};"
+                cursor.execute(user_profile_query)
+                user_profile_data = cursor.fetchone()
+                # print(user_profile_data)
+                if user_profile_data: 
+                    print("有近來")
+                    if course_type_data[0]=='必修':
+                        updated_credit = user_profile_data[9] + int(course_credit_data[0])
+                        # 使用 UPDATE 查询更新数据库中的数据
+                        update_query = f"UPDATE user_profile SET complete_credit_major = {updated_credit} WHERE id = {user_id};"
+                    elif course_type_data[0]=='選修': 
+                        updated_credit = user_profile_data[11] + int(course_credit_data[0])
+                        update_query = f"UPDATE user_profile SET complete_credit_elec = {updated_credit} WHERE id = {user_id};"    
+                    elif course_type_data[0]=='通識':    
+                        updated_credit = user_profile_data[13] + int(course_credit_data[0])
+                        update_query = f"UPDATE user_profile SET complete_credit_general = {updated_credit} WHERE id = {user_id};"
+                    elif course_type_data[0]=='系外選修':    
+                        updated_credit = user_profile_data[15] + int(course_credit_data[0])
+                        update_query = f"UPDATE user_profile SET complete_credit_outer = {updated_credit} WHERE id = {user_id};"    
+                    cursor.execute(update_query)
+                    connection.commit()
 
             return redirect(url_for('learningProgress'))
         else:

@@ -93,7 +93,7 @@ def update_users():
     # Get the data you want to update from the request or any other source.
     updated_data = [
         {'name': '計算機概論', 
-         'math':        3, 
+         'math':        1, 
          'coding':      3, 
          'logic':       3, 
          'creative':    3, 
