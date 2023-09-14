@@ -1,5 +1,5 @@
 import wtforms
-from wtforms.validators import Email, Length, EqualTo, NumberRange
+from wtforms.validators import Email, Length, EqualTo, NumberRange, DataRequired
 from ..models import UserModel
 
 # 驗證數據是否符合要求
@@ -29,3 +29,11 @@ class MyResultSearchForm(wtforms.Form):
     course_year = wtforms.SelectField('年級', choices=[(0,'年級'),(1,'大一'),(2,'大二'),(3,'大三'),(4,'大四')])
     course_name = wtforms.SelectField('科目名稱', choices=[])
     score = wtforms.IntegerField('分數', validators=[NumberRange(min=0, max=100, message="less then 0 or more then 100")])
+
+class UploadPaperForm(wtforms.Form):
+    year = wtforms.IntegerField('年份')
+    course = wtforms.StringField('科目')
+    teacher = wtforms.StringField('老師')
+    pdf_file = wtforms.FileField('Upload PDF File')
+    info = wtforms.TextAreaField('詳情', validators=[Length(min=1)])
+    submit = wtforms.SubmitField('Submit')
