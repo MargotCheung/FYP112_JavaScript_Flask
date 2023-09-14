@@ -290,9 +290,27 @@
                                                         <span>{{ user_id_to_username[comment.user_id] }}</span>
 
                                                         <div style="float: right">
-                                                            <a href="/like-comment/course_name={{ comment.course_name }}/{{ comment.index }}"><i class="fa-regular fa-thumbs-up"></i></a>
+
+                                                            {% set liked = false %}
+                                                            {% for like in comment.likes %}
+                                                                {% if like.author == user.id %}
+                                                                    {% set liked = true %}
+                                                                {% endif %}
+                                                            {% endfor %}
+
+                                                            {% if liked %}
+                                                            {% set icon_class = "fa-regular fa-thumbs-up" %}
+                                                            {% else %}
+                                                            {% set icon_class = "fa-regular fa-thumbs-up" %}
+                                                            {% endif %}
+
+                                                            <a href="/like-comment/course_name={{ comment.course_name }}/{{ comment.index }}"><i class="{{icon_class}}"></i></a>
+                                                            {% if user.course_name == comment.user %}
+                                                            
                                                             <span class="">{{ comment.likes|length }}</span>                                               
+                                                                                   
                                                         </div>
+
                                                         <div class="row removable">
                                                             <div class="col-lg-12">
                                                                 <p class="">{{ comment.response }}</p>
