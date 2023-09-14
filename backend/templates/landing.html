@@ -67,15 +67,15 @@
                                         <!-- <div class="dropdown-header noti-title">
                                             <h6 class="text-overflow m-0">Welcome!</h6>
                                         </div> -->
-                                        <a href="#!" class="dropdown-item">
+                                        <a href="{{ url_for('profile') }}" class="dropdown-item">
                                             <i class="fa fa-user"></i>
                                             <span>我的檔案</span>
                                         </a>
-                                        <a href="#!" class="dropdown-item">
-                                            <i class="fa fa-cog"></i>
-                                            <span>用戶設定</span>
+                                        <a href="/lessonPage" class="dropdown-item">
+                                            <i class="fa fa-search"></i>
+                                            <span>課程檢索</span>
                                         </a>
-                                        <a href="#!" class="dropdown-item">
+                                        <a href="/learningProgress" class="dropdown-item">
                                             <i class="fa fa-book"></i>
                                             <span>學習進度</span>
                                         </a>
@@ -84,9 +84,9 @@
                                             <span>COIN錢包</span>
                                         </a>
                                         <div class="dropdown-divider"></div>
-                                        <a href="#!" class="dropdown-item">
-                                            
-                                            <a class="nav-link" style="color: #6B705C" href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out-alt"></i>登出</a>
+                                        <a href="{{ url_for('auth.logout') }}" class="dropdown-item">
+                                            <i class="fa fa-sign-out-alt"></i>
+                                            <span>登出</span>                                            
                                         </a>
                                     </div>
                                 </li>
