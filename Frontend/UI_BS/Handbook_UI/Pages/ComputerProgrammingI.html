@@ -285,10 +285,10 @@
                             <div class="col-lg-1"></div>
 
                             <div class="card-body col-lg-10" style="background: #FFF3F3">
-                                                                         
-                                <!-- END of Toggleable Tabs -->
+                                                                                                         
                                 <p></p>
-                                <form action="">
+                                <!-- END of Toggle Message board complete -->
+                                <form method="POST">
 
                                     <div class="row removable">
                                         <div class="col-lg-6"><h5>留言</h5></div>
@@ -302,6 +302,7 @@
                                     </div>
                                     <p style="padding: 5px;"></p>
 
+                                    <!-- Toggleable Tabs -->
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item">
                                         <a class="nav-link active" id="chen-tab" data-toggle="tab" href="#chen" role="tab" aria-controls="chen" aria-selected="true">陳一</a>
@@ -314,32 +315,96 @@
                                         </li>
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
-                                    <p style="padding: 5px;"></p>
+                                        <p style="padding: 5px;"></p>
                                     
-                                    <!-- <div class="tab-pane fade show active" id="chen" role="tabpanel" aria-labelledby="home-tab">留言關於陳一。</div> -->
-
-
-                                    <div class="tab-pane fade show active" id="chen" role="tabpanel" aria-labelledby="home-tab">
-                                        <!-- Sample message #1 -->
-                                        <div class="row removable">
-                                            <div class="col-lg-12">
-                                                <div class="row removable">
-                                                    <div class="col-lg-1">
-                                                        <span class="avatar avatar-sm rounded-circle">
-                                                            <img alt="Image placeholder" src="..\src\images\head.png">
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-lg-11">
-                                                        <span>ID: </span><span>0001</span>
+                                        <!-- Toggleable Tabs 1 -->
+                                        <!-- <div class="tab-pane fade show active" id="chen" role="tabpanel" aria-labelledby="home-tab">留言關於陳一。</div> -->
+                                        <div class="tab-pane fade show active" id="chen" role="tabpanel" aria-labelledby="home-tab">
+                                            <!-- Sample message #1 -->
+                                            <div class="row removable">
+                                                <div class="col-lg-12">
+                                                    <div class="row removable">
+                                                        <div class="col-lg-1">
+                                                            <span class="avatar avatar-sm rounded-circle">
+                                                                <img alt="Image placeholder" src="..\src\images\head.png">
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-lg-11">
+                                                            <span>ID: </span><span>0001</span>
+                                                            
+                                                            <div style="float: right">
+                                                                <input type="checkbox" id="likeButton" checked/>
+                                                                <label for="heart"></label>   
+                                                            </div>
                                                         
-                                                        <div style="float: right">
-                                                            <input type="checkbox" id="likeButton" checked/>
-                                                            <!-- <label for="heart"></label>                                                -->
+                                                            <div class="row removable">
+                                                                <div class="col-lg-12">
+                                                                    <p class="">陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一陳一</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    
-                                                        <div class="row removable">
-                                                            <div class="col-lg-12">
-                                                                <p class="">留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內容</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Toggleable Tabs 2 -->
+                                        <!-- <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="profile-tab">留言關於李二。...</div> -->
+                                        <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="profile-tab">
+                                            <!-- Sample message #2 -->
+                                            <div class="row removable">
+                                                <div class="col-lg-12">
+                                                    <div class="row removable">
+                                                        <div class="col-lg-1">
+                                                            <span class="avatar avatar-sm rounded-circle">
+                                                                <img alt="Image placeholder" src="..\src\images\head.png">
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-lg-11">
+                                                            <span>ID: </span><span>0002</span>
+
+                                                            <div style="float: right">
+                                                                <input type="checkbox" id="likeButton" checked/>
+                                                                <label for="heart"></label>   
+                                                            </div>
+
+                                                            <div class="row removable">
+                                                                <div class="col-lg-12">
+                                                                    <p class="">李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二李二</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Toggleable Tabs 3 -->
+                                        <!-- <div class="tab-pane fade" id="wang" role="tabpanel" aria-labelledby="contact-tab">留言關於王三...</div> -->
+                                        <div class="tab-pane fade" id="wang" role="tabpanel" aria-labelledby="contact-tab">
+                                            <!-- Sample message #3 -->
+                                            <div class="row removable">
+                                                <div class="col-lg-12">
+                                                    <div class="row removable">
+                                                        <div class="col-lg-1">
+                                                            <span class="avatar avatar-sm rounded-circle">
+                                                                <img alt="Image placeholder" src="..\src\images\head.png">
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-lg-11">
+                                                            <span>ID: </span><span>0003</span>
+
+                                                            <div style="float: right">
+                                                                <input type="checkbox" id="likeButton" checked/>
+                                                                <label for="heart"></label>   
+                                                            </div>
+
+                                                            <div class="row removable">
+                                                                <div class="col-lg-12">
+                                                                    <p class="">王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三王三</p>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -347,58 +412,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-                                    <!-- <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="profile-tab">留言關於李二。...</div> -->
-                                    <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="profile-tab">
-                                        <!-- Sample message #2 -->
-                                        <div class="row removable">
-                                            <div class="col-lg-12">
-                                                <div class="row removable">
-                                                    <div class="col-lg-1">
-                                                        <span class="avatar avatar-sm rounded-circle">
-                                                            <img alt="Image placeholder" src="..\src\images\head.png">
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-lg-11">
-                                                        <span>ID: </span><span>0002</span>
-                                                        <div class="row removable">
-                                                            <div class="col-lg-12">
-                                                                <p class="">補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- <div class="tab-pane fade" id="wang" role="tabpanel" aria-labelledby="contact-tab">留言關於王三...</div> -->
-                                    <div class="tab-pane fade" id="wang" role="tabpanel" aria-labelledby="contact-tab">
-                                        <!-- Sample message #3 -->
-                                        <div class="row removable">
-                                            <div class="col-lg-12">
-                                                <div class="row removable">
-                                                    <div class="col-lg-1">
-                                                        <span class="avatar avatar-sm rounded-circle">
-                                                            <img alt="Image placeholder" src="..\src\images\head.png">
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-lg-11">
-                                                        <span>ID: </span><span>0003</span>
-                                                        <div class="row removable">
-                                                            <div class="col-lg-12">
-                                                                <p class="">補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白補字空白</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
         
 
                                     
@@ -461,11 +474,12 @@
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end"> <!-- move button to the right -->
                                         <button class="btn btn-default" style="background:#FFCCCC   ; color: #000" type="submit">提交</button>
                                     </div>
-                                </form>                                                               
-                            </div>   
-                          
+                                </form>
+                                <p style="padding: 5px;"></p>
+                                <!-- END of Toggle Message board complete -->
                             
-
+                            </div>   
+                                                  
                             <div class="col-lg-1"></div>
                         </div>
                         <!-- 白色row -->
