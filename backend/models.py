@@ -38,11 +38,11 @@ class CourseInfoModel(db.Model):
     course_type = db.Column(db.String(30), nullable=False)
     course_credit = db.Column(db.Integer, nullable=False)
     course_intro = db.Column(db.Text)
-    math = db.Column(db.Integer, nullable=False)
-    coding = db.Column(db.Integer, nullable=False)
-    logic = db.Column(db.Integer, nullable=False)
-    creative = db.Column(db.Integer, nullable=False)
-    solve = db.Column(db.Integer, nullable=False)
+    math = db.Column(db.Float, nullable=False)
+    coding = db.Column(db.Float, nullable=False)
+    logic = db.Column(db.Float, nullable=False)
+    creative = db.Column(db.Float, nullable=False)
+    solve = db.Column(db.Float, nullable=False)
     math_txt = db.Column(db.Text)
     coding_txt = db.Column(db.Text)
     logic_txt = db.Column(db.Text)
@@ -84,7 +84,7 @@ class UserGradeModel(db.Model):
     course_logic = db.Column(db.Float, nullable=False)
     course_creative = db.Column(db.Float, nullable=False)
     course_solve = db.Column(db.Float, nullable=False)
-
+ 
 class PassExamPaperModel(db.Model):
     __tablename__ = "pass_exam_paper"
     index = db.Column(db.Integer, primary_key=True, autoincrement=True)
