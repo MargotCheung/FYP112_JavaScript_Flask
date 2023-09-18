@@ -13,10 +13,13 @@
 
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 
 <body class="g-sidenav-show" style="background: #FFE8D6">
+
+    <!-- Include Chart.js library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- SideNav -->
     <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light loopple-fixed-start" id="sidenav-main" style="background: #FFE8D6">
@@ -253,14 +256,91 @@
                         <!-- 白色row -->
                         <div class="card-body"></div>
 
-                       
-
+                        <!-- 成績分佈圖 -->
                         <div class="row removable">
                             <div class="col-lg-1"></div>
                             <div class="card-body col-lg-10" style="background: #FFF3F3">
+                                <p></p>
+                                <h4>成績分佈圖：</h4>
 
+                                <!-- <ul>
+                                    <li>1.理解不同類型的程式語言概念</li>
+                                    <li>2.理解C語言程式設計的開發環境及工具</li>
+                                    <li>3.理解C語言的結構化程式設計基礎概念</li>
+                                    <li>4.暸解軟體工程的基本概念</li>
+                                </ul> -->
+
+                                <div class="row removable">
+                                    <canvas id="myChart3" style="width: 520px;"></canvas>
+                                </div>
+                                
+                            </div>                               
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <!-- End of 成績分佈圖 -->
+                        
+                        <!-- 白色row -->
+                        <div class="card-body"></div>
+                        <div class="row removable">
+                            <div class="col-lg-1"></div>
+
+                            
+                           
+                            
+                            <div class="card-body col-lg-10" style="background: #FFF3F3">
+                                
+                                
+                                 <!-- Toggleable Tabs -->
+                            <!-- <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">陳一</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link " href="#">王二</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link " href="#">李三</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link " href="#">張四</a>
+                                </li>
+                              </ul> -->
+
+
+
+                              
+
+
+
+                            <!-- END of Toggleable Tabs -->
+                              <p></p>
+
+                              <div class="col-lg-6"><h5>留言</h5></div>
                                 <form action="">
+
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="chen-tab" data-toggle="tab" href="#chen" role="tab" aria-controls="chen" aria-selected="true">陳一</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="lee-tab" data-toggle="tab" href="#lee" role="tab" aria-controls="lee" aria-selected="false">李二</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="wang-tab" data-toggle="tab" href="#wang" role="tab" aria-controls="wang" aria-selected="false">王三</a>
+                                        </li>
+                                      </ul>
+                                      <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="chen" role="tabpanel" aria-labelledby="home-tab">留言關於陳一。</div>
+                                        <div class="tab-pane fade" id="lee" role="tabpanel" aria-labelledby="profile-tab">留言關於李二。...</div>
+                                        <div class="tab-pane fade" id="wang" role="tabpanel" aria-labelledby="contact-tab">留言關於王三...</div>
+                                      </div>
+        
+
                                     <div class="row removable">
+
+
+                                        
+
                                         <div class="col-lg-6"><h5>留言</h5></div>
                                         <!-- <div class="col-lg-2 text-right"><h5>熱門</h5></div>
                                         <div class="col-lg-2  text-right"><h5>從新到舊</h5></div>
@@ -335,7 +415,10 @@
                                         <button class="btn btn-default" style="background:#FFCCCC   ; color: #000" type="submit">提交</button>
                                     </div>
                                 </form>                                                               
-                            </div>                               
+                            </div>   
+                          
+                            
+
                             <div class="col-lg-1"></div>
                         </div>
                         <!-- 白色row -->
@@ -406,8 +489,14 @@
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/5cef8f62939eeb089fa26d4c53a49198de421e3d/argon-dashboard/js/vendor/chart.extension.js"></script>
     <script src="https://rawcdn.githack.com/Loopple/loopple-public-assets/7bb803d2af2ab6d71d429b0cb459c24a4cd0fbb4/argon-dashboard/js/argon.min.js"></script>
  
-    
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
+
+
     <script></script>
     <!-- Loople JavaScript -->
     <script src="../src/JavaScript/loopple.js"></script>
+
+    <script src="../src/JavaScript/chartApi.js"></script>
+
 </body>

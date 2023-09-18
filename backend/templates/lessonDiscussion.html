@@ -255,6 +255,25 @@
                         <!-- 白色row -->
                         <div class="card-body"></div>
 
+
+                        <!-- 成績分佈圖 -->
+                        <div class="row removable">
+                            <div class="col-lg-1"></div>
+                            <div class="card-body col-lg-10" style="background: #FFF3F3">
+                                <p></p>
+                                <h4>成績分佈圖：</h4>                              
+
+                                <div class="row removable">
+                                    <canvas id="myChart1" style="width: 520px;"></canvas>
+                                </div>
+                                
+                            </div>                               
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <!-- End of 成績分佈圖 -->
+                        <!-- 白色row -->
+                        <div class="card-body"></div>
+
                        
 
                         <div class="row removable">
@@ -388,8 +407,11 @@
     <script></script>
     <!-- Loople JavaScript -->
     <script src="/static/js/loopple.js"></script>
+    <script src="/static/js/chartApi.js"></script>
 
-    
+    <!-- Include Chart.js library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </body>
