@@ -105,19 +105,19 @@ def learningProgress_view():
                 isUpdate.score = score
                 # print("new score: ")
                 # print(isUpdate.score)
-                if course_type_data[0]=='必修':
-                    course_math = (course.math *star_math* score) / 100
-                    course_coding = (course.coding *star_coding* score) / 100
-                    course_logic = (course.logic *star_logic* score) / 100
-                    course_creative = (course.creative *star_creative* score) / 100
-                    course_solve = (course.solve *star_solve* score) / 100
-                elif course_type_data[0]=='選修':
-                    course_math = (course.math *0.1* score) / 100
-                    course_coding = (course.coding *0.1* score) / 100
-                    course_logic = (course.logic *0.1* score) / 100
-                    course_creative = (course.creative *0.1* score) / 100
-                    course_solve = (course.solve *0.1* score) / 100
-                    
+                if course_type_data[0] == '必修':
+                    course_math = round((course.math * star_math * score) / 100, 2)
+                    course_coding = round((course.coding * star_coding * score) / 100, 2)
+                    course_logic = round((course.logic * star_logic * score) / 100, 2)
+                    course_creative = round((course.creative * star_creative * score) / 100, 2)
+                    course_solve = round((course.solve * star_solve * score) / 100, 2)
+                elif course_type_data[0] == '選修':
+                    course_math = round((course.math * 0.08 * score) / 100, 2)
+                    course_coding = round((course.coding * 0.08 * score) / 100, 2)
+                    course_logic = round((course.logic * 0.08 * score) / 100, 2)
+                    course_creative = round((course.creative * 0.08 * score) / 100, 2)
+                    course_solve = round((course.solve * 0.08 * score) / 100, 2)
+             
                 Update_course_math = course_math
                 Update_course_coding = course_coding
                 Update_course_logic = course_logic
@@ -146,11 +146,11 @@ def learningProgress_view():
                     course_creative = round((course.creative * star_creative * score) / 100, 2)
                     course_solve = round((course.solve * star_solve * score) / 100, 2)
                 elif course_type_data[0] == '選修':
-                    course_math = round((course.math * 0.1 * score) / 100, 2)
-                    course_coding = round((course.coding * 0.1 * score) / 100, 2)
-                    course_logic = round((course.logic * 0.1 * score) / 100, 2)
-                    course_creative = round((course.creative * 0.1 * score) / 100, 2)
-                    course_solve = round((course.solve * 0.1 * score) / 100, 2)
+                    course_math = round((course.math * 0.08 * score) / 100, 2)
+                    course_coding = round((course.coding * 0.08 * score) / 100, 2)
+                    course_logic = round((course.logic * 0.08 * score) / 100, 2)
+                    course_creative = round((course.creative * 0.08 * score) / 100, 2)
+                    course_solve = round((course.solve * 0.08 * score) / 100, 2)
 
                     
                 user.ability_math += course_math
