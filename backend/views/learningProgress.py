@@ -72,12 +72,13 @@ def learningProgress_view():
                     star_creative += item[8]
                     star_solve += item[9]
 
-                star_math = round(1 / star_math, 2)
-                star_coding = round(1 / star_coding, 2)
-                star_logic = round(1 / star_logic, 2)
-                star_creative = round(1 / star_creative, 2)
-                star_solve = round(1 / star_solve, 2)
-                
+                star_math = 1 / star_math
+                star_coding = 1 / star_coding
+                star_logic = 1 / star_logic
+                star_creative = 1 / star_creative
+                star_solve = 1 / star_solve
+                # print("1/star_math 平均數值: ")
+                # print(star_math)
 
 
             # 確認想要上傳的成績是不是已經存在，如果是已經存在會變成更新分數
@@ -90,6 +91,7 @@ def learningProgress_view():
                 beforeLogic = isUpdate.course_logic
                 beforeCreative = isUpdate.course_creative
                 beforeSolve = isUpdate.course_solve
+                # print("before math:")
                 # print(beforeMath)
 
                 user.ability_math -= beforeMath
@@ -98,10 +100,11 @@ def learningProgress_view():
                 user.ability_creative -= beforeCreative
                 user.ability_solve -= beforeSolve
                 
-                db.session.commit()
                 
                 # 計算更新後的成績能力值后，加入user的能力值 
                 isUpdate.score = score
+                # print("new score: ")
+                # print(isUpdate.score)
                 if course_type_data[0]=='必修':
                     course_math = (course.math *star_math* score) / 100
                     course_coding = (course.coding *star_coding* score) / 100
@@ -109,17 +112,23 @@ def learningProgress_view():
                     course_creative = (course.creative *star_creative* score) / 100
                     course_solve = (course.solve *star_solve* score) / 100
                 elif course_type_data[0]=='選修':
-                    course_math = (course.math *0.02* score) / 100
-                    course_coding = (course.coding *0.02* score) / 100
-                    course_logic = (course.logic *0.02* score) / 100
-                    course_creative = (course.creative *0.02* score) / 100
-                    course_solve = (course.solve *0.02* score) / 100
+                    course_math = (course.math *0.1* score) / 100
+                    course_coding = (course.coding *0.1* score) / 100
+                    course_logic = (course.logic *0.1* score) / 100
+                    course_creative = (course.creative *0.1* score) / 100
+                    course_solve = (course.solve *0.1* score) / 100
                     
                 Update_course_math = course_math
                 Update_course_coding = course_coding
                 Update_course_logic = course_logic
                 Update_course_creative = course_creative
                 Update_course_solve = course_solve
+
+                isUpdate.course_math=course_math
+                isUpdate.course_coding=course_coding
+                isUpdate.course_logic=course_logic
+                isUpdate.course_creative=course_creative
+                isUpdate.course_solve=course_solve
 
                 user.ability_math += Update_course_math
                 user.ability_coding += Update_course_coding
@@ -130,18 +139,19 @@ def learningProgress_view():
             else:
                 # 計算成績能力值加入user的能力值
                 # 計算必修的能力值
-                if course_type_data[0]=='必修':
-                    course_math = (course.math *star_math* score) / 100
-                    course_coding = (course.coding *star_coding* score) / 100
-                    course_logic = (course.logic *star_logic* score) / 100
-                    course_creative = (course.creative *star_creative* score) / 100
-                    course_solve = (course.solve *star_solve* score) / 100
-                elif course_type_data[0]=='選修':
-                    course_math = (course.math *0.02* score) / 100
-                    course_coding = (course.coding *0.02* score) / 100
-                    course_logic = (course.logic *0.02* score) / 100
-                    course_creative = (course.creative *0.02* score) / 100
-                    course_solve = (course.solve *0.02* score) / 100
+                if course_type_data[0] == '必修':
+                    course_math = round((course.math * star_math * score) / 100, 2)
+                    course_coding = round((course.coding * star_coding * score) / 100, 2)
+                    course_logic = round((course.logic * star_logic * score) / 100, 2)
+                    course_creative = round((course.creative * star_creative * score) / 100, 2)
+                    course_solve = round((course.solve * star_solve * score) / 100, 2)
+                elif course_type_data[0] == '選修':
+                    course_math = round((course.math * 0.1 * score) / 100, 2)
+                    course_coding = round((course.coding * 0.1 * score) / 100, 2)
+                    course_logic = round((course.logic * 0.1 * score) / 100, 2)
+                    course_creative = round((course.creative * 0.1 * score) / 100, 2)
+                    course_solve = round((course.solve * 0.1 * score) / 100, 2)
+
                     
                 user.ability_math += course_math
                 user.ability_coding += course_coding
